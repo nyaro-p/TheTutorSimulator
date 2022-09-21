@@ -2,9 +2,10 @@ extends Node2D
 
 onready var students = $"%Students"
 onready var timer = $"%Timer"
+onready var clock = $"%Clock"
 
-var rate_time = 2
-var active_time = 6.0
+var rate_time = 1
+var active_time = 10.0
 
 func _ready():
 	randomize()
@@ -26,7 +27,4 @@ func on_timeout():
 			if !child.is_on_timer:
 				child.start_timer(active_time)
 				break
-
-
-
-
+			print("check failed")

@@ -6,9 +6,11 @@ onready var TimeEffect = preload("res://Effects/TimeEffect.tscn")
 
 var is_on_timer = false
 
-#func _ready():
-#	randomize()
-#	person.frame = randi() % 6
+func _ready():
+	randomize()
+	$Laptop.visible = bool(randi() % 2)
+	
+	#person.frame = randi() % 6
 
 func start_timer(time):
 	is_on_timer = true
