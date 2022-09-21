@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Student6.png-823f075e07b555a7ea747bd4a9f8a3b9.stex"
+path="res://.import/Students_Spritesheet.png-4573aea6fb7ea3989f2dc1f5717a74a6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Prefabs/Student/Assets/Student6.png"
-dest_files=[ "res://.import/Student6.png-823f075e07b555a7ea747bd4a9f8a3b9.stex" ]
+source_file="res://Prefabs/Student/Assets/Students_Spritesheet.png"
+dest_files=[ "res://.import/Students_Spritesheet.png-4573aea6fb7ea3989f2dc1f5717a74a6.stex" ]
 
 [params]
 
