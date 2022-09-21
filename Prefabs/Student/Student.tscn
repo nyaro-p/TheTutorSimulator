@@ -44,3 +44,6 @@ shape = SubResource( 4 )
 visible = false
 position = Vector2( 0, 9 )
 shape = SubResource( 6 )
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
