@@ -34,7 +34,7 @@ unique_name_in_owner = true
 position = Vector2( 0, -5.5 )
 scale = Vector2( 0.12, 0.12 )
 texture = ExtResource( 3 )
-hframes = 6
+hframes = 9
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, 8.5 )
