@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Prefabs/Student/Student.gd" type="Script" id=1]
 [ext_resource path="res://Prefabs/Student/Assets/Table.png" type="Texture" id=2]
 [ext_resource path="res://Prefabs/Student/Assets/Students_Spritesheet.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Shadow.png" type="Texture" id=4]
 
 [sub_resource type="QuadMesh" id=1]
 
@@ -15,6 +16,12 @@ extents = Vector2( 11.375, 12.5 )
 [node name="Student" type="StaticBody2D"]
 scale = Vector2( 2, 2 )
 script = ExtResource( 1 )
+
+[node name="Shadow" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.588235 )
+position = Vector2( 0, 13.5 )
+scale = Vector2( 0.12, 0.187 )
+texture = ExtResource( 4 )
 
 [node name="Chair" type="MeshInstance2D" parent="."]
 modulate = Color( 0.215686, 0.152941, 0.152941, 1 )
