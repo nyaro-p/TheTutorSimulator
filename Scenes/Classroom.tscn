@@ -232,9 +232,10 @@ scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 10 )
 
 [node name="SidebarEntrance" type="Sprite" parent="Outside4"]
-position = Vector2( 77, 227 )
-scale = Vector2( 0.25, 0.397 )
+position = Vector2( 76.214, 235.58 )
+scale = Vector2( 0.247, 0.205 )
 texture = ExtResource( 15 )
+flip_v = true
 
 [node name="Items" type="Node2D" parent="."]
 
