@@ -6,7 +6,6 @@ onready var target_rotation = 0.0
 func decrease(value):
 	pivot.rotation_degrees += value
 	pivot.rotation_degrees = clamp(pivot.rotation_degrees, 0, 90)
-	print(target_rotation)
 
 func increase(value):
 	target_rotation -= value
