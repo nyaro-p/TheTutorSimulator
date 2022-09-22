@@ -7,9 +7,12 @@ export var FRICTION = 1000
 var velocity := Vector2.ZERO
 var input_vector := Vector2.ZERO
 
+onready var collectArea = $CollectArea
 onready var areaPivot = $"%AreaPivot"
 onready var animationTree = $"%AnimationTree"
 onready var animationState = animationTree.get("parameters/playback")
+
+signal coffee_collected
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
@@ -34,3 +37,8 @@ func _physics_process(delta):
 		animationState.travel("Idle")
 		
 	velocity = move_and_slide(velocity)
+
+
+func _on_CollectArea_area_entered(area):
+	emit_signal("coffee_collected")
+	area.get_parent().queue_free()

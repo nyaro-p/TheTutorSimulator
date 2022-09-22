@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Prefabs/Student/Student.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Prefabs/Player/Player.tscn" type="PackedScene" id=2]
@@ -7,12 +7,15 @@
 [ext_resource path="res://Assets/Wall.png" type="Texture" id=5]
 [ext_resource path="res://Prefabs/UI/Clock.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Prefabs/UI/Manometer.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Lightray.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Outside.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Outside2.png" type="Texture" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 660, 20 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 96.25, 345 )
+extents = Vector2( 91.25, 345 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 105, 345 )
@@ -29,12 +32,12 @@ curve = SubResource( 6 )
 [sub_resource type="ParticlesMaterial" id=5]
 lifetime_randomness = 0.48
 emission_shape = 2
-emission_box_extents = Vector3( 300, 150, 1 )
+emission_box_extents = Vector3( 200, 150, 1 )
 flag_disable_z = true
 direction = Vector3( 0, 0, 0 )
 spread = 180.0
 gravity = Vector3( 0, 0, 0 )
-initial_velocity = 6.0
+initial_velocity = 4.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 angle = -99.8
@@ -53,13 +56,14 @@ unique_name_in_owner = true
 position = Vector2( 473, 34 )
 
 [node name="Manometer" parent="UI" instance=ExtResource( 7 )]
+unique_name_in_owner = true
 
 [node name="Background" type="Node2D" parent="."]
 
 [node name="TextureRect" type="TextureRect" parent="Background"]
-margin_left = -3.00002
+margin_left = 79.0
 margin_top = 2.99998
-margin_right = 1306.0
+margin_right = 971.0
 margin_bottom = 799.0
 rect_scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 4 )
@@ -67,7 +71,7 @@ stretch_mode = 2
 
 [node name="TextureRect2" type="TextureRect" parent="Background"]
 margin_top = -2.0
-margin_right = 2595.0
+margin_right = 2179.0
 margin_bottom = 155.0
 rect_scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 5 )
@@ -81,7 +85,8 @@ position = Vector2( 650, 55 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Background/StaticBody2D"]
-position = Vector2( 86.25, 422.5 )
+position = Vector2( 108.75, 422.5 )
+scale = Vector2( 1, 1 )
 shape = SubResource( 2 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Background/StaticBody2D"]
@@ -131,6 +136,7 @@ position = Vector2( 360, 295 )
 unique_name_in_owner = true
 
 [node name="Player" parent="Room" instance=ExtResource( 2 )]
+unique_name_in_owner = true
 position = Vector2( 295, 174 )
 
 [node name="Particles2D" type="Particles2D" parent="."]
@@ -140,8 +146,67 @@ lifetime = 10.0
 preprocess = 22.02
 process_material = SubResource( 5 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -6.0
-margin_right = 74.0
-margin_bottom = 324.0
+[node name="Outside4" type="Node2D" parent="."]
+
+[node name="WallLeft" type="ColorRect" parent="Outside4"]
+margin_top = 1.52588e-05
+margin_right = 80.0
+margin_bottom = 326.0
 color = Color( 0, 0, 0, 1 )
+
+[node name="WallRight" type="ColorRect" parent="Outside4"]
+margin_left = 432.0
+margin_top = 1.52588e-05
+margin_right = 441.0
+margin_bottom = 327.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Lightray" type="Sprite" parent="Outside4"]
+modulate = Color( 1, 1, 1, 0.156863 )
+position = Vector2( 340, 46 )
+scale = Vector2( 0.33, 0.33 )
+texture = ExtResource( 8 )
+flip_h = true
+
+[node name="Lightray2" type="Sprite" parent="Outside4"]
+modulate = Color( 1, 1, 1, 0.156863 )
+position = Vector2( 340, 134 )
+scale = Vector2( 0.33, 0.33 )
+texture = ExtResource( 8 )
+flip_h = true
+
+[node name="Lightray3" type="Sprite" parent="Outside4"]
+modulate = Color( 1, 1, 1, 0.156863 )
+position = Vector2( 340, 223 )
+scale = Vector2( 0.33, 0.33 )
+texture = ExtResource( 8 )
+flip_h = true
+
+[node name="Outside" type="Sprite" parent="Outside4"]
+position = Vector2( 490, 74 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 9 )
+
+[node name="Outside5" type="Sprite" parent="Outside4"]
+position = Vector2( 491, -14 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 10 )
+
+[node name="Outside2" type="Sprite" parent="Outside4"]
+position = Vector2( 490, 163 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 9 )
+
+[node name="Outside3" type="Sprite" parent="Outside4"]
+position = Vector2( 490, 252 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 9 )
+
+[node name="Outside4" type="Sprite" parent="Outside4"]
+position = Vector2( 491, 340 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 10 )
+
+[node name="Items" type="Node2D" parent="."]
+
+[node name="ItemTimer" type="Timer" parent="."]
