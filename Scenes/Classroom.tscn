@@ -86,7 +86,6 @@ shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Background/StaticBody2D"]
 position = Vector2( 108.75, 422.5 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 2 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Background/StaticBody2D"]
