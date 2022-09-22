@@ -15,3 +15,6 @@ func time_finished():
 		var tween := create_tween().set_trans(Tween.TRANS_ELASTIC)
 		tween.tween_property(arrow, "rotation_degrees", new_rotation, time)
 		tween.connect("finished", self, "time_finished")
+
+func set_tut_time(value):
+	tut_time = value
