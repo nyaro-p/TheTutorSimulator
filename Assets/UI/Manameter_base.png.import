@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Manameter_bar_empty.png-4c88640e210b61394ce7188249f00b7a.stex"
+path="res://.import/Manameter_base.png-53a0d2ee57d6b5e2985a4c258a6a9387.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Manameter_bar_empty.png"
-dest_files=[ "res://.import/Manameter_bar_empty.png-4c88640e210b61394ce7188249f00b7a.stex" ]
+source_file="res://Assets/UI/Manameter_base.png"
+dest_files=[ "res://.import/Manameter_base.png-53a0d2ee57d6b5e2985a4c258a6a9387.stex" ]
 
 [params]
 

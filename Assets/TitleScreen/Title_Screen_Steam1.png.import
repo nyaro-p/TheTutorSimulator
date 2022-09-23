@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Manameter_bar_full.png-3ff7541770d61f5e912c05f9cd08a3ad.stex"
+path="res://.import/Title_Screen_Steam1.png-93da223c2e8cf29e0ea2069cdcc831ca.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Manameter_bar_full.png"
-dest_files=[ "res://.import/Manameter_bar_full.png-3ff7541770d61f5e912c05f9cd08a3ad.stex" ]
+source_file="res://Assets/TitleScreen/Title_Screen_Steam1.png"
+dest_files=[ "res://.import/Title_Screen_Steam1.png-93da223c2e8cf29e0ea2069cdcc831ca.stex" ]
 
 [params]
 

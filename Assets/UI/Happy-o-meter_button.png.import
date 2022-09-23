@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Title_Screen_Image.png-e4cff0ef5672eb854aaf5309cdb82778.stex"
+path="res://.import/Happy-o-meter_button.png-48d11b3b402160f9b5dc5c30b6340d50.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Title_Screen_Image.png"
-dest_files=[ "res://.import/Title_Screen_Image.png-e4cff0ef5672eb854aaf5309cdb82778.stex" ]
+source_file="res://Assets/UI/Happy-o-meter_button.png"
+dest_files=[ "res://.import/Happy-o-meter_button.png-48d11b3b402160f9b5dc5c30b6340d50.stex" ]
 
 [params]
 

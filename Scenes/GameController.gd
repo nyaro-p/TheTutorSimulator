@@ -70,7 +70,7 @@ func on_itemTimeout() -> void:
 	
 	itemTimer.start(5.0 + float(randi() % item_rate_time))
 
-func _physics_process(delta) -> void:
+func _physics_process(delta: float) -> void:
 	#constantly decreases coffee level
 	manometer.decrease(4.0 * delta)
 	

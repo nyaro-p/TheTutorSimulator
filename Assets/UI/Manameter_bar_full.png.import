@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Coffee_on_sign.png-14caf06f10e2812d0c2e3970d31b1d24.stex"
+path="res://.import/Manameter_bar_full.png-71a68c9a967eb780658e4942bcc36160.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Coffee_on_sign.png"
-dest_files=[ "res://.import/Coffee_on_sign.png-14caf06f10e2812d0c2e3970d31b1d24.stex" ]
+source_file="res://Assets/UI/Manameter_bar_full.png"
+dest_files=[ "res://.import/Manameter_bar_full.png-71a68c9a967eb780658e4942bcc36160.stex" ]
 
 [params]
 

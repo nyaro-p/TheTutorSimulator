@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Arrow.png-b8e6da00c37ab648b87d046a161ddee5.stex"
+path="res://.import/Coffee_on_sign.png-7138b892a752a4d1ba3636e193994ebe.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Arrow.png"
-dest_files=[ "res://.import/Arrow.png-b8e6da00c37ab648b87d046a161ddee5.stex" ]
+source_file="res://Assets/UI/Coffee_on_sign.png"
+dest_files=[ "res://.import/Coffee_on_sign.png-7138b892a752a4d1ba3636e193994ebe.stex" ]
 
 [params]
 
