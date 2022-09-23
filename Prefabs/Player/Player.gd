@@ -27,6 +27,9 @@ func _input(_event) -> void:
 	input_vector.y = round(Input.get_axis("move_up", "move_down"))
 	input_vector = input_vector.normalized()
 	
+	if Input.is_action_just_pressed("pause_screen"):
+		get_tree().change_scene("res://Scenes/TitleScreen.tscn")
+	
 func _physics_process(delta) -> void:
 	#Movement
 	if input_vector != Vector2.ZERO:
