@@ -1,13 +1,18 @@
 extends Node2D
 
-onready var pivot = $YellowPivot
-onready var target_rotation = 0.0
+onready var pivot := $YellowPivot as Node2D
+#Saves how much coffee should be added to the meter.
+onready var target_rotation := 0.0
 
-func decrease(value):
+#Called from Game Controller in physics_process,
+#decreases the coffee level with a small value.
+func decrease(value: float) -> void:
 	pivot.rotation_degrees += value
 	pivot.rotation_degrees = clamp(pivot.rotation_degrees, 0, 90)
 
-func increase(value):
+#Called from Game Controller in physics_process,
+#increases the coffee level with a value of a coffe cup.
+func increase(value: float) -> void:
 	target_rotation -= value
 	var new_rotation = pivot.rotation_degrees + target_rotation
 	new_rotation = clamp(new_rotation, 0, 90)
@@ -16,5 +21,6 @@ func increase(value):
 	#prevents "coffee loss" when collecting multiple coffeees at the same time
 	tween.connect("finished", self, "finished", [value])
 
-func finished(value):
+#Subtracts the value from target_rotation when the value was filled.
+func finished(value: float) -> void:
 	target_rotation += value
