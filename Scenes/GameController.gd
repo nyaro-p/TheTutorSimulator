@@ -27,7 +27,7 @@ func _ready() -> void:
 	questionTimer.start(2.0 + float(randi() % question_rate_time))
 	questionTimer.connect("timeout", self, "on_questionTimeout")
 	#Coffee dropping
-	itemTimer.start(5.0 + float(randi() % item_rate_time))
+	itemTimer.start(2.0 + float(randi() % item_rate_time))
 	itemTimer.connect("timeout", self, "on_itemTimeout")
 	
 	var children = students.get_children()
@@ -58,17 +58,40 @@ func on_itemTimeout() -> void:
 	var coffee = Coffee.instance()
 	$Items.add_child(coffee)
 	var end_position
-	if randi() % 2 == 1:
-		coffee.global_position = Vector2(210, 20)
-		end_position = Vector2(210, 290)
-	else:
-		coffee.global_position = Vector2(300, 20)
-		end_position = Vector2(300, 290)
+	var directrion
+	match randi() % 4:
+		0:
+			coffee.global_position = Vector2(210, 20)
+			end_position = Vector2(210, 285)
+			directrion = Vector2(0, -1)
+		1:
+			coffee.global_position = Vector2(305, 20)
+			end_position = Vector2(305, 285)
+			directrion = Vector2(0, -1)
+		2:
+			coffee.global_position = Vector2(80, 105)
+			end_position = Vector2(425, 105)
+			directrion = Vector2(-1, 0)
+		3:
+			coffee.global_position = Vector2(80, 200)
+			end_position = Vector2(425, 200)
+			directrion = Vector2(-1, 0)
 	
 	var tween := create_tween().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
-	tween.tween_property(coffee, "position", end_position, 4.0)
+	tween.tween_property(coffee, "position", end_position, 1.0)
+	tween.connect("finished", self, "animation_finished", [coffee, directrion])
 	
-	itemTimer.start(5.0 + float(randi() % item_rate_time))
+	itemTimer.start(2.0 + float(randi() % item_rate_time))
+
+#Called after end of coffee animation.
+func animation_finished(coffee : Node2D, direction : Vector2) -> void:
+	if coffee != null:
+		#Throw back coffee.
+		var new_position = coffee.position + direction * Vector2(10, 5)
+		var tween := create_tween().set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+		tween.tween_property(coffee, "position", new_position, 0.4)
+		#Play spill animation.
+		coffee.spill_animation()
 
 func _physics_process(delta: float) -> void:
 	#constantly decreases coffee level

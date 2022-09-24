@@ -8,11 +8,11 @@ var velocity := Vector2.ZERO
 var input_vector := Vector2.ZERO
 
 #Item collection area
-onready var collectArea = $CollectArea as Area2D
+onready var collectArea := $CollectArea as Area2D
 #Interraction area
-#onready var areaPivot = $"%AreaPivot" as Node2D
+onready var interactArea := $"%InteractArea" as Area2D
 #Animations
-onready var animationTree = $"%AnimationTree" as AnimationTree
+onready var animationTree := $"%AnimationTree" as AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 
 signal coffee_collected
@@ -27,8 +27,16 @@ func _input(_event) -> void:
 	input_vector.y = round(Input.get_axis("move_up", "move_down"))
 	input_vector = input_vector.normalized()
 	
+	#Pause game
 	if Input.is_action_just_pressed("pause_screen"):
 		get_tree().change_scene("res://Scenes/TitleScreen.tscn")
+	
+	#Helping students.
+	if Input.is_action_pressed("interact"):
+		var areas = interactArea.get_overlapping_areas()
+		if areas != null:
+			for area in areas:
+				area.get_parent().help()
 	
 func _physics_process(delta) -> void:
 	#Movement

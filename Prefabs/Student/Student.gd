@@ -11,6 +11,10 @@ func _ready() -> void:
 	#randomly gives student a laptop.
 	$Laptop.visible = bool(randi() % 2)
 
+#called by player
+func help():
+	print("i'm getting helped")
+
 #Sets a timer for a question / adds th Time Effect.
 #Called from Game Controller.
 func start_timer(time: float) -> void:
