@@ -4,11 +4,19 @@ onready var pivot := $YellowPivot as Node2D
 #Saves how much coffee should be added to the meter.
 onready var target_rotation := 0.0
 
+onready var LoseScreen = preload("res://Prefabs/UI/LoseScreen.tscn")
+
 #Called from Game Controller in physics_process,
 #decreases the coffee level with a small value.
 func decrease(value: float) -> void:
 	pivot.rotation_degrees += value
 	pivot.rotation_degrees = clamp(pivot.rotation_degrees, 0, 90)
+	if pivot.rotation_degrees == 90:
+		print("coffee finished")
+		get_tree().paused = true
+		var loseScreen = LoseScreen.instance()
+		(get_parent().get_node("Clock") as Node2D).pause_mode = PAUSE_MODE_INHERIT
+		(get_parent() as CanvasLayer).add_child(loseScreen)
 
 #Called from Game Controller in physics_process,
 #increases the coffee level with a value of a coffe cup.

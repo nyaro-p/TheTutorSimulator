@@ -3,6 +3,8 @@ extends Node2D
 onready var arrow := $ArrowPivot as Node2D
 onready var tut_time := 20.0
 
+onready var WinScreen = preload("res://Prefabs/UI/WinScreen.tscn")
+
 func _ready() -> void:
 	time_finished()
 
@@ -12,6 +14,9 @@ func time_finished() -> void:
 	
 	if new_rotation > 360.0:
 		print("global time finished")
+		get_tree().paused = true
+		var winScreen = WinScreen.instance()
+		(get_parent() as CanvasLayer).add_child(winScreen)
 	else:
 		var time = tut_time / 60
 		var tween := create_tween().set_trans(Tween.TRANS_ELASTIC)

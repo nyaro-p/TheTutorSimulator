@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/EndScreens/End_Screen_GameOver.png" type="Texture" id=1]
+
+[node name="LoseScreen" type="Node2D"]
+
+[node name="EndScreenGameOver" type="Sprite" parent="."]
+position = Vector2( 258, 120 )
+scale = Vector2( 0.32, 0.32 )
+texture = ExtResource( 1 )

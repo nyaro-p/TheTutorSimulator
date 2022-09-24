@@ -36,7 +36,7 @@ func _input(_event) -> void:
 		var areas = interactArea.get_overlapping_areas()
 		if areas != null:
 			for area in areas:
-				area.get_parent().help()
+				(area.get_parent() as StaticBody2D).help()
 	
 func _physics_process(delta) -> void:
 	#Movement

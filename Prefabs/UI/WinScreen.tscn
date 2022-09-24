@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/EndScreens/End_Screen_YouWon.png" type="Texture" id=1]
+
+[node name="WinScreen" type="Node2D"]
+
+[node name="EndScreenYouWon" type="Sprite" parent="."]
+position = Vector2( 258, 119 )
+scale = Vector2( 0.32, 0.32 )
+texture = ExtResource( 1 )
