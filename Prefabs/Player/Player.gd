@@ -31,14 +31,14 @@ func _input(_event) -> void:
 	if Input.is_action_just_pressed("pause_screen"):
 		get_tree().change_scene("res://Scenes/TitleScreen.tscn")
 	
+func _physics_process(delta) -> void:
 	#Helping students.
 	if Input.is_action_pressed("interact"):
 		var areas = interactArea.get_overlapping_areas()
 		if areas != null:
 			for area in areas:
+				#TimeEffect
 				(area.get_parent() as Node2D).decrease()
-	
-func _physics_process(delta) -> void:
 	#Movement
 	if input_vector != Vector2.ZERO:
 		velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELERATION * delta)

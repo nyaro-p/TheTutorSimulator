@@ -8,11 +8,6 @@ enum {
 	DEFAULT
 }
 
-onready var audios: Dictionary = {
-	"AudioAnswered" : $AudioAnswered,
-	"QuestionTimeOut" : $QuestionTimeOut
-}
-
 #Stops clock after GameLost
 var level_status = GAME_ON
 
@@ -27,6 +22,3 @@ func get_level_status()-> int:
 #Setter
 func set_level_status(value: int):
 	level_status = value
-
-func play(audio: String) -> void:
-	audios[audio].play()

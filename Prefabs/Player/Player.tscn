@@ -12,11 +12,11 @@
 [ext_resource path="res://Prefabs/Player/Animations/RunUp.tres" type="Animation" id=10]
 [ext_resource path="res://Assets/Shadow.png" type="Texture" id=11]
 
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="CapsuleShape2D" id=23]
 radius = 9.0
 height = 0.0
 
-[sub_resource type="CircleShape2D" id=5]
+[sub_resource type="CircleShape2D" id=24]
 radius = 7.0
 
 [sub_resource type="AnimationNodeAnimation" id=13]
@@ -31,7 +31,7 @@ animation = "IdleLeft"
 [sub_resource type="AnimationNodeAnimation" id=16]
 animation = "IdleRight"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=6]
+[sub_resource type="AnimationNodeBlendSpace2D" id=25]
 blend_point_0/node = SubResource( 13 )
 blend_point_0/pos = Vector2( 0, 1.1 )
 blend_point_1/node = SubResource( 14 )
@@ -56,7 +56,7 @@ animation = "RunUp"
 [sub_resource type="AnimationNodeAnimation" id=21]
 animation = "RunDown"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=7]
+[sub_resource type="AnimationNodeBlendSpace2D" id=26]
 blend_point_0/node = SubResource( 17 )
 blend_point_0/pos = Vector2( -1, 0 )
 blend_point_1/node = SubResource( 18 )
@@ -67,16 +67,16 @@ blend_point_3/node = SubResource( 21 )
 blend_point_3/pos = Vector2( 0, 1 )
 blend_mode = 1
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=8]
+[sub_resource type="AnimationNodeStateMachineTransition" id=27]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=9]
 
 [sub_resource type="AnimationNodeStateMachine" id=10]
-states/Idle/node = SubResource( 6 )
+states/Idle/node = SubResource( 25 )
 states/Idle/position = Vector2( 304, 63 )
-states/Run/node = SubResource( 7 )
+states/Run/node = SubResource( 26 )
 states/Run/position = Vector2( 508, 63 )
-transitions = [ "Idle", "Run", SubResource( 8 ), "Run", "Idle", SubResource( 9 ) ]
+transitions = [ "Idle", "Run", SubResource( 27 ), "Run", "Idle", SubResource( 9 ) ]
 start_node = "Idle"
 graph_offset = Vector2( -196.844, -95.16 )
 
@@ -135,7 +135,7 @@ tracks/3/keys = {
 
 [sub_resource type="CapsuleShape2D" id=22]
 radius = 12.0
-height = 24.0
+height = 22.0
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -148,7 +148,7 @@ texture = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-shape = SubResource( 2 )
+shape = SubResource( 23 )
 
 [node name="AreaPivot" type="Node2D" parent="."]
 
@@ -159,7 +159,7 @@ monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaPivot/InteractArea"]
 visible = false
-shape = SubResource( 5 )
+shape = SubResource( 24 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -16 )
@@ -193,7 +193,7 @@ monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectArea"]
 visible = false
-position = Vector2( 0, -14 )
+position = Vector2( 0, -15 )
 shape = SubResource( 22 )
 
 [connection signal="area_entered" from="CollectArea" to="." method="_on_CollectArea_area_entered"]

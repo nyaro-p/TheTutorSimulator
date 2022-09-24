@@ -101,7 +101,7 @@ func on_itemTimeout() -> void:
 #sets cofee flying
 func start_coffee_animation(coffee : Node2D, end_position : Vector2, direction : Vector2) -> void:
 	coffee.visible = true
-	coffee.play_audio()
+	GlobalAudio.play("EjectCoffee")
 	coffee.set_monitorable(true)
 	var tween := create_tween().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(coffee, "position", end_position, 1.0)
@@ -129,6 +129,6 @@ func adjust_manometer() -> void:
 #Adjust HappyOMeter according to signal from student.
 func adjust_happy(happy) -> void:
 	if happy:
-		happyOMeter.increase()
+		happyOMeter.adjust(1.0)
 	else:
-		happyOMeter.decrease()
+		happyOMeter.adjust(-1.0)

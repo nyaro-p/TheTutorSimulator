@@ -8,13 +8,9 @@ var happiness = 0.5
 func _ready() -> void:
 	button.position.y = 61
 
-func increase() -> void:
-	animate(-1.0)
-
-func decrease() -> void:
-	animate(1.0)
-
-func animate(value : float) -> void:
+#Called by Game Controller.
+func adjust(value : float) -> void:
+	value = value * -1
 	var new_position = button.position + (Vector2(0.0, 5.0) * value)
 	if new_position.y < 35:
 		new_position.y = 35
