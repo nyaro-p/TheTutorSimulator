@@ -55,7 +55,15 @@ func _physics_process(delta) -> void:
 		
 	velocity = move_and_slide(velocity)
 
-#Emits a signal to the Game Controller, (deletes coffee)
+#Emits a signal to the Game Controller, animates coffee towards player
 func _on_CollectArea_area_entered(area) ->void:
 	emit_signal("coffee_collected")
-	area.get_parent().queue_free()
+	var tween := create_tween().set_trans(Tween.TRANS_QUAD)
+	tween.tween_property(area.get_parent(), "position", position + Vector2(0, -25), 0.1)
+	tween.parallel().tween_property(area.get_parent(), "modulate", Color(1, 1, 1, 0), 0.1)
+	tween.connect("finished", self, "delete_coffee", [area.get_parent()])
+
+#When coffee meets player -> delete.
+func delete_coffee(coffee: Node2D) -> void:
+	if coffee != null: #need it for some reason
+		coffee.queue_free()

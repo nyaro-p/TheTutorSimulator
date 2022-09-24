@@ -18,8 +18,6 @@ onready var happyOMeter := $"%HappyOMeter" as Node2D
 var tut_time := 50.0
 #rate of questions
 var question_rate_time := 2
-##time to answer a question
-#var active_time := 10.0
 #rate of tem drops
 var item_rate_time := 1
 
@@ -41,6 +39,7 @@ func _ready() -> void:
 	player.connect("coffee_collected", self, "adjust_manometer")
 	
 	clock.set_tut_time(tut_time)
+	
 
 #Called by questionTimer, picks a student to start a question,
 #studen must not be busy with another question.
@@ -102,6 +101,7 @@ func on_itemTimeout() -> void:
 #sets cofee flying
 func start_coffee_animation(coffee : Node2D, end_position : Vector2, direction : Vector2) -> void:
 	coffee.visible = true
+	coffee.play_audio()
 	coffee.set_monitorable(true)
 	var tween := create_tween().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(coffee, "position", end_position, 1.0)

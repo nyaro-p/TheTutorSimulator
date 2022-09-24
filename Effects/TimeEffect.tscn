@@ -8,7 +8,7 @@ radius = 10.0
 height = 20.0
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 10, 11.5 )
+extents = Vector2( 10, 13 )
 
 [node name="TimeEffect" type="Node2D"]
 script = ExtResource( 1 )
@@ -30,5 +30,5 @@ collision_mask = 0
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HelpArea"]
-position = Vector2( 0, 0.5 )
+position = Vector2( 0, 2 )
 shape = SubResource( 2 )

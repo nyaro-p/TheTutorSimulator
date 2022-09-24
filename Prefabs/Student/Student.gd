@@ -31,11 +31,13 @@ func is_on_timer() -> bool:
 	return is_on_timer_bool
 
 #Setter function.
+#Listened by GameController
 func timer_finished() -> void:
 	emit_signal("unhappy")
 	is_on_timer_bool = false
 
 #Setter function.
+#Listened by GameController
 func question_answered() -> void:
 	emit_signal("happy")
 	is_on_timer_bool = false

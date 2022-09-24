@@ -2,6 +2,7 @@ extends Node2D
 
 onready var button := $"Happy-o-meterButton"
 
+#Overall student happiness.
 var happiness = 0.5
 
 func _ready() -> void:

@@ -16,7 +16,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-GlobalStats="*res://Scenes/globalStats.gd"
+GlobalStats="*res://Scenes/GlobalStats.tscn"
 
 [debug]
 

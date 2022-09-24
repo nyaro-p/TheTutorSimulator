@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Short_Pipe_SFX.wav-4311c6c6714eda8ff1c47c92ca3c26dc.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Short_Pipe_SFX.wav"
+dest_files=[ "res://.import/Short_Pipe_SFX.wav-4311c6c6714eda8ff1c47c92ca3c26dc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

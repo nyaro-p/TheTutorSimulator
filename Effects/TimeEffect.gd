@@ -41,8 +41,10 @@ func animate_timer(time: float) -> void:
 #Emits signal to the Student node
 func finished() -> void:
 	emit_signal("timer_finished")
+	GlobalStats.play("QuestionTimeOut")
 	queue_free()
 
 func answered() -> void:
 	emit_signal("question_answered")
+	GlobalStats.play("AudioAnswered")
 	queue_free()

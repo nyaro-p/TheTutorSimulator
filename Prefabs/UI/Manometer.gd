@@ -13,6 +13,7 @@ func decrease(value: float) -> void:
 	pivot.rotation_degrees = clamp(pivot.rotation_degrees, 0, 90)
 	if pivot.rotation_degrees == 90:
 		print("coffee finished")
+		GlobalStats.set_level_status(GlobalStats.GAME_STOPPED)
 		get_tree().paused = true
 		var loseScreen = LoseScreen.instance()
 		(get_parent().get_node("Clock") as Node2D).pause_mode = PAUSE_MODE_INHERIT
