@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Prefabs/Student/Student.gd" type="Script" id=1]
 [ext_resource path="res://Prefabs/Student/Assets/Table.png" type="Texture" id=2]
@@ -10,9 +10,6 @@
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 11, 8.5 )
-
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 11.375, 12.5 )
 
 [node name="Student" type="StaticBody2D"]
 scale = Vector2( 2, 2 )
@@ -46,13 +43,6 @@ texture = ExtResource( 2 )
 visible = false
 position = Vector2( 0, 8.5 )
 shape = SubResource( 4 )
-
-[node name="HelpArea" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HelpArea"]
-visible = false
-position = Vector2( 0, 9 )
-shape = SubResource( 6 )
 
 [node name="Laptop" type="Sprite" parent="."]
 position = Vector2( -1.5, 4.5 )

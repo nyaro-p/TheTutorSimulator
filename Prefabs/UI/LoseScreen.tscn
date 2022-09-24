@@ -5,6 +5,6 @@
 [node name="LoseScreen" type="Node2D"]
 
 [node name="EndScreenGameOver" type="Sprite" parent="."]
-position = Vector2( 258, 120 )
+position = Vector2( 258, 119 )
 scale = Vector2( 0.32, 0.32 )
 texture = ExtResource( 1 )

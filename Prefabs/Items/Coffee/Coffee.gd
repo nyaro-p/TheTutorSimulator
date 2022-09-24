@@ -1,7 +1,7 @@
 extends Node2D
 
-func _ready() -> void:
-	$Area2D.monitorable = true
+func set_monitorable(value:bool) -> void:
+	$Area2D.monitorable = value
 	
 func spill_animation() -> void:
 	$AnimationPlayer.play("spill")
