@@ -158,7 +158,6 @@ position = Vector2( 0, 16 )
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaPivot/InteractArea"]
-visible = false
 shape = SubResource( 24 )
 
 [node name="Sprite" type="Sprite" parent="."]

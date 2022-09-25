@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Scenes/TitleScreen.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Background.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/SceneScripts/TitleScreen.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/SceneScripts/Background.gd" type="Script" id=2]
 [ext_resource path="res://Assets/TitleScreen/Title_Screen_Image.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Fonts/Coffee House.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Assets/TitleScreen/Title_Screen_Steam2.png" type="Texture" id=5]
@@ -75,6 +75,7 @@ texture = ExtResource( 3 )
 position = Vector2( 362, 139 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 6 )
+frame = 1
 speed_scale = 0.283
 playing = true
 

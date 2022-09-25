@@ -22,12 +22,12 @@ var question_rate_time := 2
 var item_rate_time := 1
 
 func _ready() -> void:
-	var fade = GlobalStats.FadeIn.instance()
-	$UI.add_child(fade)
+	var fadeIn = GlobalStats.FadeIn.instance()
+	$UI.add_child(fadeIn)
 	
 	randomize()
 	#Student questions
-	questionTimer.start(4.0 + float(randi() % question_rate_time))
+	questionTimer.start(4.0 + randi() % question_rate_time)
 	questionTimer.connect("timeout", self, "on_questionTimeout")
 	#Coffee dropping
 	itemTimer.start(2.0 + float(randi() % item_rate_time))
@@ -37,7 +37,7 @@ func _ready() -> void:
 	
 	#Assign student sprite frame
 	for i in children.size():
-		children[i].person.frame = i
+		children[i].assign_frame(i)
 	
 	player.connect("coffee_collected", self, "adjust_manometer")
 	

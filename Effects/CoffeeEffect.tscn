@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Effects/CoffeeEffect.gd" type="Script" id=1]
+[ext_resource path="res://Effects/Scripts/CoffeeEffect.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Paricles/RoundParicle.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Audio/Long_Pipe_SFX.wav" type="AudioStream" id=3]
 

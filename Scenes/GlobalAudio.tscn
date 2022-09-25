@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Scenes/GlobalAudio.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/SceneScripts/GlobalAudio.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Audio/Helped.wav" type="AudioStream" id=2]
 [ext_resource path="res://Assets/Audio/QuestionTimeOut.wav" type="AudioStream" id=3]
 [ext_resource path="res://Assets/Audio/Short_Pipe_SFX.wav" type="AudioStream" id=4]
