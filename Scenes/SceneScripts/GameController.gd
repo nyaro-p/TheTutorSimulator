@@ -22,6 +22,7 @@ var question_rate_time := 2
 var item_rate_time := 1
 
 func _ready() -> void:
+	GlobalAudio.play_track("ClassroomMusic")
 	var fadeIn = GlobalStats.FadeIn.instance()
 	$UI.add_child(fadeIn)
 	
@@ -104,7 +105,7 @@ func on_itemTimeout() -> void:
 #sets cofee flying
 func start_coffee_animation(coffee : Node2D, end_position : Vector2, direction : Vector2) -> void:
 	coffee.visible = true
-	GlobalAudio.play("EjectCoffee")
+	GlobalAudio.play_sound("EjectCoffee")
 	coffee.set_monitorable(true)
 	var tween := create_tween().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(coffee, "position", end_position, 1.0)

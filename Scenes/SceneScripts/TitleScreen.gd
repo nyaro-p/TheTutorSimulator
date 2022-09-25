@@ -1,6 +1,7 @@
 extends Control
 
 func _ready() -> void:
+	GlobalAudio.play_track("TitleScreenMusic")
 	$Buttons/Play.grab_focus()
 
 func _on_Play_pressed() -> void:

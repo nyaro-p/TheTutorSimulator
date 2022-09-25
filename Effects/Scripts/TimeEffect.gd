@@ -46,10 +46,10 @@ func finished() -> void:
 	emit = true
 	$Animation.play("fail")
 	emit_signal("timer_finished")
-	GlobalAudio.play("QuestionTimeOut")
+	GlobalAudio.play_sound("QuestionTimeOut")
 
 func answered() -> void:
 	emit = true
 	emit_signal("question_answered")
-	GlobalAudio.play("AudioAnswered")
+	GlobalAudio.play_sound("AudioAnswered")
 	queue_free()
