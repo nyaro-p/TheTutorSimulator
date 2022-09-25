@@ -1,5 +1,8 @@
 extends Node
 
+onready var FadeOut = preload("res://Effects/FadeOut.tscn")
+onready var FadeIn = preload("res://Effects/FadeIn.tscn")
+
 var controller := false
 
 enum {

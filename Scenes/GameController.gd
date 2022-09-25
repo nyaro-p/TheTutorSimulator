@@ -22,6 +22,9 @@ var question_rate_time := 2
 var item_rate_time := 1
 
 func _ready() -> void:
+	var fade = GlobalStats.FadeIn.instance()
+	$UI.add_child(fade)
+	
 	randomize()
 	#Student questions
 	questionTimer.start(4.0 + float(randi() % question_rate_time))

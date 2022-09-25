@@ -4,7 +4,9 @@ func _ready() -> void:
 	$Buttons/Play.grab_focus()
 
 func _on_Play_pressed() -> void:
-	get_tree().change_scene("res://Scenes/Classroom.tscn")
+	var fade = GlobalStats.FadeOut.instance()
+	add_child(fade)
+	fade.set_next_scene("res://Scenes/TransitionScene.tscn")
 
 
 func _on_Quit_pressed() -> void:
