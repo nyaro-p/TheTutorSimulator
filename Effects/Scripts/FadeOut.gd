@@ -7,4 +7,5 @@ func configure(scene: String, t_color:= Color(1, 1, 1, 1)) -> void:
 	color = t_color
 
 func change_scene():
+	get_tree().paused = false
 	get_tree().change_scene(next_scene)
