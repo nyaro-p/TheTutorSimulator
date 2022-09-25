@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 onready var arrow := $ArrowPivot as Node2D
 onready var tut_time := 20.0

@@ -5,7 +5,7 @@
 [ext_resource path="res://Assets/UI/Manameter_base.png" type="Texture" id=3]
 [ext_resource path="res://Prefabs/UI/Scripts/Manometer.gd" type="Script" id=4]
 
-[node name="Manometer" type="Node2D"]
+[node name="Manometer" type="Control"]
 script = ExtResource( 4 )
 
 [node name="Red" type="Sprite" parent="."]

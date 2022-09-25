@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 onready var button := $"Happy-o-meterButton"
 

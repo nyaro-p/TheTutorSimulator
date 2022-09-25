@@ -9,9 +9,9 @@ onready var students := $"%Students" as YSort
 onready var questionTimer := $"%Timer" as Timer
 onready var itemTimer := $ItemTimer as Timer
 #UI
-onready var clock := $"%Clock" as Node2D
-onready var manometer := $"%Manometer" as Node2D
-onready var happyOMeter := $"%HappyOMeter" as Node2D
+onready var clock := $"%Clock" as Control
+onready var manometer := $"%Manometer" as Control
+onready var happyOMeter := $"%HappyOMeter" as Control
 
 
 #time to be "survived"

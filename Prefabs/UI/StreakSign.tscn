@@ -3,7 +3,7 @@
 [ext_resource path="res://Assets/UI/Sign.png" type="Texture" id=1]
 [ext_resource path="res://Assets/UI/Coffee_on_sign.png" type="Texture" id=2]
 
-[node name="StreakSign" type="Node2D"]
+[node name="StreakSign" type="Control"]
 
 [node name="Sign" type="Sprite" parent="."]
 position = Vector2( 33, 33 )

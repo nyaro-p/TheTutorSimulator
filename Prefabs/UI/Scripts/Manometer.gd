@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 onready var pivot := $YellowPivot as Node2D
 #Saves how much coffee should be added to the meter.

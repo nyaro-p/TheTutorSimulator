@@ -15,6 +15,9 @@ enum {
 #Stops clock after GameLost
 var level_status = GAME_ON
 
+func _ready() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+
 #Checks for controller.
 func _input(event: InputEvent) -> void:
 	controller = (event is InputEventJoypadButton) or (event is InputEventJoypadMotion)

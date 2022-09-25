@@ -1,30 +1,115 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Prefabs/UI/Scripts/Options.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Fonts/MenuFont.tres" type="Theme" id=2]
+[ext_resource path="res://Assets/Fonts/DialoguedFont.tres" type="Theme" id=2]
+[ext_resource path="res://Assets/UI/Button.png" type="Texture" id=3]
+[ext_resource path="res://Assets/UI/Options_Screen.png" type="Texture" id=4]
 
 [node name="Options" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
 
+[node name="OptionsScreen" type="Sprite" parent="."]
+position = Vector2( 256, 111 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 4 )
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_right = 266.0
-margin_bottom = 155.0
+margin_left = 122.0
+margin_top = 66.0
+margin_right = 388.0
+margin_bottom = 221.0
 theme = ExtResource( 2 )
 
 [node name="GeneralAudio" type="VBoxContainer" parent="VBoxContainer"]
-margin_left = 10.0
-margin_top = 10.0
 margin_right = 266.0
-margin_bottom = 49.0
+margin_bottom = 37.0
 
 [node name="GeneralAudio" type="Label" parent="VBoxContainer/GeneralAudio"]
-margin_right = 256.0
-margin_bottom = 29.0
+margin_right = 266.0
+margin_bottom = 13.0
 text = "General Audio:"
+align = 1
 
-[node name="HSlider" type="HSlider" parent="VBoxContainer/GeneralAudio"]
-margin_top = 33.0
-margin_right = 256.0
-margin_bottom = 49.0
+[node name="GeneralAudioSlider" type="HSlider" parent="VBoxContainer/GeneralAudio"]
+unique_name_in_owner = true
+margin_top = 17.0
+margin_right = 266.0
+margin_bottom = 37.0
+focus_neighbour_top = NodePath("../../../Button")
+focus_previous = NodePath("../../../Button")
+custom_icons/tick = ExtResource( 3 )
+custom_icons/grabber_disabled = ExtResource( 3 )
+custom_icons/grabber_highlight = ExtResource( 3 )
+custom_icons/grabber = ExtResource( 3 )
+min_value = -80.0
+max_value = 0.0
+step = 2.0
+
+[node name="Music" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 41.0
+margin_right = 266.0
+margin_bottom = 78.0
+
+[node name="Music" type="Label" parent="VBoxContainer/Music"]
+margin_right = 266.0
+margin_bottom = 13.0
+text = "Music:"
+align = 1
+
+[node name="MusicSlider" type="HSlider" parent="VBoxContainer/Music"]
+unique_name_in_owner = true
+margin_top = 17.0
+margin_right = 266.0
+margin_bottom = 37.0
+custom_icons/tick = ExtResource( 3 )
+custom_icons/grabber_disabled = ExtResource( 3 )
+custom_icons/grabber_highlight = ExtResource( 3 )
+custom_icons/grabber = ExtResource( 3 )
+min_value = -80.0
+max_value = 0.0
+step = 2.0
+
+[node name="SFX" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 82.0
+margin_right = 266.0
+margin_bottom = 119.0
+
+[node name="SFX" type="Label" parent="VBoxContainer/SFX"]
+margin_right = 266.0
+margin_bottom = 13.0
+text = "SFX:"
+align = 1
+
+[node name="SFXSlider" type="HSlider" parent="VBoxContainer/SFX"]
+unique_name_in_owner = true
+margin_top = 17.0
+margin_right = 266.0
+margin_bottom = 37.0
+custom_icons/tick = ExtResource( 3 )
+custom_icons/grabber_disabled = ExtResource( 3 )
+custom_icons/grabber_highlight = ExtResource( 3 )
+custom_icons/grabber = ExtResource( 3 )
+min_value = -80.0
+max_value = 0.0
+step = 2.0
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -21.0
+margin_top = -80.0
+margin_right = 21.0
+margin_bottom = -60.0
+focus_neighbour_bottom = NodePath("../VBoxContainer/GeneralAudio/GeneralAudioSlider")
+focus_next = NodePath("../VBoxContainer/GeneralAudio/GeneralAudioSlider")
+theme = ExtResource( 2 )
+text = "Back"
+
+[connection signal="value_changed" from="VBoxContainer/GeneralAudio/GeneralAudioSlider" to="." method="_on_GeneralAudioSlider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/Music/MusicSlider" to="." method="_on_MusicSlider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/SFX/SFXSlider" to="." method="_on_SFXSlider_value_changed"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

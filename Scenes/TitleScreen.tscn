@@ -65,6 +65,7 @@ texture = ExtResource( 3 )
 position = Vector2( 362, 139 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 6 )
+frame = 1
 speed_scale = 0.283
 playing = true
 
@@ -132,4 +133,5 @@ custom_styles/normal = SubResource( 3 )
 text = "Quit"
 
 [connection signal="pressed" from="Buttons/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="Buttons/Options" to="." method="_on_Options_pressed"]
 [connection signal="pressed" from="Buttons/Quit" to="." method="_on_Quit_pressed"]
