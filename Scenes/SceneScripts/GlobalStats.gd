@@ -4,6 +4,7 @@ onready var FadeOut = preload("res://Effects/FadeOut.tscn") as PackedScene
 onready var FadeIn = preload("res://Effects/FadeIn.tscn") as PackedScene
 
 var controller := false
+var happiness := 0.5
 
 enum {
 	GAME_ON,

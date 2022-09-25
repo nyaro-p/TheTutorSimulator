@@ -19,5 +19,6 @@ func adjust(value : float) -> void:
 		new_position.y = 87
 	
 	happiness = 1.0 -((new_position.y - 35) / (87- 35))
+	GlobalStats.happiness = happiness
 	var tween := create_tween().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(button, "position", new_position, 0.6)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=61 format=2]
+[gd_scene load_steps=59 format=2]
 
 [ext_resource path="res://Scenes/SceneScripts/Background.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Outside2.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Fonts/DialoguedFont.tres" type="Theme" id=3]
 [ext_resource path="res://Assets/Outside.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Lightray.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Sidebar_background.png" type="Texture" id=6]
@@ -13,6 +14,7 @@
 [ext_resource path="res://Assets/Wall.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Ground.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Shadow.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Fonts/MenuFont.tres" type="Theme" id=15]
 [ext_resource path="res://Assets/Paricles/RoundParicle.png" type="Texture" id=19]
 [ext_resource path="res://Prefabs/Student/Student.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Prefabs/Player/Animations/IdleUp.tres" type="Animation" id=21]
@@ -24,10 +26,8 @@
 [ext_resource path="res://Prefabs/Player/Animations/RunUp.tres" type="Animation" id=27]
 [ext_resource path="res://Prefabs/Player/Animations/RunDown.tres" type="Animation" id=28]
 [ext_resource path="res://Scenes/SceneScripts/IntroScene.gd" type="Script" id=29]
-[ext_resource path="res://Assets/Fonts/Coffee House.ttf" type="DynamicFontData" id=30]
 [ext_resource path="res://Scenes/SceneScripts/TransitionClassroom.gd" type="Script" id=31]
 [ext_resource path="res://Assets/Intro/Speech_window.png" type="Texture" id=32]
-[ext_resource path="res://Assets/Fonts/PatrickHand-Regular.ttf" type="DynamicFontData" id=33]
 [ext_resource path="res://Assets/Intro/Speech_Window_Icons_Spritesheet.png" type="Texture" id=34]
 
 [sub_resource type="RectangleShape2D" id=33]
@@ -65,15 +65,37 @@ scale = 0.15
 scale_curve = SubResource( 7 )
 color = Color( 1, 0.960784, 0.839216, 0.623529 )
 
-[sub_resource type="DynamicFont" id=1]
-size = 25
-outline_size = 1
-outline_color = Color( 0, 0.207843, 0.647059, 1 )
-extra_spacing_char = 8
-font_data = ExtResource( 30 )
+[sub_resource type="Animation" id=35]
+resource_name = "Loading"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "Loading", "Loading.", "Loading..", "Loading..." ]
+}
 
-[sub_resource type="Theme" id=2]
-default_font = SubResource( 1 )
+[sub_resource type="Animation" id=36]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "Loading..." ]
+}
 
 [sub_resource type="CapsuleShape2D" id=23]
 radius = 9.0
@@ -198,16 +220,6 @@ tracks/2/keys = {
 
 [sub_resource type="CircleShape2D" id=32]
 radius = 7.0
-
-[sub_resource type="DynamicFont" id=35]
-size = 15
-outline_size = 1
-outline_color = Color( 0.298039, 0, 0, 1 )
-extra_spacing_bottom = -8
-font_data = ExtResource( 33 )
-
-[sub_resource type="Theme" id=36]
-default_font = SubResource( 35 )
 
 [sub_resource type="Animation" id=30]
 length = 0.001
@@ -342,7 +354,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 6, 6.5, 7, 7.5, 8.2, 9.3, 10, 25.1 ),
+"times": PoolRealArray( 0, 6, 6.5, 7, 7.5, 8.2, 9.3, 10, 27 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "values": [ {
 "args": [ "RunRight" ],
@@ -476,11 +488,14 @@ tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"times": PoolRealArray( 11, 14, 18, 22 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 11, 14, 16.1, 17.1, 18.1, 20, 21.1, 24 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ "Hmm, something is off today!", "Uhh, excuse me?
-How do I open IntellJ?", "I see.. The homework is due tomorrow!", "Well, let's start then!" ]
+How do I open In-", "Uhh, excuse me?
+How do I open In- tel-", "Uhh, excuse me?
+How do I open In- tel- li-", "Uhh, excuse me?
+How do I open In- tel- li- Jay?", "", "I see.. The homework is due tomorrow!", "Well, let's start then!" ]
 }
 tracks/10/type = "value"
 tracks/10/path = NodePath("../Dialogue/Sprite:frame")
@@ -489,10 +504,10 @@ tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 11, 14, 18, 22 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 11, 14, 20, 21.1, 24 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 2, 3, 4, 1 ]
+"values": [ 2, 3, 0, 4, 1 ]
 }
 
 [node name="TransitionScene" type="Node2D"]
@@ -715,8 +730,13 @@ margin_left = -358.0
 margin_top = 137.0
 margin_right = -216.0
 margin_bottom = 164.0
-theme = SubResource( 2 )
+theme = ExtResource( 15 )
 text = "Loading..."
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Classroom/Label"]
+autoplay = "Loading"
+anims/Loading = SubResource( 35 )
+anims/RESET = SubResource( 36 )
 
 [node name="Adem" type="Node2D" parent="."]
 
@@ -797,7 +817,7 @@ margin_left = 181.0
 margin_top = 229.0
 margin_right = 379.0
 margin_bottom = 260.0
-theme = SubResource( 36 )
+theme = ExtResource( 3 )
 text = "Hmm, something is different today!"
 autowrap = true
 

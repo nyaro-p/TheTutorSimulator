@@ -5,6 +5,7 @@ onready var growing_mesh := $GrowingMesh as MeshInstance2D
 onready var timer := $Timer as Timer
 
 var my_delta := 1.0
+var emit = false
 
 signal timer_finished
 signal question_answered
@@ -19,13 +20,15 @@ func _physics_process(delta: float) -> void:
 
 
 func increase() -> void:
-	growing_mesh.scale += Vector2(0.3, 0.3) * my_delta
-	if growing_mesh.scale >= Vector2(1.0, 1.0):
+	if emit == false:
+		growing_mesh.scale += Vector2(0.3, 0.3) * my_delta
+	if growing_mesh.scale >= Vector2(1.0, 1.0) and emit == false:
 		finished()
 
 func decrease() -> void:
-	growing_mesh.scale -= Vector2(1.0, 1.0) * my_delta
-	if growing_mesh.scale <= Vector2(0.0, 0.0):
+	if emit == false:
+		growing_mesh.scale -= Vector2(1.0, 1.0) * my_delta
+	if growing_mesh.scale <= Vector2(0.0, 0.0) and emit == false:
 		answered()
 	
 ##Animate Question Effect circles, scale and color, first the outline elasticly,
@@ -40,11 +43,13 @@ func animate_timer() -> void:
 
 #Emits signal to the Student node
 func finished() -> void:
+	emit = true
+	$Animation.play("fail")
 	emit_signal("timer_finished")
 	GlobalAudio.play("QuestionTimeOut")
-	queue_free()
 
 func answered() -> void:
+	emit = true
 	emit_signal("question_answered")
 	GlobalAudio.play("AudioAnswered")
 	queue_free()

@@ -1,10 +1,29 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/EndScreens/End_Screen_YouWon.png" type="Texture" id=1]
+[ext_resource path="res://Prefabs/UI/Scripts/WinScreen.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Fonts/DialoguedFont.tres" type="Theme" id=3]
 
 [node name="WinScreen" type="Node2D"]
+script = ExtResource( 2 )
 
 [node name="EndScreenYouWon" type="Sprite" parent="."]
 position = Vector2( 258, 119 )
 scale = Vector2( 0.32, 0.32 )
 texture = ExtResource( 1 )
+
+[node name="StudentHappiness" type="Label" parent="."]
+margin_left = 171.0
+margin_top = 55.0
+margin_right = 275.0
+margin_bottom = 69.0
+theme = ExtResource( 3 )
+text = "Student Happiness: "
+
+[node name="StudentLeftClass" type="Label" parent="."]
+margin_left = 171.0
+margin_top = 74.0
+margin_right = 277.0
+margin_bottom = 88.0
+theme = ExtResource( 3 )
+text = "Student Left Class: "

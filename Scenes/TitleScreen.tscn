@@ -1,11 +1,11 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/SceneScripts/TitleScreen.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/SceneScripts/Background.gd" type="Script" id=2]
 [ext_resource path="res://Assets/TitleScreen/Title_Screen_Image.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Fonts/Coffee House.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Assets/TitleScreen/Title_Screen_Steam2.png" type="Texture" id=5]
 [ext_resource path="res://Assets/TitleScreen/Title_Screen_Steam1.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Fonts/MenuFont.tres" type="Theme" id=7]
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
@@ -14,16 +14,6 @@ animations = [ {
 "name": "default",
 "speed": 4.0
 } ]
-
-[sub_resource type="DynamicFont" id=1]
-size = 25
-outline_size = 1
-outline_color = Color( 0, 0.207843, 0.647059, 1 )
-extra_spacing_char = 8
-font_data = ExtResource( 4 )
-
-[sub_resource type="Theme" id=2]
-default_font = SubResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=9]
 content_margin_bottom = 6.0
@@ -75,7 +65,6 @@ texture = ExtResource( 3 )
 position = Vector2( 362, 139 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 6 )
-frame = 1
 speed_scale = 0.283
 playing = true
 
@@ -84,11 +73,12 @@ anchor_left = 0.928
 anchor_top = 0.018
 anchor_right = 0.928
 anchor_bottom = 0.046
-margin_left = -71.0
-margin_right = 23.0
-margin_bottom = 14.0
+margin_left = -41.136
+margin_top = 0.816
+margin_right = 127.864
+margin_bottom = 21.752
 rect_scale = Vector2( 0.4, 0.4 )
-theme = SubResource( 2 )
+theme = ExtResource( 7 )
 text = "by Jane and Yaro"
 
 [node name="Buttons" type="VBoxContainer" parent="."]
@@ -98,11 +88,11 @@ margin_left = 89.0
 margin_top = 22.0
 margin_right = 40.0
 margin_bottom = 20.0
-theme = SubResource( 2 )
+theme = ExtResource( 7 )
 
 [node name="Play" type="Button" parent="Buttons"]
-margin_right = 107.0
-margin_bottom = 27.0
+margin_right = 76.0
+margin_bottom = 29.0
 focus_neighbour_top = NodePath("../Quit")
 focus_neighbour_bottom = NodePath("../Options")
 focus_next = NodePath("../Options")
@@ -114,9 +104,9 @@ custom_styles/normal = SubResource( 3 )
 text = "Play"
 
 [node name="Options" type="Button" parent="Buttons"]
-margin_top = 31.0
-margin_right = 107.0
-margin_bottom = 58.0
+margin_top = 33.0
+margin_right = 76.0
+margin_bottom = 62.0
 focus_neighbour_top = NodePath("../Play")
 focus_neighbour_bottom = NodePath("../Quit")
 focus_next = NodePath("../Quit")
@@ -128,9 +118,9 @@ custom_styles/normal = SubResource( 3 )
 text = "Options"
 
 [node name="Quit" type="Button" parent="Buttons"]
-margin_top = 62.0
-margin_right = 107.0
-margin_bottom = 89.0
+margin_top = 66.0
+margin_right = 76.0
+margin_bottom = 95.0
 focus_neighbour_top = NodePath("../Options")
 focus_neighbour_bottom = NodePath("../Play")
 focus_next = NodePath("../Play")
