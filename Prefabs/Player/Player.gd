@@ -19,7 +19,7 @@ signal coffee_collected
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-	animationTree.active = true
+	#get_tree().paused = false
 
 func _input(_event) -> void:
 	#Read input

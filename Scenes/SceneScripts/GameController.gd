@@ -9,9 +9,7 @@ onready var students := $"%Students" as YSort
 onready var questionTimer := $"%Timer" as Timer
 onready var itemTimer := $ItemTimer as Timer
 #UI
-onready var clock := $"%Clock" as Control
-onready var manometer := $"%Manometer" as Control
-onready var happyOMeter := $"%HappyOMeter" as Control
+onready var UI := $"%UI" as CanvasLayer
 
 
 #time to be "survived"
@@ -25,6 +23,9 @@ func _ready() -> void:
 	GlobalAudio.play_track("ClassroomMusic")
 	var fadeIn = GlobalStats.FadeIn.instance()
 	$UI.add_child(fadeIn)
+	
+	get_tree().paused = true
+	UI.connect("animation_finished", self, "start_finished")
 	
 	randomize()
 	#Student questions
@@ -42,7 +43,7 @@ func _ready() -> void:
 	
 	player.connect("coffee_collected", self, "adjust_manometer")
 	
-	clock.set_tut_time(tut_time)
+	UI.clock.set_clock_time(tut_time)
 	
 
 #Called by questionTimer, picks a student to start a question,
@@ -123,16 +124,20 @@ func animation_finished(coffee : Node2D, direction : Vector2) -> void:
 
 func _physics_process(delta: float) -> void:
 	#constantly decreases coffee level
-	manometer.decrease(4.0 * delta)
+	UI.manometer.decrease(4.0 * delta)
 	
 #Called from Player with a signal,
 #adds coffee level upon collecting coffee item.
 func adjust_manometer() -> void:
-	manometer.increase(10.0)
+	UI.manometer.increase(10.0)
 
 #Adjust HappyOMeter according to signal from student.
 func adjust_happy(happy) -> void:
 	if happy:
-		happyOMeter.adjust(1.0)
+		UI.happyOMeter.adjust(1.0)
 	else:
-		happyOMeter.adjust(-1.0)
+		UI.happyOMeter.adjust(-1.0)
+
+#Called by UI at the beginning.
+func start_finished():
+	get_tree().paused = false

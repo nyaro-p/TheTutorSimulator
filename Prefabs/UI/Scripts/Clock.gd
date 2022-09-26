@@ -26,6 +26,6 @@ func do_one_tick() -> void:
 		if GlobalStats.get_level_status() == GlobalStats.GAME_ON:
 			tween.connect("finished", self, "do_one_tick")
 
-#Setter function called from Game Controller.
-func set_tut_time(value: float) -> void:
+#Setter function called from UI.
+func set_clock_time(value: float) -> void:
 	tut_time = value

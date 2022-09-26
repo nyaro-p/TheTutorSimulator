@@ -1,16 +1,17 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/SceneScripts/GlobalAudio.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Audio/Helped.wav" type="AudioStream" id=2]
-[ext_resource path="res://Assets/Audio/QuestionTimeOut.wav" type="AudioStream" id=3]
-[ext_resource path="res://Assets/Audio/Short_Pipe_SFX.wav" type="AudioStream" id=4]
-[ext_resource path="res://Assets/Audio/AdemGameLong.wav" type="AudioStream" id=5]
-[ext_resource path="res://Assets/Audio/Classroom.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Audio/Sounds/Helped.wav" type="AudioStream" id=2]
+[ext_resource path="res://Assets/Audio/Sounds/QuestionTimeOut.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Audio/Sounds/Short_Pipe_SFX.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Audio/Tracks/AdemGameLong.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Audio/Tracks/Classroom.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Audio/Sounds/button_pressed.wav" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Audio/Sounds/button_selected.wav" type="AudioStream" id=8]
 
 [node name="GlobalAudio" type="Node"]
 pause_mode = 2
 script = ExtResource( 1 )
-debug_music = false
 
 [node name="Sounds" type="Node" parent="."]
 
@@ -24,6 +25,16 @@ bus = "SFX"
 
 [node name="EjectCoffee" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource( 4 )
+volume_db = -10.0
+bus = "SFX"
+
+[node name="ButtonPressed" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 7 )
+volume_db = -10.0
+bus = "SFX"
+
+[node name="ButtonSelected" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 8 )
 volume_db = -10.0
 bus = "SFX"
 

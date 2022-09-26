@@ -8,7 +8,8 @@ var current_song := "default"
 onready var audios: Dictionary = {
 	"AudioAnswered" : $Sounds/AudioAnswered,
 	"QuestionTimeOut" : $Sounds/QuestionTimeOut,
-	"EjectCoffee" : $Sounds/EjectCoffee
+	"EjectCoffee" : $Sounds/EjectCoffee,
+	
 }
 
 onready var music: Dictionary = {
@@ -16,21 +17,25 @@ onready var music: Dictionary = {
 	"ClassroomMusic" : $Music/ClassroomMusic
 }
 
-func play_sound(audio: String) -> void:
+func play_sound(audio_name: String) -> void:
 	if debug_sound:
-		audios[audio].play()
+		var sound = $Sounds.get_node(audio_name) as AudioStreamPlayer
+		sound.play()
 #	audios[audio].connect("finished", self, "stop_audio", [audios[audio]])
 #
 #func stop_audio(audio) -> void:
 #	audio.stop()
 
-func play_track(song: String) -> void:
+func play_track(track_name: String) -> void:
 	if debug_music:
-		if song != current_song and current_song != "default":
+		if track_name != current_song and current_song != "default":
 			music[current_song].stop()
 			music[current_song].disconnect("finished", self, "play_track")
-		current_song = song
-		music[song].play()
-		if !music[song].is_connected("finished", self, "play_track"):
-			music[song].connect("finished", self, "play_track", [song])
+		current_song = track_name
+		
+		var track = $Music.get_node(track_name) as AudioStreamPlayer
+		
+		track.play()
+		if !track.is_connected("finished", self, "play_track"):
+			track.connect("finished", self, "play_track", [track_name])
 	

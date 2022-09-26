@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Effects/Scripts/CoffeeEffect.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Paricles/RoundParicle.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Audio/Long_Pipe_SFX.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Audio/Sounds/Long_Pipe_SFX.wav" type="AudioStream" id=3]
 
 [sub_resource type="Gradient" id=1]
 interpolation_mode = 2

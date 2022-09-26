@@ -109,7 +109,10 @@ focus_next = NodePath("../VBoxContainer/GeneralAudio/GeneralAudioSlider")
 theme = ExtResource( 2 )
 text = "Back"
 
+[connection signal="focus_entered" from="VBoxContainer/GeneralAudio/GeneralAudioSlider" to="." method="_on_GeneralAudioSlider_focus_entered"]
 [connection signal="value_changed" from="VBoxContainer/GeneralAudio/GeneralAudioSlider" to="." method="_on_GeneralAudioSlider_value_changed"]
+[connection signal="focus_entered" from="VBoxContainer/Music/MusicSlider" to="." method="_on_MusicSlider_focus_entered"]
 [connection signal="value_changed" from="VBoxContainer/Music/MusicSlider" to="." method="_on_MusicSlider_value_changed"]
+[connection signal="focus_entered" from="VBoxContainer/SFX/SFXSlider" to="." method="_on_SFXSlider_focus_entered"]
 [connection signal="value_changed" from="VBoxContainer/SFX/SFXSlider" to="." method="_on_SFXSlider_value_changed"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
