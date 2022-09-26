@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/End_Screen_Menu1.png-c09ef8c2fab2da1f2ee98e3f15d9c601.stex"
+path="res://.import/Buttom_Home_hover.png-70534b1e9002b01afefd7a3f2ecb5e17.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/EndScreens/End_Screen_Menu1.png"
-dest_files=[ "res://.import/End_Screen_Menu1.png-c09ef8c2fab2da1f2ee98e3f15d9c601.stex" ]
+source_file="res://Assets/EndScreens/Buttom_Home_hover.png"
+dest_files=[ "res://.import/Buttom_Home_hover.png-70534b1e9002b01afefd7a3f2ecb5e17.stex" ]
 
 [params]
 

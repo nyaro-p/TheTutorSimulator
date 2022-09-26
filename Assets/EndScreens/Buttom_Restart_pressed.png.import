@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/End_Screen_Menu2.png-8e8c13f198d1be6eeffd1ae7e57f4b08.stex"
+path="res://.import/Buttom_Restart_pressed.png-63259b5e1d4a1545996b3906e0a4510e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/EndScreens/End_Screen_Menu2.png"
-dest_files=[ "res://.import/End_Screen_Menu2.png-8e8c13f198d1be6eeffd1ae7e57f4b08.stex" ]
+source_file="res://Assets/EndScreens/Buttom_Restart_pressed.png"
+dest_files=[ "res://.import/Buttom_Restart_pressed.png-63259b5e1d4a1545996b3906e0a4510e.stex" ]
 
 [params]
 
