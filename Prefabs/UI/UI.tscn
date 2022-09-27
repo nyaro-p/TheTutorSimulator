@@ -83,7 +83,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 550, 35 ), Vector2( 475, 35 ) ]
+"values": [ Vector2( 475, -40 ), Vector2( 475, 35 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("StreakSign:rect_position")
@@ -156,9 +156,9 @@ script = ExtResource( 1 )
 unique_name_in_owner = true
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = 475.0
+margin_left = -37.0
 margin_top = 35.0
-margin_right = 475.0
+margin_right = -37.0
 margin_bottom = 35.0
 
 [node name="StreakSign" parent="." instance=ExtResource( 4 )]
@@ -174,8 +174,7 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_top = 111.0
-margin_bottom = 144.0
+margin_top = -33.0
 
 [node name="Tutorial" type="Sprite" parent="."]
 position = Vector2( 476, 267 )

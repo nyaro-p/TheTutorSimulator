@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Prefabs/UI/Scripts/Tutorial.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/DialoguedFont.tres" type="Theme" id=2]
@@ -9,21 +9,34 @@
 [ext_resource path="res://Assets/Tutorial/CoffeeMeter.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Tutorial/CoffeeThrowing.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Tutorial/CoffeeParticles.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Tutorial/New_Tutorial/Tutorial_Background.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Tutorial/New_Tutorial/Tutorial_Font.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Tutorial/New_Tutorial/Tutorial_Student2.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Tutorial/New_Tutorial/Tutorial_Student1.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Tutorial/New_Tutorial/Tutorial_Time.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Tutorial/New_Tutorial/Tutorial_Happiness.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Tutorial/New_Tutorial/Tutorial_Coffee.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Tutorial/New_Tutorial/Tutorial_HaveFun.png" type="Texture" id=17]
 
 [node name="Tutorial" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="First" type="Control" parent="."]
+[node name="Old" type="Control" parent="."]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
-[node name="ColorRect2" type="ColorRect" parent="First"]
+[node name="ColorRect" type="ColorRect" parent="Old"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="First" type="Control" parent="Old"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ColorRect2" type="ColorRect" parent="Old/First"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 122.0
@@ -32,23 +45,23 @@ margin_right = 325.0
 margin_bottom = 72.0
 color = Color( 0.4, 0.301961, 0.301961, 1 )
 
-[node name="Stud" type="Sprite" parent="First"]
+[node name="Stud" type="Sprite" parent="Old/First"]
 position = Vector2( 163, 70 )
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 4 )
 region_filter_clip = true
 
-[node name="StudQuestion" type="Sprite" parent="First/Stud"]
+[node name="StudQuestion" type="Sprite" parent="Old/First/Stud"]
 position = Vector2( 395, 2.5 )
 scale = Vector2( 0.9, 0.9 )
 texture = ExtResource( 5 )
 
-[node name="Tutorial" type="Sprite" parent="First/Stud"]
+[node name="Tutorial" type="Sprite" parent="Old/First/Stud"]
 position = Vector2( 215, 20 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 3 )
 
-[node name="ColorRect3" type="ColorRect" parent="First/Stud"]
+[node name="ColorRect3" type="ColorRect" parent="Old/First/Stud"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 95.0
@@ -57,11 +70,11 @@ margin_right = 97.0
 margin_bottom = -84.0
 color = Color( 0.4, 0.301961, 0.301961, 1 )
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="Old"]
 margin_left = 200.0
 margin_top = 50.0
-margin_right = 240.0
-margin_bottom = 64.0
+margin_right = 298.0
+margin_bottom = 120.0
 rect_scale = Vector2( 0.6, 0.6 )
 theme = ExtResource( 2 )
 custom_constants/line_spacing = -10
@@ -70,13 +83,13 @@ their questions by
 holding \"Enter\"
 near them"
 
-[node name="Second" type="Control" parent="."]
+[node name="Second" type="Control" parent="Old"]
 margin_left = -4.0
 margin_top = 105.0
 margin_right = 36.0
 margin_bottom = 145.0
 
-[node name="ColorRect2" type="ColorRect" parent="Second"]
+[node name="ColorRect2" type="ColorRect" parent="Old/Second"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 90.0
@@ -85,12 +98,12 @@ margin_right = 323.0
 margin_bottom = 92.0
 color = Color( 0.4, 0.301961, 0.301961, 1 )
 
-[node name="CoffeeMeter" type="Sprite" parent="Second"]
+[node name="CoffeeMeter" type="Sprite" parent="Old/Second"]
 position = Vector2( 136, 68 )
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 7 )
 
-[node name="Label" type="Label" parent="Second"]
+[node name="Label" type="Label" parent="Old/Second"]
 margin_left = 176.0
 margin_top = 40.0
 margin_right = 395.0
@@ -100,7 +113,7 @@ theme = ExtResource( 2 )
 custom_constants/line_spacing = -10
 text = "Don't run out of coffee, it's your stamina!"
 
-[node name="Label2" type="Label" parent="Second"]
+[node name="Label2" type="Label" parent="Old/Second"]
 margin_left = 175.0
 margin_top = 55.0
 margin_right = 394.0
@@ -111,13 +124,13 @@ custom_constants/line_spacing = -10
 text = "Collect coffee!
 "
 
-[node name="CoffeeSpritesheet" type="Sprite" parent="Second/Label2"]
+[node name="CoffeeSpritesheet" type="Sprite" parent="Old/Second/Label2"]
 position = Vector2( 100, 11.6667 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 6 )
 hframes = 4
 
-[node name="Label3" type="Label" parent="Second"]
+[node name="Label3" type="Label" parent="Old/Second"]
 margin_left = 141.0
 margin_top = 99.0
 margin_right = 533.0
@@ -128,11 +141,129 @@ custom_constants/line_spacing = -10
 text = "Do not worry! It is supplied directly
 into classrooms by Kaffee Typ GMBH"
 
-[node name="CoffeeParticles" type="Sprite" parent="Second/Label3"]
+[node name="CoffeeParticles" type="Sprite" parent="Old/Second/Label3"]
 position = Vector2( 235, 50 )
 scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 9 )
 
-[node name="CoffeeThrowing" type="Sprite" parent="Second/Label3/CoffeeParticles"]
+[node name="CoffeeThrowing" type="Sprite" parent="Old/Second/Label3/CoffeeParticles"]
 position = Vector2( 127.778, -30.5555 )
 texture = ExtResource( 8 )
+
+[node name="New" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="First" type="Control" parent="New"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="TutorialBackground" type="Sprite" parent="New/First"]
+position = Vector2( 256, 144 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
+
+[node name="TutorialStudent1" type="Sprite" parent="New/First"]
+position = Vector2( 142, 62 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 13 )
+
+[node name="TutorialStudent2" type="Sprite" parent="New/First"]
+position = Vector2( 338, 123 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 12 )
+
+[node name="TutorialTime" type="Sprite" parent="New/First"]
+position = Vector2( 139, 142 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 14 )
+
+[node name="TutorialCoffee" type="Sprite" parent="New/First"]
+position = Vector2( 253, 230 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
+
+[node name="TutorialFont" type="Sprite" parent="New/First"]
+position = Vector2( 383, 31 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+
+[node name="About" type="Label" parent="New/First"]
+margin_left = 122.0
+margin_top = 17.0
+margin_right = 243.0
+margin_bottom = 87.0
+theme = ExtResource( 2 )
+custom_constants/line_spacing = -10
+text = "In this game you assume the role of Adem! Help your students with Computer Science!"
+autowrap = true
+
+[node name="Help" type="Label" parent="New/First"]
+margin_left = 317.0
+margin_top = 80.0
+margin_right = 438.0
+margin_bottom = 165.0
+theme = ExtResource( 2 )
+custom_constants/line_spacing = -10
+text = "Help students with their questions
+by holding
+\"Enter\" near
+them!"
+autowrap = true
+
+[node name="Time" type="Label" parent="New/First"]
+margin_left = 118.0
+margin_top = 119.0
+margin_right = 239.0
+margin_bottom = 204.0
+theme = ExtResource( 2 )
+custom_constants/line_spacing = -10
+text = "Survive until the
+end."
+autowrap = true
+
+[node name="Coffee" type="Label" parent="New/First"]
+margin_left = 133.0
+margin_top = 193.0
+margin_right = 352.0
+margin_bottom = 218.0
+theme = ExtResource( 2 )
+custom_constants/line_spacing = -10
+text = "Don't run out of coffee, it's your stamina!
+
+Do not worry! It is supplied directly
+into classrooms by Kaffee Typ GMBH!"
+
+[node name="Second" type="Control" parent="New"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="TutorialBackground" type="Sprite" parent="New/Second"]
+position = Vector2( 256, 144 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
+
+[node name="TutorialHappiness" type="Sprite" parent="New/Second"]
+position = Vector2( 135, 145 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 15 )
+
+[node name="TutorialHaveFun" type="Sprite" parent="New/Second"]
+position = Vector2( 375, 181 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="TutorialFont" type="Sprite" parent="New/Second"]
+position = Vector2( 383, 31 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+
+[node name="Happiness" type="Label" parent="New/Second"]
+margin_left = 135.0
+margin_top = 109.0
+margin_right = 247.0
+margin_bottom = 209.0
+theme = ExtResource( 2 )
+custom_constants/line_spacing = -10
+text = "Look out, surviving a class is not enough. The students will change to another tutor, if they dod't get enough help."
+autowrap = true
