@@ -21,7 +21,7 @@ var item_rate_time := 1
 
 func _ready() -> void:
 	GlobalStats.set_level_status(GlobalStats.GAME_ON)
-	GlobalAudio.play_track("ClassroomMusic")
+	#GlobalAudio.play_track("ClassroomMusic")
 	var fadeIn = GlobalStats.FadeIn.instance()
 	$UI.add_child(fadeIn)
 	
@@ -41,6 +41,13 @@ func _ready() -> void:
 	#Assign student sprite frame
 	for i in children.size():
 		children[i].assign_frame(i)
+		#Special frames
+		match i:
+			0:
+				if randi() % 2 == 1:
+					children[i].change_to_special_sprite()
+			6:
+				children[i].change_to_special_sprite()
 	
 	player.connect("coffee_collected", self, "adjust_manometer")
 	

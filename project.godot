@@ -10,8 +10,8 @@ config_version=4
 
 [application]
 
-config/name="the adam game"
-run/main_scene="res://Scenes/Classroom.tscn"
+config/name="the adem game"
+run/main_scene="res://Prefabs/UI/SplashScreen.tscn"
 config/icon="res://icon.png"
 
 [autoload]

@@ -265,5 +265,5 @@ margin_right = 247.0
 margin_bottom = 209.0
 theme = ExtResource( 2 )
 custom_constants/line_spacing = -10
-text = "Look out, surviving a class is not enough. The students will change to another tutor, if they dod't get enough help."
+text = "Look out, surviving a class is not enough. The students will change to another tutor, if they don't get enough help."
 autowrap = true

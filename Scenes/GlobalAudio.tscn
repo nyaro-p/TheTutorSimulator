@@ -12,7 +12,6 @@
 [node name="GlobalAudio" type="Node"]
 pause_mode = 2
 script = ExtResource( 1 )
-debug_music = false
 
 [node name="Sounds" type="Node" parent="."]
 
