@@ -12,7 +12,8 @@ config_version=4
 
 config/name="the adem game"
 run/main_scene="res://Prefabs/UI/SplashScreen.tscn"
-config/icon="res://icon.png"
+config/icon="res://AdemIcon.png"
+config/windows_native_icon="res://AdemIcon.ico"
 
 [autoload]
 
