@@ -7,10 +7,10 @@ func _ready() -> void:
 	$StudentLeftClass.text = "Student Left Class: " + str(left)
 	$Buttons/HomeButton.grab_focus()
 	
-	var timer = Timer.new()
-	timer.connect("timeout",self,"_on_timer_timeout") 
-	add_child(timer)
-	timer.start(5.0)
+#	var timer = Timer.new()
+#	timer.connect("timeout",self,"_on_timer_timeout") 
+#	add_child(timer)
+#	timer.start(5.0)
 
 func _on_timer_timeout():
 	var fadeOut = GlobalStats.FadeOut.instance()

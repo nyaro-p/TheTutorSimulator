@@ -354,7 +354,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 6, 6.5, 7, 7.5, 8.2, 9.3, 10, 27 ),
+"times": PoolRealArray( 0, 6, 6.5, 7, 7.5, 8.2, 9.3, 10, 26.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "values": [ {
 "args": [ "RunRight" ],
@@ -818,6 +818,7 @@ margin_top = 229.0
 margin_right = 379.0
 margin_bottom = 260.0
 theme = ExtResource( 3 )
+custom_constants/line_spacing = -10
 text = "Hmm, something is different today!"
 autowrap = true
 

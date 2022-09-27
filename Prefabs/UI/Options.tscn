@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Prefabs/UI/Scripts/Options.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/DialoguedFont.tres" type="Theme" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Assets/EndScreens/Buttom_Next_pressed.png" type="Texture" id=5]
 [ext_resource path="res://Assets/EndScreens/Buttom_Next_hover.png" type="Texture" id=6]
 [ext_resource path="res://Assets/EndScreens/Buttom_Next_normal.png" type="Texture" id=7]
+[ext_resource path="res://Assets/UI/ButtonSelected.png" type="Texture" id=8]
 
 [node name="Options" type="Control"]
 anchor_right = 1.0
@@ -24,79 +25,109 @@ margin_top = 66.0
 margin_right = 388.0
 margin_bottom = 221.0
 theme = ExtResource( 2 )
+custom_constants/separation = -8
 
 [node name="GeneralAudio" type="VBoxContainer" parent="VBoxContainer"]
 margin_right = 266.0
-margin_bottom = 37.0
+margin_bottom = 35.0
+custom_constants/separation = -10
 
 [node name="GeneralAudio" type="Label" parent="VBoxContainer/GeneralAudio"]
 margin_right = 266.0
-margin_bottom = 13.0
+margin_bottom = 25.0
 text = "General Audio:"
 align = 1
 
 [node name="GeneralAudioSlider" type="HSlider" parent="VBoxContainer/GeneralAudio"]
 unique_name_in_owner = true
-margin_top = 17.0
+margin_top = 15.0
 margin_right = 266.0
-margin_bottom = 37.0
+margin_bottom = 35.0
+focus_neighbour_left = NodePath(".")
 focus_neighbour_top = NodePath("../../../Button")
+focus_neighbour_right = NodePath(".")
 focus_previous = NodePath("../../../Button")
 custom_icons/tick = ExtResource( 3 )
 custom_icons/grabber_disabled = ExtResource( 3 )
-custom_icons/grabber_highlight = ExtResource( 3 )
+custom_icons/grabber_highlight = ExtResource( 8 )
 custom_icons/grabber = ExtResource( 3 )
-min_value = -80.0
+min_value = -40.0
 max_value = 0.0
 step = 2.0
 
 [node name="Music" type="VBoxContainer" parent="VBoxContainer"]
-margin_top = 41.0
+margin_top = 27.0
 margin_right = 266.0
-margin_bottom = 78.0
+margin_bottom = 62.0
+custom_constants/separation = -10
 
 [node name="Music" type="Label" parent="VBoxContainer/Music"]
 margin_right = 266.0
-margin_bottom = 13.0
+margin_bottom = 25.0
 text = "Music:"
 align = 1
 
 [node name="MusicSlider" type="HSlider" parent="VBoxContainer/Music"]
 unique_name_in_owner = true
-margin_top = 17.0
+margin_top = 15.0
 margin_right = 266.0
-margin_bottom = 37.0
+margin_bottom = 35.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_right = NodePath(".")
 custom_icons/tick = ExtResource( 3 )
 custom_icons/grabber_disabled = ExtResource( 3 )
-custom_icons/grabber_highlight = ExtResource( 3 )
+custom_icons/grabber_highlight = ExtResource( 8 )
 custom_icons/grabber = ExtResource( 3 )
-min_value = -80.0
+min_value = -40.0
 max_value = 0.0
 step = 2.0
 
 [node name="SFX" type="VBoxContainer" parent="VBoxContainer"]
-margin_top = 82.0
+margin_top = 54.0
 margin_right = 266.0
-margin_bottom = 119.0
+margin_bottom = 89.0
+custom_constants/separation = -10
 
 [node name="SFX" type="Label" parent="VBoxContainer/SFX"]
 margin_right = 266.0
-margin_bottom = 13.0
+margin_bottom = 25.0
 text = "SFX:"
 align = 1
 
 [node name="SFXSlider" type="HSlider" parent="VBoxContainer/SFX"]
 unique_name_in_owner = true
-margin_top = 17.0
+margin_top = 15.0
 margin_right = 266.0
-margin_bottom = 37.0
+margin_bottom = 35.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_right = NodePath(".")
 custom_icons/tick = ExtResource( 3 )
 custom_icons/grabber_disabled = ExtResource( 3 )
-custom_icons/grabber_highlight = ExtResource( 3 )
+custom_icons/grabber_highlight = ExtResource( 8 )
 custom_icons/grabber = ExtResource( 3 )
-min_value = -80.0
+min_value = -40.0
 max_value = 0.0
 step = 2.0
+
+[node name="Fullscreen" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 81.0
+margin_right = 266.0
+margin_bottom = 114.0
+custom_constants/separation = 0
+
+[node name="Fullscreen" type="Label" parent="VBoxContainer/Fullscreen"]
+margin_top = 4.0
+margin_right = 57.0
+margin_bottom = 29.0
+text = "Fullscreen"
+
+[node name="FullscreenCheckBox" type="CheckBox" parent="VBoxContainer/Fullscreen"]
+unique_name_in_owner = true
+margin_left = 57.0
+margin_right = 81.0
+margin_bottom = 33.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_right = NodePath(".")
 
 [node name="Button" type="TextureButton" parent="."]
 anchor_left = 0.5
@@ -109,6 +140,8 @@ margin_right = 109.0
 margin_bottom = 7.0
 rect_scale = Vector2( 0.3, 0.3 )
 rect_pivot_offset = Vector2( 1, 1 )
+focus_neighbour_left = NodePath(".")
+focus_neighbour_right = NodePath(".")
 focus_neighbour_bottom = NodePath("../VBoxContainer/GeneralAudio/GeneralAudioSlider")
 focus_next = NodePath("../VBoxContainer/GeneralAudio/GeneralAudioSlider")
 texture_normal = ExtResource( 7 )
@@ -123,4 +156,7 @@ flip_h = true
 [connection signal="value_changed" from="VBoxContainer/Music/MusicSlider" to="." method="_on_MusicSlider_value_changed"]
 [connection signal="focus_entered" from="VBoxContainer/SFX/SFXSlider" to="." method="_on_SFXSlider_focus_entered"]
 [connection signal="value_changed" from="VBoxContainer/SFX/SFXSlider" to="." method="_on_SFXSlider_value_changed"]
+[connection signal="focus_entered" from="VBoxContainer/Fullscreen/FullscreenCheckBox" to="." method="_on_FullscreenCheckBox_focus_entered"]
+[connection signal="pressed" from="VBoxContainer/Fullscreen/FullscreenCheckBox" to="." method="_on_FullscreenCheckBox_pressed"]
+[connection signal="focus_entered" from="Button" to="." method="_on_Button_focus_entered"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

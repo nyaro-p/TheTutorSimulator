@@ -64,6 +64,7 @@ margin_right = 240.0
 margin_bottom = 64.0
 rect_scale = Vector2( 0.6, 0.6 )
 theme = ExtResource( 2 )
+custom_constants/line_spacing = -10
 text = "Help Students with
 their questions by
 holding \"Enter\"
@@ -96,6 +97,7 @@ margin_right = 395.0
 margin_bottom = 54.0
 rect_scale = Vector2( 0.6, 0.6 )
 theme = ExtResource( 2 )
+custom_constants/line_spacing = -10
 text = "Don't run out of coffee, it's your stamina!"
 
 [node name="Label2" type="Label" parent="Second"]
@@ -105,6 +107,7 @@ margin_right = 394.0
 margin_bottom = 84.0
 rect_scale = Vector2( 0.6, 0.6 )
 theme = ExtResource( 2 )
+custom_constants/line_spacing = -10
 text = "Collect coffee!
 "
 
@@ -121,6 +124,7 @@ margin_right = 533.0
 margin_bottom = 128.0
 rect_scale = Vector2( 0.6, 0.6 )
 theme = ExtResource( 2 )
+custom_constants/line_spacing = -10
 text = "Do not worry! It is supplied directly
 into classrooms by Kaffee Typ GMBH"
 

@@ -1,5 +1,8 @@
 extends Node
 
+#Settings
+onready var fullscreen = OS.window_fullscreen
+
 onready var FadeOut = preload("res://Effects/FadeOut.tscn") as PackedScene
 onready var FadeIn = preload("res://Effects/FadeIn.tscn") as PackedScene
 
@@ -29,3 +32,7 @@ func get_level_status()-> int:
 #Setter
 func set_level_status(value: int):
 	level_status = value
+
+func toggle_fullscreen() -> void:
+	OS.window_fullscreen = !OS.window_fullscreen
+	fullscreen = OS.window_fullscreen
