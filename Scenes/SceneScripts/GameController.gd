@@ -20,6 +20,7 @@ var question_rate_time := 2
 var item_rate_time := 1
 
 func _ready() -> void:
+	GlobalStats.set_level_status(GlobalStats.GAME_ON)
 	GlobalAudio.play_track("ClassroomMusic")
 	var fadeIn = GlobalStats.FadeIn.instance()
 	$UI.add_child(fadeIn)

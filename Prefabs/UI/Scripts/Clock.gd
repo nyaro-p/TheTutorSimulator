@@ -6,6 +6,7 @@ onready var tut_time := 20.0
 onready var WinScreen = preload("res://Prefabs/UI/WinScreen.tscn")
 
 func _ready() -> void:
+	GlobalStats.set_level_status(GlobalStats.GAME_ON)
 	do_one_tick()
 
 #Calls itself until the arrow makes a full rotation.

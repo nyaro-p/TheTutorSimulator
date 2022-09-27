@@ -6,4 +6,4 @@ func play(name) -> void:
 func start_game():
 	var fadeOut = GlobalStats.FadeOut.instance()
 	get_parent().get_parent().add_child(fadeOut)
-	fadeOut.configure("res://Scenes/Classroom.tscn")
+	fadeOut.configure("res://Prefabs/UI/Tutorial.tscn")

@@ -16,7 +16,7 @@ func decrease(value: float) -> void:
 		GlobalStats.set_level_status(GlobalStats.GAME_STOPPED)
 		get_tree().paused = true
 		var loseScreen = LoseScreen.instance()
-		(get_parent().get_node("Clock") as Node2D).pause_mode = PAUSE_MODE_INHERIT
+		#(get_parent().clock as Control).pause_mode = PAUSE_MODE_INHERIT
 		(get_parent() as CanvasLayer).add_child(loseScreen)
 
 #Called from Game Controller in physics_process,
