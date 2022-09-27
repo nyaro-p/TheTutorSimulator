@@ -1,11 +1,27 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/SceneScripts/TitleScreen.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/SceneScripts/Background.gd" type="Script" id=2]
+[ext_resource path="res://Assets/TitleScreen/Title_Screen_Background.png" type="Texture" id=2]
 [ext_resource path="res://Assets/TitleScreen/Title_Screen_Image.png" type="Texture" id=3]
 [ext_resource path="res://Assets/TitleScreen/Title_Screen_Steam2.png" type="Texture" id=5]
 [ext_resource path="res://Assets/TitleScreen/Title_Screen_Steam1.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Fonts/MenuFont.tres" type="Theme" id=7]
+
+[sub_resource type="Shader" id=10]
+code = "shader_type canvas_item;
+
+uniform vec2 direction = vec2(1.0, 0.0);
+uniform float speed = 0.05;
+
+void fragment() {
+	
+	COLOR = texture(TEXTURE, UV + (direction * TIME * speed));
+}"
+
+[sub_resource type="ShaderMaterial" id=11]
+shader = SubResource( 10 )
+shader_param/direction = Vector2( 1, -1 )
+shader_param/speed = 0.05
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
@@ -44,12 +60,22 @@ script = ExtResource( 1 )
 [node name="Background" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="Background"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0.54902, 0.945098, 0.984314, 1 )
+
+[node name="TitleScreenBackground" type="TextureRect" parent="Background"]
+modulate = Color( 1, 1, 1, 0.694118 )
+material = SubResource( 11 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1714.0
+margin_bottom = 964.0
+rect_scale = Vector2( 0.23, 0.23 )
+texture = ExtResource( 2 )
+stretch_mode = 2
 
 [node name="Foreground" type="Control" parent="."]
 anchor_right = 1.0
