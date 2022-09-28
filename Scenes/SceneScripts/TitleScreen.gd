@@ -10,7 +10,11 @@ func _on_Play_pressed() -> void:
 	GlobalAudio.play_sound("ButtonPressed")
 	var fadeOut = GlobalStats.FadeOut.instance()
 	add_child(fadeOut)
-	fadeOut.configure("res://Scenes/TransitionScene.tscn")
+	if !GlobalStats.tutorial_shown:
+		fadeOut.configure("res://Scenes/TransitionScene.tscn")
+		GlobalStats.tutorial_shown = true
+	else:
+		fadeOut.configure("res://Scenes/Classroom.tscn")
 
 func _on_Options_pressed() -> void:
 	GlobalAudio.play_sound("ButtonPressed")

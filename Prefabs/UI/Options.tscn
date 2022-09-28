@@ -44,9 +44,11 @@ margin_top = 15.0
 margin_right = 266.0
 margin_bottom = 35.0
 focus_neighbour_left = NodePath(".")
-focus_neighbour_top = NodePath("../../../Button")
+focus_neighbour_top = NodePath("../../../BackButton")
 focus_neighbour_right = NodePath(".")
-focus_previous = NodePath("../../../Button")
+focus_neighbour_bottom = NodePath("../../Music/MusicSlider")
+focus_next = NodePath("../../Music/MusicSlider")
+focus_previous = NodePath("../../../BackButton")
 custom_icons/tick = ExtResource( 3 )
 custom_icons/grabber_disabled = ExtResource( 3 )
 custom_icons/grabber_highlight = ExtResource( 8 )
@@ -73,7 +75,11 @@ margin_top = 15.0
 margin_right = 266.0
 margin_bottom = 35.0
 focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath("../../GeneralAudio/GeneralAudioSlider")
 focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath("../../SFX/SFXSlider")
+focus_next = NodePath("../../SFX/SFXSlider")
+focus_previous = NodePath("../../GeneralAudio/GeneralAudioSlider")
 custom_icons/tick = ExtResource( 3 )
 custom_icons/grabber_disabled = ExtResource( 3 )
 custom_icons/grabber_highlight = ExtResource( 8 )
@@ -100,7 +106,11 @@ margin_top = 15.0
 margin_right = 266.0
 margin_bottom = 35.0
 focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath("../../Music/MusicSlider")
 focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath("../../Fullscreen/FullscreenCheckBox")
+focus_next = NodePath("../../Fullscreen/FullscreenCheckBox")
+focus_previous = NodePath("../../Music/MusicSlider")
 custom_icons/tick = ExtResource( 3 )
 custom_icons/grabber_disabled = ExtResource( 3 )
 custom_icons/grabber_highlight = ExtResource( 8 )
@@ -127,9 +137,13 @@ margin_left = 57.0
 margin_right = 81.0
 margin_bottom = 33.0
 focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath("../../SFX/SFXSlider")
 focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath("../../../BackButton")
+focus_next = NodePath("../../../BackButton")
+focus_previous = NodePath("../../SFX/SFXSlider")
 
-[node name="Button" type="TextureButton" parent="."]
+[node name="BackButton" type="TextureButton" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -141,9 +155,11 @@ margin_bottom = 7.0
 rect_scale = Vector2( 0.3, 0.3 )
 rect_pivot_offset = Vector2( 1, 1 )
 focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath("../VBoxContainer/Fullscreen/FullscreenCheckBox")
 focus_neighbour_right = NodePath(".")
 focus_neighbour_bottom = NodePath("../VBoxContainer/GeneralAudio/GeneralAudioSlider")
 focus_next = NodePath("../VBoxContainer/GeneralAudio/GeneralAudioSlider")
+focus_previous = NodePath("../VBoxContainer/Fullscreen/FullscreenCheckBox")
 texture_normal = ExtResource( 7 )
 texture_pressed = ExtResource( 5 )
 texture_hover = ExtResource( 6 )
@@ -158,5 +174,5 @@ flip_h = true
 [connection signal="value_changed" from="VBoxContainer/SFX/SFXSlider" to="." method="_on_SFXSlider_value_changed"]
 [connection signal="focus_entered" from="VBoxContainer/Fullscreen/FullscreenCheckBox" to="." method="_on_FullscreenCheckBox_focus_entered"]
 [connection signal="pressed" from="VBoxContainer/Fullscreen/FullscreenCheckBox" to="." method="_on_FullscreenCheckBox_pressed"]
-[connection signal="focus_entered" from="Button" to="." method="_on_Button_focus_entered"]
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="focus_entered" from="BackButton" to="." method="_on_Button_focus_entered"]
+[connection signal="pressed" from="BackButton" to="." method="_on_Button_pressed"]

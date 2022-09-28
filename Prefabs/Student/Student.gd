@@ -73,9 +73,10 @@ func blink() -> void:
 #Switches to a special sprite for the student if one is available.
 func change_to_special_sprite() -> void:
 	match person.frame:
-		0:
-			specialSprite.visible = !specialSprite.visible
-			person.visible = !person.visible
+#		0:
+#			specialSprite.visible = !specialSprite.visible
+#			person.visible = !person.visible
+#			blinkPerson.visible = (!specialSprite.visible and !person.visible)
 		6:
 			specialSprite.visible = !specialSprite.visible
 			person.visible = !specialSprite.visible

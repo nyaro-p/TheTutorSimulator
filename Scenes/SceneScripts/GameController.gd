@@ -43,9 +43,9 @@ func _ready() -> void:
 		children[i].assign_frame(i)
 		#Special frames
 		match i:
-			0:
-				if randi() % 2 == 1:
-					children[i].change_to_special_sprite()
+#			0:
+#				if randi() % 2 == 1:
+#					children[i].change_to_special_sprite()
 			6:
 				children[i].change_to_special_sprite()
 	

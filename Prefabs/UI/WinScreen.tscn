@@ -138,7 +138,7 @@ margin_top = 74.0
 margin_right = 277.0
 margin_bottom = 88.0
 theme = ExtResource( 3 )
-text = "Student Left Class: "
+text = "Students Left Class: "
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "move_in"

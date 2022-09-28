@@ -4,7 +4,7 @@ func _ready() -> void:
 	var value = GlobalStats.happiness
 	$StudentHappiness.text = "Student Happiness: " + str(stepify(value * 100, 0.1)) + "%"
 	var left = 7 - round(7 * value)
-	$StudentLeftClass.text = "Student Left Class: " + str(left)
+	$StudentLeftClass.text = "Students Left Class: " + str(left)
 	$Buttons/RestartButton.grab_focus()
 
 
