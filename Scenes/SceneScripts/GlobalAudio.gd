@@ -29,13 +29,16 @@ func play_sound(audio_name: String) -> void:
 func play_track(track_name: String) -> void:
 	if debug_music:
 		if track_name != current_song and current_song != "default":
-			music[current_song].stop()
-			music[current_song].disconnect("finished", self, "play_track")
-		current_song = track_name
+			var old_track = $Music.get_node(current_song) as AudioStreamPlayer
+			old_track.stop()
+			old_track.disconnect("finished", self, "play_track")
+		
 		
 		var track = $Music.get_node(track_name) as AudioStreamPlayer
-		
-		track.play()
+		if !track.playing:
+			track.play()
 		if !track.is_connected("finished", self, "play_track"):
 			track.connect("finished", self, "play_track", [track_name])
+		
+		current_song = track_name
 	

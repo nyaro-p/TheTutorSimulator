@@ -15,6 +15,7 @@ func _ready() -> void:
 
 
 func start_fight() -> void:
+	GlobalAudio.play_track("BossFight")
 	$AnimationPlayer.play("Fight")
 
 func end_fight() -> void:

@@ -1226,7 +1226,7 @@ anims/upper_attack = SubResource( 11 )
 position = Vector2( 255, 178 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "AfterFight"
+autoplay = "PreFight"
 anims/AfterFight = SubResource( 22 )
 anims/Fight = SubResource( 5 )
 anims/PreFight = SubResource( 3 )

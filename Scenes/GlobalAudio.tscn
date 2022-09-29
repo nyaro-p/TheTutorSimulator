@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/SceneScripts/GlobalAudio.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Audio/Sounds/Helped.wav" type="AudioStream" id=2]
@@ -8,11 +8,11 @@
 [ext_resource path="res://Assets/Audio/Tracks/Classroom.wav" type="AudioStream" id=6]
 [ext_resource path="res://Assets/Audio/Sounds/button_pressed.wav" type="AudioStream" id=7]
 [ext_resource path="res://Assets/Audio/Sounds/button_selected.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Audio/Tracks/BossFight.wav" type="AudioStream" id=9]
 
 [node name="GlobalAudio" type="Node"]
 pause_mode = 2
 script = ExtResource( 1 )
-debug_music = false
 
 [node name="Sounds" type="Node" parent="."]
 
@@ -48,5 +48,10 @@ bus = "Music"
 
 [node name="ClassroomMusic" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource( 6 )
+volume_db = -10.0
+bus = "Music"
+
+[node name="BossFight" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource( 9 )
 volume_db = -10.0
 bus = "Music"
