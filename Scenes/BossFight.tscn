@@ -1281,6 +1281,18 @@ theme = ExtResource( 8 )
 text = "You Made It"
 align = 1
 
+[node name="ColorRect" type="ColorRect" parent="UI"]
+margin_right = 101.0
+margin_bottom = 288.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="UI"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -101.0
+margin_bottom = 288.0
+color = Color( 0, 0, 0, 1 )
+
 [node name="Particles2D" type="Particles2D" parent="."]
 pause_mode = 2
 position = Vector2( 249, 149 )

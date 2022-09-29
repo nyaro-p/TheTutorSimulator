@@ -19,6 +19,8 @@ func start_fight() -> void:
 	$AnimationPlayer.play("Fight")
 
 func end_fight() -> void:
+	var tween := create_tween().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(player, "position", Vector2(255, 178), 1.0)
 	$AnimationPlayer.play("AfterFight")
 
 #### Attacks ####
