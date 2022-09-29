@@ -17,6 +17,29 @@ extents = Vector2( 79, 3 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 3, 80 )
 
+[sub_resource type="Curve" id=19]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.258427, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.707865, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0875 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=20]
+curve = SubResource( 19 )
+
+[sub_resource type="ParticlesMaterial" id=21]
+lifetime_randomness = 0.48
+emission_shape = 2
+emission_box_extents = Vector3( 200, 150, 1 )
+flag_disable_z = true
+direction = Vector3( 0, 0, 0 )
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 4.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = -99.8
+angle_random = 0.26
+scale = 0.15
+scale_curve = SubResource( 20 )
+color = Color( 1, 0.960784, 0.839216, 0.623529 )
+
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 61.5, 8.5 )
 
@@ -374,7 +397,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=14]
 resource_name = "four_questions"
-length = 12.0
+length = 11.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("FourQuestions:visible")
 tracks/0/interp = 1
@@ -382,7 +405,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 4, 4.5, 6.6, 7.1, 11.9 ),
+"times": PoolRealArray( 0, 3, 3.5, 5.6, 6.1, 10.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ true, false, true, false, true, false ]
@@ -394,7 +417,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.5, 2.5, 4, 4.5, 5, 6, 6.4, 6.6, 7.1, 7.8, 8.1, 11.9 ),
+"times": PoolRealArray( 0, 0.5, 1.5, 3, 3.5, 4, 5, 5.4, 5.6, 6.1, 6.8, 7.1, 10.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( -241, -65 ), Vector2( -241, -65 ), Vector2( -56, -65 ), Vector2( -56, -65 ), Vector2( 105, -65 ), Vector2( 105, -65 ), Vector2( 105, -65 ), Vector2( -39, -65 ), Vector2( -39, -65 ), Vector2( -198, -186 ), Vector2( -198, -186 ), Vector2( 17, 24 ), Vector2( 17, 24 ) ]
@@ -406,10 +429,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.5, 2.5, 4, 4.5, 5, 6, 6.6, 8.1, 8.8, 9.2, 11.9 ),
+"times": PoolRealArray( 0, 0.5, 1.5, 3, 3.5, 4, 5, 5.6, 7.1, 7.8, 8.2, 10.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -241, -29 ), Vector2( -241, -29 ), Vector2( -77, -29 ), Vector2( -77, -29 ), Vector2( 106, -29 ), Vector2( 106, -29 ), Vector2( -77, -29 ), Vector2( -77, -29 ), Vector2( 121, -95.709 ), Vector2( 121, -95.709 ), Vector2( -82, -33 ), Vector2( -82, -33 ) ]
+"values": [ Vector2( -241, -29 ), Vector2( -241, -29 ), Vector2( -77, -29 ), Vector2( -77, -29 ), Vector2( 106, -29 ), Vector2( 106, -29 ), Vector2( -77, -29 ), Vector2( -77, -29 ), Vector2( 121, -95.709 ), Vector2( 121, -95.709 ), Vector2( -117, -19 ), Vector2( -117, -19 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("FourQuestions/Q3:rect_position")
@@ -418,10 +441,10 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 0.5, 2.5, 3, 4, 4.5, 5, 6, 6.6, 9.2, 9.9, 10.3, 11.9 ),
+"times": PoolRealArray( 0, 0.5, 1.5, 2, 3, 3.5, 4, 5, 5.6, 8.2, 8.9, 9.3, 10.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -241, 9 ), Vector2( -241, 9 ), Vector2( -241, 9 ), Vector2( -62, 9 ), Vector2( -62, 9 ), Vector2( 108, 9 ), Vector2( 108, 9 ), Vector2( -65, 9 ), Vector2( -65, 9 ), Vector2( -51, -152 ), Vector2( -51, -152 ), Vector2( -22, 13 ), Vector2( -22, 13 ) ]
+"values": [ Vector2( -241, 9 ), Vector2( -241, 9 ), Vector2( -241, 9 ), Vector2( -62, 9 ), Vector2( -62, 9 ), Vector2( 108, 9 ), Vector2( 108, 9 ), Vector2( -65, 9 ), Vector2( -65, 9 ), Vector2( -61, -178 ), Vector2( -61, -178 ), Vector2( -22, 13 ), Vector2( -22, 13 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("FourQuestions/Q4:rect_position")
@@ -430,7 +453,7 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.5, 2.5, 4, 4.5, 5, 6, 6.6, 10.3, 11.1, 11.5, 11.9 ),
+"times": PoolRealArray( 0, 0.5, 1.5, 3, 3.5, 4, 5, 5.6, 9.3, 10.1, 10.5, 10.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( -241, 42 ), Vector2( -241, 42 ), Vector2( -63, 42 ), Vector2( -63, 42 ), Vector2( 108, 42 ), Vector2( 108, 42 ), Vector2( -63, 42 ), Vector2( -63, 42 ), Vector2( 118, -16 ), Vector2( 118, -16 ), Vector2( -106, 51 ), Vector2( -106, 51 ) ]
@@ -442,7 +465,7 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 4, 4.5, 6.6, 7.1, 11.9 ),
+"times": PoolRealArray( 0, 3, 3.5, 5.6, 6.1, 10.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false, true, false, true ]
@@ -454,7 +477,7 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0, 4, 4.5, 6.6, 8.1, 11.9 ),
+"times": PoolRealArray( 0, 3, 3.5, 5.6, 7.1, 10.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false, true, false, true ]
@@ -466,7 +489,7 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0, 4, 4.5, 6.6, 9.2, 11.9 ),
+"times": PoolRealArray( 0, 3, 3.5, 5.6, 8.2, 10.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false, true, false, true ]
@@ -478,7 +501,7 @@ tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 0, 4, 4.5, 6.6, 10.3, 11.9 ),
+"times": PoolRealArray( 0, 3, 3.5, 5.6, 9.3, 10.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false, true, false, true ]
@@ -490,7 +513,7 @@ tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"times": PoolRealArray( 0, 6.6, 7.1 ),
+"times": PoolRealArray( 0, 5.6, 6.1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ true, false, true ]
@@ -502,7 +525,7 @@ tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 0, 6.6, 8.1 ),
+"times": PoolRealArray( 0, 5.6, 7.1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ true, false, true ]
@@ -514,7 +537,7 @@ tracks/11/loop_wrap = true
 tracks/11/imported = false
 tracks/11/enabled = true
 tracks/11/keys = {
-"times": PoolRealArray( 0, 6.6, 9.2 ),
+"times": PoolRealArray( 0, 5.6, 8.2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ true, false, true ]
@@ -526,7 +549,7 @@ tracks/12/loop_wrap = true
 tracks/12/imported = false
 tracks/12/enabled = true
 tracks/12/keys = {
-"times": PoolRealArray( 0, 6.6, 10.3 ),
+"times": PoolRealArray( 0, 5.6, 9.3 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ true, false, true ]
@@ -538,7 +561,7 @@ tracks/13/loop_wrap = true
 tracks/13/imported = false
 tracks/13/enabled = true
 tracks/13/keys = {
-"times": PoolRealArray( 0, 6.6, 7.1, 11.9 ),
+"times": PoolRealArray( 0, 5.6, 6.1, 10.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0, 46.5, 46.5 ]
@@ -550,7 +573,7 @@ tracks/14/loop_wrap = true
 tracks/14/imported = false
 tracks/14/enabled = true
 tracks/14/keys = {
-"times": PoolRealArray( 0, 6.6, 8.1, 11.9 ),
+"times": PoolRealArray( 0, 5.6, 7.1, 10.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0, -15.5, -15.5 ]
@@ -562,7 +585,7 @@ tracks/15/loop_wrap = true
 tracks/15/imported = false
 tracks/15/enabled = true
 tracks/15/keys = {
-"times": PoolRealArray( 0, 6.6, 9.2, 11.9 ),
+"times": PoolRealArray( 0, 5.6, 8.2, 10.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0, 77.4, 77.4 ]
@@ -574,7 +597,7 @@ tracks/16/loop_wrap = true
 tracks/16/imported = false
 tracks/16/enabled = true
 tracks/16/keys = {
-"times": PoolRealArray( 0, 6.6, 10.3, 11.9 ),
+"times": PoolRealArray( 0, 5.6, 9.3, 10.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0, -15.5, -15.5 ]
@@ -684,7 +707,7 @@ tracks/0/keys = {
 } ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Student/Label2:percent_visible")
+tracks/1/path = NodePath("Field/Student/Label2:percent_visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -696,7 +719,7 @@ tracks/1/keys = {
 "values": [ 0.0, 1.0, 1.0, 0.0, 1.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Student/Label2:visible")
+tracks/2/path = NodePath("Field/Student/Label2:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -708,7 +731,7 @@ tracks/2/keys = {
 "values": [ true, true, false ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Student/Label2:text")
+tracks/3/path = NodePath("Field/Student/Label2:text")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -744,7 +767,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.4, 4.4, 8, 20.5, 23.5, 28.7, 41 ),
+"times": PoolRealArray( 0.4, 4.4, 8, 20.5, 23.5, 28.7, 40.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "values": [ {
 "args": [  ],
@@ -776,7 +799,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 2.6, 3.2, 3.6, 4, 7.4, 8, 17, 18.5, 19.5, 20, 26.5, 27.4, 27.9, 28.5, 40.5 ),
+"times": PoolRealArray( 0, 2.6, 3.2, 3.6, 4, 7.4, 8, 17, 18.5, 19.5, 20, 26.5, 27.4, 27.9, 28.5, 40 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "values": [ {
 "args": [  ],
@@ -864,7 +887,7 @@ tracks/1/keys = {
 } ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Student/Label2:percent_visible")
+tracks/2/path = NodePath("Field/Student/Label2:percent_visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -893,7 +916,7 @@ tracks/3/keys = {
 } ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Student/Label2:visible")
+tracks/4/path = NodePath("Field/Student/Label2:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -905,7 +928,7 @@ tracks/4/keys = {
 "values": [ true, true, false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Student/Label2:text")
+tracks/5/path = NodePath("Field/Student/Label2:text")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -921,7 +944,7 @@ a few more questions..." ]
 [sub_resource type="Animation" id=4]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("Student/Label2:percent_visible")
+tracks/0/path = NodePath("Field/Student/Label2:percent_visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -933,7 +956,7 @@ tracks/0/keys = {
 "values": [ 0.0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Student/Label2:visible")
+tracks/1/path = NodePath("Field/Student/Label2:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -945,7 +968,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Student/Label2:text")
+tracks/2/path = NodePath("Field/Student/Label2:text")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -957,29 +980,6 @@ tracks/2/keys = {
 "values": [ "Actually, I have
 a few more questions..." ]
 }
-
-[sub_resource type="Curve" id=19]
-_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.258427, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.707865, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0875 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=20]
-curve = SubResource( 19 )
-
-[sub_resource type="ParticlesMaterial" id=21]
-lifetime_randomness = 0.48
-emission_shape = 2
-emission_box_extents = Vector3( 200, 150, 1 )
-flag_disable_z = true
-direction = Vector3( 0, 0, 0 )
-spread = 180.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 4.0
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-angle = -99.8
-angle_random = 0.26
-scale = 0.15
-scale_curve = SubResource( 20 )
-color = Color( 1, 0.960784, 0.839216, 0.623529 )
 
 [node name="BossFight" type="Node2D"]
 script = ExtResource( 6 )
@@ -1023,9 +1023,9 @@ shape = SubResource( 2 )
 position = Vector2( 333, 180 )
 shape = SubResource( 2 )
 
-[node name="Student" type="Node2D" parent="."]
+[node name="Student" type="Node2D" parent="Field"]
 
-[node name="Person" type="Sprite" parent="Student"]
+[node name="Person" type="Sprite" parent="Field/Student"]
 unique_name_in_owner = true
 position = Vector2( 256, 65 )
 scale = Vector2( 0.5, 0.5 )
@@ -1033,7 +1033,7 @@ texture = ExtResource( 3 )
 hframes = 9
 frame = 3
 
-[node name="PersonBlinking" type="Sprite" parent="Student"]
+[node name="PersonBlinking" type="Sprite" parent="Field/Student"]
 unique_name_in_owner = true
 visible = false
 position = Vector2( 256, 65 )
@@ -1042,14 +1042,14 @@ texture = ExtResource( 5 )
 hframes = 9
 frame = 3
 
-[node name="RaisingHand" type="Sprite" parent="Student"]
+[node name="RaisingHand" type="Sprite" parent="Field/Student"]
 unique_name_in_owner = true
 visible = false
 position = Vector2( 262, 65 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 4 )
 
-[node name="Label2" type="Label" parent="Student"]
+[node name="Label2" type="Label" parent="Field/Student"]
 margin_left = 156.0
 margin_top = 72.0
 margin_right = 362.0
@@ -1060,6 +1060,35 @@ text = "Actually, I have
 a few more questions..."
 align = 1
 percent_visible = 0.0
+
+[node name="Particles2D" type="Particles2D" parent="."]
+pause_mode = 2
+position = Vector2( 249, 149 )
+amount = 50
+lifetime = 10.0
+preprocess = 22.02
+process_material = SubResource( 21 )
+texture = ExtResource( 9 )
+
+[node name="BlackBars" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="BlackBarLeft" type="ColorRect" parent="BlackBars"]
+margin_right = 101.0
+margin_bottom = 288.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="BlackBarRight" type="ColorRect" parent="BlackBars"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = 411.0
+margin_right = 512.0
+margin_bottom = 288.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="CoffePlayer" parent="." instance=ExtResource( 7 )]
+position = Vector2( 255, 178 )
 
 [node name="Questions" type="Node2D" parent="."]
 position = Vector2( 0, 41.25 )
@@ -1222,9 +1251,6 @@ anims/four_questions = SubResource( 14 )
 anims/rotating_attack = SubResource( 13 )
 anims/upper_attack = SubResource( 11 )
 
-[node name="CoffePlayer" parent="." instance=ExtResource( 7 )]
-position = Vector2( 255, 178 )
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "PreFight"
 anims/AfterFight = SubResource( 22 )
@@ -1280,24 +1306,3 @@ margin_bottom = 14.5
 theme = ExtResource( 8 )
 text = "You Made It"
 align = 1
-
-[node name="ColorRect" type="ColorRect" parent="UI"]
-margin_right = 101.0
-margin_bottom = 288.0
-color = Color( 0, 0, 0, 1 )
-
-[node name="ColorRect2" type="ColorRect" parent="UI"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -101.0
-margin_bottom = 288.0
-color = Color( 0, 0, 0, 1 )
-
-[node name="Particles2D" type="Particles2D" parent="."]
-pause_mode = 2
-position = Vector2( 249, 149 )
-amount = 50
-lifetime = 10.0
-preprocess = 22.02
-process_material = SubResource( 21 )
-texture = ExtResource( 9 )

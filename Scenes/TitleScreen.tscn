@@ -3,23 +3,13 @@
 [ext_resource path="res://Scenes/SceneScripts/TitleScreen.gd" type="Script" id=1]
 [ext_resource path="res://Assets/TitleScreen/Title_Screen_Background.png" type="Texture" id=2]
 [ext_resource path="res://Assets/TitleScreen/Title_Screen_Image.png" type="Texture" id=3]
+[ext_resource path="res://Prefabs/Shaders/ScrollingShader.tres" type="Shader" id=4]
 [ext_resource path="res://Assets/TitleScreen/Title_Screen_Steam2.png" type="Texture" id=5]
 [ext_resource path="res://Assets/TitleScreen/Title_Screen_Steam1.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Fonts/MenuFont.tres" type="Theme" id=7]
 
-[sub_resource type="Shader" id=12]
-code = "shader_type canvas_item;
-
-uniform vec2 direction = vec2(1.0, 0.0);
-uniform float speed = 0.05;
-
-void fragment() {
-	
-	COLOR = texture(TEXTURE, UV + (direction * TIME * speed));
-}"
-
 [sub_resource type="ShaderMaterial" id=11]
-shader = SubResource( 12 )
+shader = ExtResource( 4 )
 shader_param/direction = Vector2( 1, -1 )
 shader_param/speed = 0.05
 
@@ -91,7 +81,6 @@ texture = ExtResource( 3 )
 position = Vector2( 362, 139 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 6 )
-frame = 1
 speed_scale = 0.283
 playing = true
 

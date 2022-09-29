@@ -14,6 +14,13 @@ func _ready() -> void:
 	Fullscreen.pressed = GlobalStats.fullscreen
 	GeneralSlider.grab_focus()
 
+
+func _input(_event: InputEvent) -> void:
+	if Input.is_action_just_pressed("pause_screen"):
+		GlobalAudio.play_sound("ButtonPressed")
+		emit_signal("options_closed")
+		queue_free()
+
 ########## Button Pressed / Value Changed ##########
 
 func _on_GeneralAudioSlider_value_changed(value: float) -> void:
@@ -40,7 +47,8 @@ func _on_SFXSlider_value_changed(value: float) -> void:
 
 
 func _on_FullscreenCheckBox_pressed() -> void:
-	 GlobalStats.toggle_fullscreen()
+	GlobalAudio.play_sound("ButtonPressed")
+	GlobalStats.toggle_fullscreen()
 
 
 func _on_Button_pressed() -> void:

@@ -12,7 +12,6 @@ onready var lifes := $"%Lifes"
 var active := true
 var life_count := 3
 
-#signal won
 signal lost
 
 func _input(_event) -> void:
@@ -39,13 +38,31 @@ func subtract_life() -> void:
 		life_count -= 1
 		var children = lifes.get_children()
 		children[life_count].visible = false
+		if active:
+			#Animation
+			$BlinkAnimation.play("blinking")
+			#Invincibility
+			$HurtArea.set_deferred("monitoring", false)
+			var timer = $HurtArea/Timer
+			timer.start(0.8)
+			if !timer.is_connected("timeout", self,"activate_HurtArea"):
+					timer.connect("timeout",self,"activate_HurtArea") 
+	
 	if life_count <= 0:
-		emit_signal("lost")
-		active = false
+		if active:
+			$SpillAnimation.play("spill")
+			active = false
+
+func activate_HurtArea() -> void:
+	$HurtArea.set_deferred("monitoring", true)
 
 func toggle_active() -> void:
 	active = !active
 
 
-func _on_HurtArea_area_entered(area: Area2D) -> void:
+func _on_HurtArea_area_entered(_area: Area2D) -> void:
 	subtract_life()
+
+
+func _on_SpillAnimation_animation_finished(_anim_name: String) -> void:
+	emit_signal("lost")
