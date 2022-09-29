@@ -17,6 +17,9 @@ func _ready() -> void:
 func start_fight() -> void:
 	$AnimationPlayer.play("Fight")
 
+func end_fight() -> void:
+	$AnimationPlayer.play("AfterFight")
+
 #### Attacks ####
 
 func upper_attack():
@@ -27,6 +30,9 @@ func bottom_attack() -> void:
 
 func rotating_attack() -> void:
 	attack.play("rotating_attack")
+
+func four_questions() -> void:
+	attack.play("four_questions")
 
 #### Student ####
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Assets/Ground.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Fonts/DialoguedFont.tres" type="Theme" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Scenes/SceneScripts/BossFight.gd" type="Script" id=6]
 [ext_resource path="res://Prefabs/Player/CoffeePlayer/CoffePlayer.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Fonts/MenuFont.tres" type="Theme" id=8]
+[ext_resource path="res://Assets/Paricles/RoundParicle.png" type="Texture" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 resource_local_to_scene = true
@@ -27,6 +28,18 @@ extents = Vector2( 88.5, 8.5 )
 
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 71.5, 10 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 58, 8.5 )
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 78, 8.5 )
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 43.5, 8.5 )
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 62.5, 8.5 )
 
 [sub_resource type="Animation" id=10]
 length = 0.001
@@ -126,6 +139,210 @@ tracks/7/keys = {
 "update": 0,
 "values": [ Vector2( -66, 400 ) ]
 }
+tracks/8/type = "value"
+tracks/8/path = NodePath("FourQuestions:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("FourQuestions/Q1:rect_position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -241, -65 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("FourQuestions/Q2:rect_position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -241, -29 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("FourQuestions/Q3:rect_position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -241, 9 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("FourQuestions/Q4:rect_position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -241, 42 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("FourQuestions/Q1/Area2D/CollisionShape2D:disabled")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("FourQuestions/Q2/Area2D/CollisionShape2D:disabled")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("FourQuestions/Q3/Area2D/CollisionShape2D:disabled")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("FourQuestions/Q4/Area2D/CollisionShape2D:disabled")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("FourQuestions/Q1:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("FourQuestions/Q2:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("FourQuestions/Q3:visible")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("FourQuestions/Q4:visible")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("FourQuestions/Q1:rect_rotation")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("FourQuestions/Q2:rect_rotation")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("FourQuestions/Q3:rect_rotation")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("FourQuestions/Q4:rect_rotation")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
 
 [sub_resource type="Animation" id=12]
 resource_name = "bottom_attack"
@@ -153,6 +370,214 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0, -90.0 ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "four_questions"
+length = 12.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("FourQuestions:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4, 4.5, 6.6, 7.1, 11.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("FourQuestions/Q1:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 2.5, 4, 4.5, 5, 6, 6.4, 6.6, 7.1, 7.8, 8.1, 11.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -241, -65 ), Vector2( -241, -65 ), Vector2( -56, -65 ), Vector2( -56, -65 ), Vector2( 105, -65 ), Vector2( 105, -65 ), Vector2( 105, -65 ), Vector2( -39, -65 ), Vector2( -39, -65 ), Vector2( -198, -186 ), Vector2( -198, -186 ), Vector2( 17, 24 ), Vector2( 17, 24 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("FourQuestions/Q2:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5, 2.5, 4, 4.5, 5, 6, 6.6, 8.1, 8.8, 9.2, 11.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -241, -29 ), Vector2( -241, -29 ), Vector2( -77, -29 ), Vector2( -77, -29 ), Vector2( 106, -29 ), Vector2( 106, -29 ), Vector2( -77, -29 ), Vector2( -77, -29 ), Vector2( 121, -95.709 ), Vector2( 121, -95.709 ), Vector2( -82, -33 ), Vector2( -82, -33 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("FourQuestions/Q3:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5, 2.5, 3, 4, 4.5, 5, 6, 6.6, 9.2, 9.9, 10.3, 11.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -241, 9 ), Vector2( -241, 9 ), Vector2( -241, 9 ), Vector2( -62, 9 ), Vector2( -62, 9 ), Vector2( 108, 9 ), Vector2( 108, 9 ), Vector2( -65, 9 ), Vector2( -65, 9 ), Vector2( -51, -152 ), Vector2( -51, -152 ), Vector2( -22, 13 ), Vector2( -22, 13 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("FourQuestions/Q4:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5, 2.5, 4, 4.5, 5, 6, 6.6, 10.3, 11.1, 11.5, 11.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -241, 42 ), Vector2( -241, 42 ), Vector2( -63, 42 ), Vector2( -63, 42 ), Vector2( 108, 42 ), Vector2( 108, 42 ), Vector2( -63, 42 ), Vector2( -63, 42 ), Vector2( 118, -16 ), Vector2( 118, -16 ), Vector2( -106, 51 ), Vector2( -106, 51 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("FourQuestions/Q1/Area2D/CollisionShape2D:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 4, 4.5, 6.6, 7.1, 11.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true, false, true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("FourQuestions/Q2/Area2D/CollisionShape2D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 4, 4.5, 6.6, 8.1, 11.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true, false, true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("FourQuestions/Q3/Area2D/CollisionShape2D:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 4, 4.5, 6.6, 9.2, 11.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true, false, true ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("FourQuestions/Q4/Area2D/CollisionShape2D:disabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 4, 4.5, 6.6, 10.3, 11.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true, false, true ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("FourQuestions/Q1:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 6.6, 7.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("FourQuestions/Q2:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 6.6, 8.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("FourQuestions/Q3:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 6.6, 9.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("FourQuestions/Q4:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 6.6, 10.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("FourQuestions/Q1:rect_rotation")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 6.6, 7.1, 11.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 46.5, 46.5 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("FourQuestions/Q2:rect_rotation")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 6.6, 8.1, 11.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, -15.5, -15.5 ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("FourQuestions/Q3:rect_rotation")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 6.6, 9.2, 11.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 77.4, 77.4 ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("FourQuestions/Q4:rect_rotation")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 6.6, 10.3, 11.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, -15.5, -15.5 ]
 }
 
 [sub_resource type="Animation" id=13]
@@ -235,9 +660,9 @@ tracks/1/keys = {
 "values": [ 0.0, 0.0, -90.0 ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "Fight"
-length = 30.0
+[sub_resource type="Animation" id=22]
+resource_name = "AfterFight"
+length = 6.5
 tracks/0/type = "method"
 tracks/0/path = NodePath(".")
 tracks/0/interp = 1
@@ -245,8 +670,82 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.4, 4.4, 8 ),
+"times": PoolRealArray( 0, 1, 6.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "blink"
+}, {
+"args": [  ],
+"method": "blink"
+}, {
+"args": [  ],
+"method": "win_animation"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Student/Label2:percent_visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1, 3, 3.8, 3.9, 4.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0, 1.0, 0.0, 1.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Student/Label2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1, 3, 6.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Student/Label2:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1, 3.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "I think I get it...", "Thanks!" ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("CoffePlayer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "toggle_active"
+} ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Fight"
+length = 41.0
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.4, 4.4, 8, 20.5, 23.5, 28.7, 41 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "values": [ {
 "args": [  ],
 "method": "upper_attack"
@@ -256,6 +755,18 @@ tracks/0/keys = {
 }, {
 "args": [  ],
 "method": "rotating_attack"
+}, {
+"args": [  ],
+"method": "upper_attack"
+}, {
+"args": [  ],
+"method": "bottom_attack"
+}, {
+"args": [  ],
+"method": "four_questions"
+}, {
+"args": [  ],
+"method": "end_fight"
 } ]
 }
 tracks/1/type = "method"
@@ -265,8 +776,8 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 2.6, 3.2, 3.6, 4, 7.4, 8, 17, 18.5, 19.5, 20 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 2.6, 3.2, 3.6, 4, 7.4, 8, 17, 18.5, 19.5, 20, 26.5, 27.4, 27.9, 28.5, 40.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "values": [ {
 "args": [  ],
 "method": "raise_hand"
@@ -300,6 +811,21 @@ tracks/1/keys = {
 }, {
 "args": [  ],
 "method": "raise_hand"
+}, {
+"args": [  ],
+"method": "lower_hand"
+}, {
+"args": [  ],
+"method": "blink"
+}, {
+"args": [  ],
+"method": "blink"
+}, {
+"args": [  ],
+"method": "raise_hand"
+}, {
+"args": [  ],
+"method": "lower_hand"
 } ]
 }
 
@@ -378,6 +904,19 @@ tracks/4/keys = {
 "update": 1,
 "values": [ true, true, false ]
 }
+tracks/5/type = "value"
+tracks/5/path = NodePath("Student/Label2:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Actually, I have
+a few more questions..." ]
+}
 
 [sub_resource type="Animation" id=4]
 length = 0.001
@@ -405,6 +944,42 @@ tracks/1/keys = {
 "update": 0,
 "values": [ true ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Student/Label2:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "Actually, I have
+a few more questions..." ]
+}
+
+[sub_resource type="Curve" id=19]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.258427, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.707865, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0875 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=20]
+curve = SubResource( 19 )
+
+[sub_resource type="ParticlesMaterial" id=21]
+lifetime_randomness = 0.48
+emission_shape = 2
+emission_box_extents = Vector3( 200, 150, 1 )
+flag_disable_z = true
+direction = Vector3( 0, 0, 0 )
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 4.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = -99.8
+angle_random = 0.26
+scale = 0.15
+scale_curve = SubResource( 20 )
+color = Color( 1, 0.960784, 0.839216, 0.623529 )
 
 [node name="BossFight" type="Node2D"]
 script = ExtResource( 6 )
@@ -567,10 +1142,83 @@ monitoring = false
 position = Vector2( 69.5, 12.25 )
 shape = SubResource( 9 )
 
+[node name="FourQuestions" type="Node2D" parent="Questions"]
+visible = false
+position = Vector2( 255, 136.75 )
+
+[node name="Q1" type="Label" parent="Questions/FourQuestions"]
+margin_left = -241.0
+margin_top = -65.0
+margin_right = -126.0
+margin_bottom = -40.0
+theme = ExtResource( 2 )
+text = "NullPointerException"
+
+[node name="Area2D" type="Area2D" parent="Questions/FourQuestions/Q1"]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Questions/FourQuestions/Q1/Area2D"]
+position = Vector2( 58, 12.25 )
+shape = SubResource( 15 )
+
+[node name="Q2" type="Label" parent="Questions/FourQuestions"]
+margin_left = -241.0
+margin_top = -29.0
+margin_right = -87.0
+margin_bottom = -4.0
+theme = ExtResource( 2 )
+text = "IndexOutOfBoundsException"
+
+[node name="Area2D" type="Area2D" parent="Questions/FourQuestions/Q2"]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Questions/FourQuestions/Q2/Area2D"]
+position = Vector2( 78, 12.25 )
+shape = SubResource( 16 )
+
+[node name="Q3" type="Label" parent="Questions/FourQuestions"]
+margin_left = -241.0
+margin_top = 9.0
+margin_right = -87.0
+margin_bottom = 34.0
+theme = ExtResource( 2 )
+text = "AssertionError"
+
+[node name="Area2D" type="Area2D" parent="Questions/FourQuestions/Q3"]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Questions/FourQuestions/Q3/Area2D"]
+position = Vector2( 43.5, 12.25 )
+shape = SubResource( 17 )
+
+[node name="Q4" type="Label" parent="Questions/FourQuestions"]
+margin_left = -241.0
+margin_top = 42.0
+margin_right = -87.0
+margin_bottom = 67.0
+theme = ExtResource( 2 )
+text = "FileNotFoundException"
+
+[node name="Area2D" type="Area2D" parent="Questions/FourQuestions/Q4"]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Questions/FourQuestions/Q4/Area2D"]
+position = Vector2( 62.5, 12.25 )
+shape = SubResource( 18 )
+
 [node name="Attack" type="AnimationPlayer" parent="Questions"]
 unique_name_in_owner = true
 anims/RESET = SubResource( 10 )
 anims/bottom_attack = SubResource( 12 )
+anims/four_questions = SubResource( 14 )
 anims/rotating_attack = SubResource( 13 )
 anims/upper_attack = SubResource( 11 )
 
@@ -578,7 +1226,8 @@ anims/upper_attack = SubResource( 11 )
 position = Vector2( 255, 178 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "PreFight"
+autoplay = "AfterFight"
+anims/AfterFight = SubResource( 22 )
 anims/Fight = SubResource( 5 )
 anims/PreFight = SubResource( 3 )
 anims/RESET = SubResource( 4 )
@@ -631,3 +1280,12 @@ margin_bottom = 14.5
 theme = ExtResource( 8 )
 text = "You Made It"
 align = 1
+
+[node name="Particles2D" type="Particles2D" parent="."]
+pause_mode = 2
+position = Vector2( 249, 149 )
+amount = 50
+lifetime = 10.0
+preprocess = 22.02
+process_material = SubResource( 21 )
+texture = ExtResource( 9 )
