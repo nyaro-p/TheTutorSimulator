@@ -122,9 +122,9 @@ anims/RESET = SubResource( 1 )
 anims/move_in = SubResource( 2 )
 
 [node name="Buttons" type="Control" parent="."]
-margin_left = 193.0
+margin_left = 217.0
 margin_top = 223.0
-margin_right = 233.0
+margin_right = 257.0
 margin_bottom = 263.0
 
 [node name="HomeButton" type="TextureButton" parent="Buttons"]
@@ -147,6 +147,7 @@ texture_hover = ExtResource( 11 )
 texture_focused = ExtResource( 11 )
 
 [node name="NextButton" type="TextureButton" parent="Buttons"]
+visible = false
 margin_left = 100.0
 margin_right = 230.0
 margin_bottom = 87.0

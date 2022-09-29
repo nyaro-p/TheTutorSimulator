@@ -1,0 +1,519 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Assets/Ground.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Fonts/DialoguedFont.tres" type="Theme" id=2]
+[ext_resource path="res://Prefabs/Student/Assets/Students_Spritesheet.png" type="Texture" id=3]
+[ext_resource path="res://Prefabs/Student/Assets/Student4_raised_hand.png" type="Texture" id=4]
+[ext_resource path="res://Prefabs/Student/Assets/Students_Spritesheet_blinking.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/SceneScripts/BossFight.gd" type="Script" id=6]
+[ext_resource path="res://Prefabs/Player/CoffeePlayer/CoffePlayer.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Fonts/MenuFont.tres" type="Theme" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+resource_local_to_scene = true
+extents = Vector2( 79, 3 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 3, 80 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 61.5, 8.5 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 44, 8.5 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 88.5, 8.5 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 71.5, 10 )
+
+[sub_resource type="Animation" id=5]
+resource_name = "Fight"
+length = 40.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Questions/Questions1:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5, 3.5, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 194, -75.25 ), Vector2( 194, 97.75 ), Vector2( 194, 157.088 ), Vector2( 180, 366.988 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Questions/Questions1:rect_rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 3.5, 3.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -90.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Questions/Questions2:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 4, 6, 8, 8.1, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 194, 257.375 ), Vector2( 194, 263.75 ), Vector2( 194, 200 ), Vector2( 194, 94.75 ), Vector2( 294, 94.75 ), Vector2( 294, -30 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Questions/Questions2:rect_rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 8, 8.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, -90.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Questions/RotatingPivot:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 10, 12.5, 15 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 90.0, 90.0, 360.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Questions/RotatingPivot/Questions3:rect_position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 10, 11, 12, 14, 19.5, 20.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -83, -400 ), Vector2( -83, -78.614 ), Vector2( -83, -71 ), Vector2( -83, -54.243 ), Vector2( -83, -54.243 ), Vector2( -83, -300 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Questions/RotatingPivot/Questions4:rect_position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 10, 11, 12, 14, 19.5, 20.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -66, 400 ), Vector2( -66, 60 ), Vector2( -66, 43 ), Vector2( -66, 28.333 ), Vector2( -66, 28.333 ), Vector2( -66, 200 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Questions/RotatingPivot:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 15, 16, 17.5, 19.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 255, 137.75 ), Vector2( 255, 137.75 ), Vector2( 255, 109.463 ), Vector2( 255, 154.45 ) ]
+}
+tracks/8/type = "method"
+tracks/8/path = NodePath(".")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 21 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "win_animation"
+} ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "PreFight"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Student/Label2:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "
+", "Actually,", "Actually, I have...", "Actually, I have
+a few more questions...", "" ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("CoffePlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "toggle_active"
+}, {
+"args": [  ],
+"method": "toggle_active"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "start_fight"
+} ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Student/Label2:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "Actually," ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Questions/Questions1:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 194, -75.25 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Questions/Questions1:rect_rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Questions/Questions2:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 194, 263.75 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Questions/Questions2:rect_rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -90.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Questions/RotatingPivot:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 90.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Questions/RotatingPivot/Questions3:rect_position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -83, -400 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Questions/RotatingPivot/Questions4:rect_position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -66, 400 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Questions/RotatingPivot:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 255, 137.75 ) ]
+}
+
+[node name="BossFight" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="Floor" type="TextureRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 1 )
+stretch_mode = 2
+
+[node name="Field" type="StaticBody2D" parent="."]
+
+[node name="Gray" type="ColorRect" parent="Field"]
+margin_left = 175.0
+margin_top = 100.25
+margin_right = 335.0
+margin_bottom = 260.25
+color = Color( 0.356863, 0.341176, 0.356863, 1 )
+
+[node name="WhiteRect" type="ColorRect" parent="Field"]
+margin_left = 180.0
+margin_top = 105.25
+margin_right = 330.0
+margin_bottom = 255.25
+color = Color( 0.8, 0.792157, 0.807843, 1 )
+
+[node name="Upper" type="CollisionShape2D" parent="Field"]
+position = Vector2( 255, 102 )
+shape = SubResource( 1 )
+
+[node name="Bottom" type="CollisionShape2D" parent="Field"]
+position = Vector2( 255, 258 )
+shape = SubResource( 1 )
+
+[node name="Left" type="CollisionShape2D" parent="Field"]
+position = Vector2( 177, 180 )
+shape = SubResource( 2 )
+
+[node name="Right" type="CollisionShape2D" parent="Field"]
+position = Vector2( 333, 180 )
+shape = SubResource( 2 )
+
+[node name="Student" type="Node2D" parent="."]
+
+[node name="Person" type="Sprite" parent="Student"]
+unique_name_in_owner = true
+position = Vector2( 256, 65 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+hframes = 9
+frame = 3
+
+[node name="PersonBlinking" type="Sprite" parent="Student"]
+unique_name_in_owner = true
+visible = false
+position = Vector2( 256, 65 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+hframes = 9
+frame = 3
+
+[node name="RaisingHand" type="Sprite" parent="Student"]
+unique_name_in_owner = true
+visible = false
+position = Vector2( 262, 65 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="Label2" type="Label" parent="Student"]
+margin_left = 156.0
+margin_top = 72.0
+margin_right = 362.0
+margin_bottom = 97.0
+theme = ExtResource( 2 )
+custom_constants/line_spacing = -10
+text = "Actually,"
+align = 1
+
+[node name="Questions" type="Node2D" parent="."]
+position = Vector2( 0, 41.25 )
+
+[node name="Questions1" type="Label" parent="Questions"]
+margin_left = 194.0
+margin_top = -75.25
+margin_right = 315.999
+margin_bottom = -50.25
+theme = ExtResource( 2 )
+text = "How do I run code?"
+align = 1
+
+[node name="Area2D" type="Area2D" parent="Questions/Questions1"]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Questions/Questions1/Area2D"]
+position = Vector2( 60.5, 12.25 )
+shape = SubResource( 6 )
+
+[node name="Questions2" type="Label" parent="Questions"]
+margin_left = 194.0
+margin_top = 263.75
+margin_right = 316.0
+margin_bottom = 288.75
+rect_rotation = -90.0
+theme = ExtResource( 2 )
+text = "What is a Class?"
+align = 1
+
+[node name="Area2D" type="Area2D" parent="Questions/Questions2"]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Questions/Questions2/Area2D"]
+position = Vector2( 59, 12.25 )
+shape = SubResource( 7 )
+
+[node name="RotatingPivot" type="Node2D" parent="Questions"]
+position = Vector2( 255, 137.75 )
+rotation = 1.5708
+
+[node name="Questions3" type="Label" parent="Questions/RotatingPivot"]
+margin_left = -83.0
+margin_top = -400.0
+margin_right = 93.0
+margin_bottom = -375.0
+theme = ExtResource( 2 )
+text = "Question: how to print in Java???"
+align = 1
+
+[node name="Area2D" type="Area2D" parent="Questions/RotatingPivot/Questions3"]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Questions/RotatingPivot/Questions3/Area2D"]
+position = Vector2( 88.5, 12.25 )
+shape = SubResource( 8 )
+
+[node name="Questions4" type="Label" parent="Questions/RotatingPivot"]
+margin_left = -66.0
+margin_top = 400.0
+margin_right = 75.0
+margin_bottom = 425.0
+theme = ExtResource( 2 )
+text = "Wow, it is easier in Python!"
+align = 1
+
+[node name="Area2D" type="Area2D" parent="Questions/RotatingPivot/Questions4"]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Questions/RotatingPivot/Questions4/Area2D"]
+position = Vector2( 69.5, 12.25 )
+shape = SubResource( 9 )
+
+[node name="CoffePlayer" parent="." instance=ExtResource( 7 )]
+position = Vector2( 255, 178 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Fight"
+anims/Fight = SubResource( 5 )
+anims/PreFight = SubResource( 3 )
+anims/RESET = SubResource( 4 )
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Lost" type="Control" parent="UI"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="UI/Lost"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Lost" type="Label" parent="UI/Lost"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -41.0
+margin_top = -14.5
+margin_right = 41.0
+margin_bottom = 14.5
+theme = ExtResource( 8 )
+text = "You Lost"
+align = 1
+valign = 1
+
+[node name="Won" type="Control" parent="UI"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="UI/Won"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.54902, 0.945098, 0.984314, 1 )
+
+[node name="Lost" type="Label" parent="UI/Won"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -57.0
+margin_top = -14.5
+margin_right = 57.0
+margin_bottom = 14.5
+theme = ExtResource( 8 )
+text = "You Made It"
+align = 1
