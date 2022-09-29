@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Assets/Ground.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Fonts/DialoguedFont.tres" type="Theme" id=2]
@@ -28,173 +28,10 @@ extents = Vector2( 88.5, 8.5 )
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 71.5, 10 )
 
-[sub_resource type="Animation" id=5]
-resource_name = "Fight"
-length = 40.0
-tracks/0/type = "value"
-tracks/0/path = NodePath("Questions/Questions1:rect_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1.5, 3.5, 4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 194, -75.25 ), Vector2( 194, 97.75 ), Vector2( 194, 157.088 ), Vector2( 180, 366.988 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Questions/Questions1:rect_rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 3.5, 3.7 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, -90.0 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Questions/Questions2:rect_position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 4, 6, 8, 8.1, 9 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 194, 257.375 ), Vector2( 194, 263.75 ), Vector2( 194, 200 ), Vector2( 194, 94.75 ), Vector2( 294, 94.75 ), Vector2( 294, -30 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Questions/Questions2:rect_rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 8, 8.3 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ 0.0, 0.0, -90.0 ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("Questions/RotatingPivot:rotation_degrees")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 10, 12.5, 15 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ 90.0, 90.0, 360.0 ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("Questions/RotatingPivot/Questions3:rect_position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 10, 11, 12, 14, 19.5, 20.2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( -83, -400 ), Vector2( -83, -78.614 ), Vector2( -83, -71 ), Vector2( -83, -54.243 ), Vector2( -83, -54.243 ), Vector2( -83, -300 ) ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("Questions/RotatingPivot/Questions4:rect_position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 10, 11, 12, 14, 19.5, 20.2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( -66, 400 ), Vector2( -66, 60 ), Vector2( -66, 43 ), Vector2( -66, 28.333 ), Vector2( -66, 28.333 ), Vector2( -66, 200 ) ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("Questions/RotatingPivot:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 15, 16, 17.5, 19.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 255, 137.75 ), Vector2( 255, 137.75 ), Vector2( 255, 109.463 ), Vector2( 255, 154.45 ) ]
-}
-tracks/8/type = "method"
-tracks/8/path = NodePath(".")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 21 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "win_animation"
-} ]
-}
-
-[sub_resource type="Animation" id=3]
-resource_name = "PreFight"
-length = 4.0
-tracks/0/type = "value"
-tracks/0/path = NodePath("Student/Label2:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1, 2, 3, 4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ "
-", "Actually,", "Actually, I have...", "Actually, I have
-a few more questions...", "" ]
-}
-tracks/1/type = "method"
-tracks/1/path = NodePath("CoffePlayer")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"values": [ {
-"args": [  ],
-"method": "toggle_active"
-}, {
-"args": [  ],
-"method": "toggle_active"
-} ]
-}
-tracks/2/type = "method"
-tracks/2/path = NodePath(".")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 4 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "start_fight"
-} ]
-}
-
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=10]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("Student/Label2:text")
+tracks/0/path = NodePath("Q1Pivot:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -203,34 +40,34 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ "Actually," ]
+"values": [ Vector2( 198, -69.25 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Questions/Questions1:rect_position")
+tracks/1/path = NodePath("Q1Pivot:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 194, -75.25 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Questions/Questions1:rect_rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Q2Pivot:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 209, 275.75 ) ]
+}
 tracks/3/type = "value"
-tracks/3/path = NodePath("Questions/Questions2:rect_position")
+tracks/3/path = NodePath("Q2Pivot:rotation_degrees")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -239,10 +76,10 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 194, 263.75 ) ]
+"values": [ 0.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Questions/Questions2:rect_rotation")
+tracks/4/path = NodePath("DoublePivot:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -251,10 +88,10 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -90.0 ]
+"values": [ Vector2( 255, 137.75 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Questions/RotatingPivot:rotation_degrees")
+tracks/5/path = NodePath("DoublePivot:rotation_degrees")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -266,7 +103,7 @@ tracks/5/keys = {
 "values": [ 90.0 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Questions/RotatingPivot/Questions3:rect_position")
+tracks/6/path = NodePath("DoublePivot/Questions3:rect_position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -278,7 +115,7 @@ tracks/6/keys = {
 "values": [ Vector2( -83, -400 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Questions/RotatingPivot/Questions4:rect_position")
+tracks/7/path = NodePath("DoublePivot/Questions4:rect_position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -289,17 +126,284 @@ tracks/7/keys = {
 "update": 0,
 "values": [ Vector2( -66, 400 ) ]
 }
-tracks/8/type = "value"
-tracks/8/path = NodePath("Questions/RotatingPivot:position")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
+
+[sub_resource type="Animation" id=12]
+resource_name = "bottom_attack"
+length = 3.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Q2Pivot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5, 1.6, 1.8, 2, 2.2, 2.9, 3.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 318, 275.75 ), Vector2( 318, 188.75 ), Vector2( 298, 174.25 ), Vector2( 338, 159.75 ), Vector2( 298, 145.25 ), Vector2( 338, 130.75 ), Vector2( 318, 80 ), Vector2( 318, -200 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Q2Pivot:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.7, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, -90.0 ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "rotating_attack"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("DoublePivot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 4.6, 6, 8, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 255, 137.75 ), Vector2( 255, 137.75 ), Vector2( 255, 137.75 ), Vector2( 255, 69.75 ), Vector2( 255, 210.75 ), Vector2( 255, 137.75 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("DoublePivot:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 3, 3.01, 4.62 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 90.0, 90.0, -360.0, 360.0, -360.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("DoublePivot/Questions3:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1, 4.62, 9, 9.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -83, -400 ), Vector2( -83, -104 ), Vector2( -83, -55 ), Vector2( -83, -55 ), Vector2( -83, -251 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("DoublePivot/Questions4:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1, 4.62, 9, 9.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -66, 400 ), Vector2( -66, 78 ), Vector2( -66, 29 ), Vector2( -66, 29 ), Vector2( -66, 181 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "upper_attack"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Q1Pivot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2.7, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 198, -69.25 ), Vector2( 198, 65.75 ), Vector2( 198, 170.755 ), Vector2( 198, 400 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Q1Pivot:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.5, 2.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, -90.0 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Fight"
+length = 30.0
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.4, 4.4, 8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "upper_attack"
+}, {
+"args": [  ],
+"method": "bottom_attack"
+}, {
+"args": [  ],
+"method": "rotating_attack"
+} ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.6, 3.2, 3.6, 4, 7.4, 8, 17, 18.5, 19.5, 20 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "raise_hand"
+}, {
+"args": [  ],
+"method": "lower_hand"
+}, {
+"args": [  ],
+"method": "blink"
+}, {
+"args": [  ],
+"method": "blink"
+}, {
+"args": [  ],
+"method": "raise_hand"
+}, {
+"args": [  ],
+"method": "lower_hand"
+}, {
+"args": [  ],
+"method": "raise_hand"
+}, {
+"args": [  ],
+"method": "lower_hand"
+}, {
+"args": [  ],
+"method": "blink"
+}, {
+"args": [  ],
+"method": "blink"
+}, {
+"args": [  ],
+"method": "raise_hand"
+} ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "PreFight"
+length = 8.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("CoffePlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "toggle_active"
+}, {
+"args": [  ],
+"method": "toggle_active"
+} ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 8 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "start_fight"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Student/Label2:percent_visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 4.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 6.3, 7.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "blink"
+}, {
+"args": [  ],
+"method": "blink"
+} ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Student/Label2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 6.1, 6.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, false ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Student/Label2:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 255, 137.75 ) ]
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Student/Label2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
 }
 
 [node name="BossFight" type="Node2D"]
@@ -377,54 +481,57 @@ margin_right = 362.0
 margin_bottom = 97.0
 theme = ExtResource( 2 )
 custom_constants/line_spacing = -10
-text = "Actually,"
+text = "Actually, I have
+a few more questions..."
 align = 1
+percent_visible = 0.0
 
 [node name="Questions" type="Node2D" parent="."]
 position = Vector2( 0, 41.25 )
 
-[node name="Questions1" type="Label" parent="Questions"]
-margin_left = 194.0
-margin_top = -75.25
-margin_right = 315.999
-margin_bottom = -50.25
+[node name="Q1Pivot" type="Node2D" parent="Questions"]
+position = Vector2( 198, -69.25 )
+
+[node name="Questions1" type="Label" parent="Questions/Q1Pivot"]
+margin_right = 121.999
+margin_bottom = 25.0
 theme = ExtResource( 2 )
 text = "How do I run code?"
 align = 1
 
-[node name="Area2D" type="Area2D" parent="Questions/Questions1"]
+[node name="Area2D" type="Area2D" parent="Questions/Q1Pivot/Questions1"]
 collision_layer = 4
 collision_mask = 0
 monitoring = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Questions/Questions1/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Questions/Q1Pivot/Questions1/Area2D"]
 position = Vector2( 60.5, 12.25 )
 shape = SubResource( 6 )
 
-[node name="Questions2" type="Label" parent="Questions"]
-margin_left = 194.0
-margin_top = 263.75
-margin_right = 316.0
-margin_bottom = 288.75
-rect_rotation = -90.0
+[node name="Q2Pivot" type="Node2D" parent="Questions"]
+position = Vector2( 209, 275.75 )
+
+[node name="Questions2" type="Label" parent="Questions/Q2Pivot"]
+margin_left = -122.0
+margin_bottom = 25.0
 theme = ExtResource( 2 )
 text = "What is a Class?"
 align = 1
 
-[node name="Area2D" type="Area2D" parent="Questions/Questions2"]
+[node name="Area2D" type="Area2D" parent="Questions/Q2Pivot/Questions2"]
 collision_layer = 4
 collision_mask = 0
 monitoring = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Questions/Questions2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Questions/Q2Pivot/Questions2/Area2D"]
 position = Vector2( 59, 12.25 )
 shape = SubResource( 7 )
 
-[node name="RotatingPivot" type="Node2D" parent="Questions"]
+[node name="DoublePivot" type="Node2D" parent="Questions"]
 position = Vector2( 255, 137.75 )
 rotation = 1.5708
 
-[node name="Questions3" type="Label" parent="Questions/RotatingPivot"]
+[node name="Questions3" type="Label" parent="Questions/DoublePivot"]
 margin_left = -83.0
 margin_top = -400.0
 margin_right = 93.0
@@ -433,16 +540,16 @@ theme = ExtResource( 2 )
 text = "Question: how to print in Java???"
 align = 1
 
-[node name="Area2D" type="Area2D" parent="Questions/RotatingPivot/Questions3"]
+[node name="Area2D" type="Area2D" parent="Questions/DoublePivot/Questions3"]
 collision_layer = 4
 collision_mask = 0
 monitoring = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Questions/RotatingPivot/Questions3/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Questions/DoublePivot/Questions3/Area2D"]
 position = Vector2( 88.5, 12.25 )
 shape = SubResource( 8 )
 
-[node name="Questions4" type="Label" parent="Questions/RotatingPivot"]
+[node name="Questions4" type="Label" parent="Questions/DoublePivot"]
 margin_left = -66.0
 margin_top = 400.0
 margin_right = 75.0
@@ -451,20 +558,27 @@ theme = ExtResource( 2 )
 text = "Wow, it is easier in Python!"
 align = 1
 
-[node name="Area2D" type="Area2D" parent="Questions/RotatingPivot/Questions4"]
+[node name="Area2D" type="Area2D" parent="Questions/DoublePivot/Questions4"]
 collision_layer = 4
 collision_mask = 0
 monitoring = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Questions/RotatingPivot/Questions4/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Questions/DoublePivot/Questions4/Area2D"]
 position = Vector2( 69.5, 12.25 )
 shape = SubResource( 9 )
+
+[node name="Attack" type="AnimationPlayer" parent="Questions"]
+unique_name_in_owner = true
+anims/RESET = SubResource( 10 )
+anims/bottom_attack = SubResource( 12 )
+anims/rotating_attack = SubResource( 13 )
+anims/upper_attack = SubResource( 11 )
 
 [node name="CoffePlayer" parent="." instance=ExtResource( 7 )]
 position = Vector2( 255, 178 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "Fight"
+autoplay = "PreFight"
 anims/Fight = SubResource( 5 )
 anims/PreFight = SubResource( 3 )
 anims/RESET = SubResource( 4 )

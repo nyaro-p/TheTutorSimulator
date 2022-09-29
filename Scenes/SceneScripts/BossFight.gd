@@ -1,7 +1,7 @@
 extends Node2D
 
 onready var player := $CoffePlayer
-
+onready var attack := $"%Attack"
 
 func _ready() -> void:
 	var fadeIn = GlobalStats.FadeIn.instance()
@@ -13,9 +13,34 @@ func _ready() -> void:
 	$UI/Lost.visible = false
 	$UI/Won.visible = false
 
-	
+
 func start_fight() -> void:
 	$AnimationPlayer.play("Fight")
+
+#### Attacks ####
+
+func upper_attack():
+	attack.play("upper_attack")
+
+func bottom_attack() -> void:
+	attack.play("bottom_attack")
+
+func rotating_attack() -> void:
+	attack.play("rotating_attack")
+
+#### Student ####
+
+func raise_hand() -> void:
+	$"%Person".visible = false
+	$"%RaisingHand".visible = true
+
+func lower_hand() -> void:
+	$"%Person".visible = true
+	$"%RaisingHand".visible = false
+	
+func blink() -> void:
+	$"%Person".visible = !$"%Person".visible
+	$"%PersonBlinking".visible = !$"%PersonBlinking".visible
 
 #### Lost ###
 
