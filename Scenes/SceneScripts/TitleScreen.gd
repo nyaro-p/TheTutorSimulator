@@ -4,11 +4,11 @@ onready var Options = preload("res://Prefabs/UI/Options.tscn")
 onready var LevelChoice = preload("res://Prefabs/UI/LevelChoice.tscn")
 
 func _ready() -> void:
-	GlobalStats.set_current_scene_id(0)
+	GlobalStats.set_current_scene_id(self)
 	GlobalAudio.play_track("TitleScreenMusic")
 	$Buttons/Play.grab_focus()
 	$Buttons/ChooseLevel.visible = false
-	if GlobalStats.tutorial_shown:
+	if GlobalStats.scene_reached > 0:
 		$Buttons/ChooseLevel.visible = true
 		$Buttons.rect_position.y -= 20
 		
@@ -17,11 +17,10 @@ func _on_Play_pressed() -> void:
 	GlobalAudio.play_sound("ButtonPressed")
 	var fadeOut = GlobalStats.FadeOut.instance()
 	add_child(fadeOut)
-	if !GlobalStats.tutorial_shown:
+	if GlobalStats.scene_reached == 0:
 		fadeOut.configure(GlobalStats.get_next_scene())
-		GlobalStats.tutorial_shown = true
 	else:
-		fadeOut.configure(GlobalStats.get_next_scene(3))
+		fadeOut.configure(GlobalStats.get_next_scene(3)) #change to path?
 
 
 func _on_ChooseLevel_pressed() -> void:

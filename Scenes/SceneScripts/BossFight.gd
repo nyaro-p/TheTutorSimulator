@@ -4,7 +4,7 @@ onready var player := $CoffePlayer
 onready var attack := $"%Attack"
 
 func _ready() -> void:
-	GlobalStats.set_current_scene_id(GlobalStats.scenes.find(get_tree().current_scene.filename))
+	GlobalStats.set_current_scene_id(self)
 	var fadeIn = GlobalStats.FadeIn.instance()
 	$UI.add_child(fadeIn)
 	player.connect("lost", self, "restart")#"lost_animation")

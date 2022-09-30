@@ -17,44 +17,43 @@ func _ready() -> void:
 	$"%Level3".visible = false
 	$"%Boss".visible = false
 	
-	if GlobalStats.level_reached < 3:
+	if GlobalStats.scene_reached < 3:
 		$"%BackButton".grab_focus()
 	previous_button = $"%BackButton"
 	
-	if GlobalStats.level_reached >= 6:
+	if GlobalStats.scene_reached >= 6:
 		$"%Boss".visible = true
 		$"%Boss".grab_focus()
 		
 		set_top_and_bottom($"%Boss", previous_button)
 		previous_button = $"%Boss"
 	
-	if GlobalStats.level_reached >= 5:
+	if GlobalStats.scene_reached >= 5:
 		$"%Level3".visible = true
 		$"%Level3".grab_focus()
 		
 		set_top_and_bottom($"%Level3", previous_button)
 		previous_button = $"%Level3"
 	
-	if GlobalStats.level_reached >= 4:
+	if GlobalStats.scene_reached >= 4:
 		$"%Level2".visible = true
 		$"%Level2".grab_focus()
 		
 		set_top_and_bottom($"%Level2", previous_button)
 		previous_button = $"%Level2"
 	
-	if GlobalStats.level_reached >= 3:
+	if GlobalStats.scene_reached >= 3:
 		$"%Level1".visible = true
 		$"%Level1".grab_focus()
 		
 		set_top_and_bottom($"%Level1", previous_button)
 		previous_button = $"%Level1"
 	
-	if GlobalStats.tutorial_shown or GlobalStats.level_reached > 0:
+	if GlobalStats.scene_reached > 0:
 		$"%Intro".visible = true
 		$"%Intro".grab_focus()
 		
-		$"%Level1".focus_neighbour_top = $"%Intro".get_path()
-		$"%Level1".focus_previous = $"%Intro".get_path()
+		set_top_and_bottom($"%Intro", previous_button)
 
 func set_top_and_bottom(current_node, bottom_node) -> void:
 	current_node.focus_neighbour_bottom = bottom_node.get_path()

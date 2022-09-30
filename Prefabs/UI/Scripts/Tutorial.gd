@@ -12,7 +12,7 @@ func _ready() -> void:
 	var tween := create_tween().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property($New/First, "modulate", Color(1, 1, 1, 1), 1.0)
 
-func _input(event: InputEvent) -> void:
+func _input(_event: InputEvent) -> void:
 	if Input.is_action_pressed("ui_select"):
 		match step:
 			0:

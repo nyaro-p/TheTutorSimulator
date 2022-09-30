@@ -8,8 +8,7 @@ onready var FadeIn = preload("res://Effects/FadeIn.tscn") as PackedScene
 
 var controller := false
 var happiness := 0.5
-var tutorial_shown := true
-var level_reached := 6
+var scene_reached := 0
 
 var current_scene := 0
 
@@ -51,9 +50,10 @@ func toggle_fullscreen() -> void:
 	OS.window_fullscreen = !OS.window_fullscreen
 	fullscreen = OS.window_fullscreen
 
-func set_current_scene_id(id) -> void:
-	current_scene = id
-	level_reached = max(level_reached, current_scene)
+func set_current_scene_id(scene) -> void:
+	current_scene = scenes.find(scene.get_tree().current_scene.filename)
+# warning-ignore:narrowing_conversion
+	scene_reached = max(scene_reached, current_scene)
 
 func get_next_scene(id:= -100) -> String:
 	if current_scene + 1 < scenes.size():
@@ -65,5 +65,5 @@ func get_next_scene(id:= -100) -> String:
 		current_scene = 0
 	
 # warning-ignore:narrowing_conversion
-	level_reached = max(level_reached, current_scene)
+	scene_reached = max(scene_reached, current_scene)
 	return scenes[current_scene]

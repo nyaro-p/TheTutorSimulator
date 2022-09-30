@@ -24,7 +24,7 @@ export var min_item_rate_time := 2.0
 export var max_item_rate_time := 1
 
 func _ready() -> void:
-	GlobalStats.set_current_scene_id(GlobalStats.scenes.find(get_tree().current_scene.filename))
+	GlobalStats.set_current_scene_id(self)
 	GlobalStats.set_level_status(GlobalStats.GAME_ON)
 	#GlobalAudio.play_track("ClassroomMusic")
 	var fadeIn = GlobalStats.FadeIn.instance()
@@ -61,6 +61,10 @@ func _ready() -> void:
 	player.connect("coffee_collected", self, "adjust_manometer")
 	
 	UI.clock.set_clock_time(tut_time)
+	
+	#fixes impossible level 1
+	if level_id == 1:
+		UI.happyOMeter.adjust(1.0)
 	
 
 #Called by questionTimer, picks a student to start a question,
