@@ -17,7 +17,6 @@ func _ready() -> void:
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("pause_screen"):
-		GlobalAudio.play_sound("ButtonPressed")
 		emit_signal("options_closed")
 		queue_free()
 

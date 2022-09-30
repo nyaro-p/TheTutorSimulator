@@ -2,6 +2,7 @@ extends Node2D
 
 onready var Coffee := preload("res://Prefabs/Items/Coffee/Coffee.tscn")
 onready var CoffeeEffect := preload("res://Effects/CoffeeEffect.tscn")
+onready var LevelEffect := preload("res://Prefabs/UI/LevelName.tscn")
 
 onready var player := $"%Player" as KinematicBody2D
 onready var students := $"%Students" as YSort
@@ -11,29 +12,37 @@ onready var itemTimer := $ItemTimer as Timer
 #UI
 onready var UI := $"%UI" as CanvasLayer
 
-
+#for Label at Beginning
+export var level_id := 0
 #time to be "survived"
-var tut_time := 50.0
+export var tut_time := 50.0
 #rate of questions
-var question_rate_time := 2
+export var min_question_rate_time := 4.0
+export var max_question_rate_time := 2
 #rate of tem drops
-var item_rate_time := 1
+export var min_item_rate_time := 2.0
+export var max_item_rate_time := 1
 
 func _ready() -> void:
+	GlobalStats.set_current_scene_id(GlobalStats.scenes.find(get_tree().current_scene.filename))
 	GlobalStats.set_level_status(GlobalStats.GAME_ON)
 	#GlobalAudio.play_track("ClassroomMusic")
 	var fadeIn = GlobalStats.FadeIn.instance()
 	$UI.add_child(fadeIn)
+	
+	var levelEffect = LevelEffect.instance()
+	levelEffect.set_level(level_id)
+	$UI.add_child(levelEffect)
 	
 	get_tree().paused = true
 	UI.connect("animation_finished", self, "start_finished")
 	
 	randomize()
 	#Student questions
-	questionTimer.start(4.0 + randi() % question_rate_time)
+	questionTimer.start(min_question_rate_time + randi() % max_question_rate_time)
 	questionTimer.connect("timeout", self, "on_questionTimeout")
 	#Coffee dropping
-	itemTimer.start(2.0 + float(randi() % item_rate_time))
+	itemTimer.start(min_item_rate_time + float(randi() % max_item_rate_time))
 	itemTimer.connect("timeout", self, "on_itemTimeout")
 	
 	var children = students.get_children()
@@ -109,7 +118,7 @@ func on_itemTimeout() -> void:
 	
 	coffeeEffect.connect("finished", self, "start_coffee_animation", [coffee, end_position, direction])
 	
-	itemTimer.start(2.0 + float(randi() % item_rate_time))
+	itemTimer.start(min_item_rate_time + float(randi() % max_item_rate_time))
 
 #sets cofee flying
 func start_coffee_animation(coffee : Node2D, end_position : Vector2, direction : Vector2) -> void:

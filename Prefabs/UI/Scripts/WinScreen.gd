@@ -28,14 +28,14 @@ func _on_RestartButton_pressed() -> void:
 	GlobalAudio.play_sound("ButtonPressed")
 	var fadeOut = GlobalStats.FadeOut.instance()
 	add_child(fadeOut)
-	fadeOut.configure("res://Scenes/Classroom.tscn")
+	fadeOut.configure(get_tree().current_scene.filename)
 
 
 func _on_NextButton_pressed() -> void:
 	GlobalAudio.play_sound("ButtonPressed")
 	var fadeOut = GlobalStats.FadeOut.instance()
 	add_child(fadeOut)
-	fadeOut.configure("res://Scenes/BossFight.tscn")
+	fadeOut.configure(GlobalStats.get_next_scene())
 
 
 func _on_HomeButton_focus_entered() -> void:

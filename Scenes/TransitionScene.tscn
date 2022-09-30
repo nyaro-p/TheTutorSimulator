@@ -692,6 +692,7 @@ position = Vector2( 120, 180 )
 position = Vector2( 120, 295 )
 
 [node name="Student4" parent="Classroom/Room/Students" instance=ExtResource( 20 )]
+visible = false
 position = Vector2( 240, 65 )
 
 [node name="Student5" parent="Classroom/Room/Students" instance=ExtResource( 20 )]

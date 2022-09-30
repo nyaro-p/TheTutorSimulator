@@ -4,6 +4,7 @@ onready var player := $CoffePlayer
 onready var attack := $"%Attack"
 
 func _ready() -> void:
+	GlobalStats.set_current_scene_id(GlobalStats.scenes.find(get_tree().current_scene.filename))
 	var fadeIn = GlobalStats.FadeIn.instance()
 	$UI.add_child(fadeIn)
 	player.connect("lost", self, "restart")#"lost_animation")
@@ -64,7 +65,7 @@ func lost_animation() -> void:
 func restart() -> void:
 	var fadeOut = GlobalStats.FadeOut.instance()
 	$UI.add_child(fadeOut)
-	fadeOut.configure("res://Scenes/BossFight.tscn", Color(0, 0, 0, 1))
+	fadeOut.configure(get_tree().current_scene.filename, Color(0, 0, 0, 1))
 
 #### Won ###
 

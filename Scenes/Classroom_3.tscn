@@ -53,6 +53,9 @@ color = Color( 1, 0.960784, 0.839216, 0.623529 )
 
 [node name="Classroom" type="Node2D"]
 script = ExtResource( 3 )
+level_id = 3
+min_question_rate_time = 2.5
+max_question_rate_time = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 257, 150 )

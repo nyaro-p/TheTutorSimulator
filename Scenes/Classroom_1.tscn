@@ -1,0 +1,259 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://Prefabs/Student/Student.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Prefabs/Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/SceneScripts/GameController.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Ground.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Wall.png" type="Texture" id=5]
+[ext_resource path="res://Prefabs/UI/UI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Lightray.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Outside.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Outside2.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Sidebar_background.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Sidebar_entrance.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Pipes1.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Pipes2.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Poster.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Paricles/RoundParicle.png" type="Texture" id=19]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 660, 20 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 91.25, 345 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 105, 345 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 660.001, 36.25 )
+
+[sub_resource type="Curve" id=6]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.258427, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.707865, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0875 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=7]
+curve = SubResource( 6 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+lifetime_randomness = 0.48
+emission_shape = 2
+emission_box_extents = Vector3( 200, 150, 1 )
+flag_disable_z = true
+direction = Vector3( 0, 0, 0 )
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 4.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = -99.8
+angle_random = 0.26
+scale = 0.15
+scale_curve = SubResource( 7 )
+color = Color( 1, 0.960784, 0.839216, 0.623529 )
+
+[node name="Classroom" type="Node2D"]
+script = ExtResource( 3 )
+level_id = 1
+tut_time = 30.0
+min_question_rate_time = 5.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 257, 150 )
+current = true
+
+[node name="UI" parent="." instance=ExtResource( 6 )]
+unique_name_in_owner = true
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Floor" type="TextureRect" parent="Background"]
+margin_left = 79.0
+margin_top = 2.99998
+margin_right = 971.0
+margin_bottom = 799.0
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 4 )
+stretch_mode = 2
+
+[node name="Wall" type="TextureRect" parent="Background"]
+margin_left = 78.0
+margin_top = -2.0
+margin_right = 1867.0
+margin_bottom = 155.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 5 )
+stretch_mode = 2
+
+[node name="HallFloor" type="TextureRect" parent="Background"]
+margin_left = -7.0
+margin_right = 423.0
+margin_bottom = 1637.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 13 )
+stretch_mode = 2
+
+[node name="Pipes1" type="Sprite" parent="Background"]
+position = Vector2( 201, 11 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 16 )
+
+[node name="Pipes2" type="Sprite" parent="Background/Pipes1"]
+position = Vector2( -590, 475 )
+texture = ExtResource( 17 )
+
+[node name="Pipes3" type="Sprite" parent="Background/Pipes1"]
+position = Vector2( -590, 945 )
+texture = ExtResource( 17 )
+
+[node name="RoomOuterCollsions" type="StaticBody2D" parent="Background"]
+scale = Vector2( 0.4, 0.4 )
+
+[node name="Upper" type="CollisionShape2D" parent="Background/RoomOuterCollsions"]
+visible = false
+position = Vector2( 650, 55 )
+shape = SubResource( 1 )
+
+[node name="Left" type="CollisionShape2D" parent="Background/RoomOuterCollsions"]
+visible = false
+position = Vector2( 108.75, 422.5 )
+shape = SubResource( 2 )
+
+[node name="Right" type="CollisionShape2D" parent="Background/RoomOuterCollsions"]
+visible = false
+position = Vector2( 1187.5, 425 )
+shape = SubResource( 3 )
+
+[node name="Bottom" type="CollisionShape2D" parent="Background/RoomOuterCollsions"]
+visible = false
+position = Vector2( 650, 773.75 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 4 )
+
+[node name="Poster" type="Sprite" parent="Background"]
+modulate = Color( 0.592157, 0.592157, 0.592157, 1 )
+position = Vector2( 345, 16 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 18 )
+
+[node name="Room" type="YSort" parent="."]
+
+[node name="Students" type="YSort" parent="Room"]
+unique_name_in_owner = true
+position = Vector2( 66, 1 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="Student" parent="Room/Students" instance=ExtResource( 1 )]
+position = Vector2( 120, 65 )
+
+[node name="Student2" parent="Room/Students" instance=ExtResource( 1 )]
+position = Vector2( 120, 180 )
+
+[node name="Student3" parent="Room/Students" instance=ExtResource( 1 )]
+position = Vector2( 120, 295 )
+
+[node name="Student4" parent="Room/Students" instance=ExtResource( 1 )]
+position = Vector2( 240, 65 )
+
+[node name="Student5" parent="Room/Students" instance=ExtResource( 1 )]
+position = Vector2( 240, 180 )
+
+[node name="Student6" parent="Room/Students" instance=ExtResource( 1 )]
+position = Vector2( 240, 295 )
+
+[node name="Student7" parent="Room/Students" instance=ExtResource( 1 )]
+position = Vector2( 360, 65 )
+
+[node name="Student8" parent="Room/Students" instance=ExtResource( 1 )]
+position = Vector2( 360, 180 )
+
+[node name="Student9" parent="Room/Students" instance=ExtResource( 1 )]
+position = Vector2( 360, 295 )
+
+[node name="Timer" type="Timer" parent="Room"]
+unique_name_in_owner = true
+
+[node name="Player" parent="Room" instance=ExtResource( 2 )]
+unique_name_in_owner = true
+position = Vector2( 257, 193 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+pause_mode = 2
+position = Vector2( 249, 149 )
+amount = 50
+lifetime = 10.0
+preprocess = 22.02
+process_material = SubResource( 5 )
+texture = ExtResource( 19 )
+
+[node name="Outside4" type="Node2D" parent="."]
+
+[node name="WallLeft" type="ColorRect" parent="Outside4"]
+margin_left = 76.0
+margin_right = 80.0
+margin_bottom = 326.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="WallRight" type="ColorRect" parent="Outside4"]
+margin_left = 432.0
+margin_top = 1.52588e-05
+margin_right = 441.0
+margin_bottom = 327.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Lightrays" type="Node2D" parent="Outside4"]
+
+[node name="Lightray" type="Sprite" parent="Outside4/Lightrays"]
+modulate = Color( 1, 1, 1, 0.156863 )
+position = Vector2( 340, 46 )
+scale = Vector2( 0.33, 0.33 )
+texture = ExtResource( 8 )
+flip_h = true
+
+[node name="Lightray2" type="Sprite" parent="Outside4/Lightrays"]
+modulate = Color( 1, 1, 1, 0.156863 )
+position = Vector2( 340, 134 )
+scale = Vector2( 0.33, 0.33 )
+texture = ExtResource( 8 )
+flip_h = true
+
+[node name="Lightray3" type="Sprite" parent="Outside4/Lightrays"]
+modulate = Color( 1, 1, 1, 0.156863 )
+position = Vector2( 340, 223 )
+scale = Vector2( 0.33, 0.33 )
+texture = ExtResource( 8 )
+flip_h = true
+
+[node name="Grass" type="Sprite" parent="Outside4"]
+position = Vector2( 490, 74 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 9 )
+
+[node name="Grass2" type="Sprite" parent="Outside4"]
+position = Vector2( 491, -14 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 10 )
+
+[node name="Grass3" type="Sprite" parent="Outside4"]
+position = Vector2( 490, 163 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 9 )
+
+[node name="Grass4" type="Sprite" parent="Outside4"]
+position = Vector2( 490, 252 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 9 )
+
+[node name="Grass5" type="Sprite" parent="Outside4"]
+position = Vector2( 491, 340 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 10 )
+
+[node name="Door" type="Sprite" parent="Outside4"]
+position = Vector2( 76.214, 235.58 )
+scale = Vector2( 0.247, 0.205 )
+texture = ExtResource( 15 )
+flip_v = true
+
+[node name="Items" type="Node2D" parent="."]
+
+[node name="ItemTimer" type="Timer" parent="."]
