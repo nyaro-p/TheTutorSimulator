@@ -27,7 +27,7 @@ func _input(_event) -> void:
 	input_vector.y = round(Input.get_axis("move_up", "move_down"))
 	input_vector = input_vector.normalized()
 	
-	#Pause game
+	#Escape game
 	if Input.is_action_just_pressed("pause_screen"):
 		get_tree().change_scene("res://Scenes/TitleScreen.tscn")
 	

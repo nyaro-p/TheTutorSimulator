@@ -9,8 +9,9 @@ onready var FadeIn = preload("res://Effects/FadeIn.tscn") as PackedScene
 var controller := false
 var happiness := 0.5
 var scene_reached := 0
+var show_boss_tutorial := true
 
-var current_scene := 0
+var current_scene := 0 #Redundant
 
 var scenes:= [
 	"res://Scenes/TitleScreen.tscn",

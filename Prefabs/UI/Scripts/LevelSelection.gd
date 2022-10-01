@@ -1,10 +1,10 @@
 extends Control
 
-signal choice_closed
+signal selection_closed
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("pause_screen"):
-		emit_signal("choice_closed")
+		emit_signal("selection_closed")
 		queue_free()
 
 
@@ -94,7 +94,7 @@ func _on_Boss_pressed() -> void:
 
 func _on_BackButton_pressed() -> void:
 	GlobalAudio.play_sound("ButtonPressed")
-	emit_signal("choice_closed")
+	emit_signal("selection_closed")
 	queue_free()
 
 ########## Button Selected ##########

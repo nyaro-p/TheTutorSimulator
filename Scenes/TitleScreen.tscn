@@ -107,7 +107,7 @@ margin_bottom = 20.0
 theme = ExtResource( 7 )
 
 [node name="Play" type="Button" parent="Buttons"]
-margin_right = 129.0
+margin_right = 123.0
 margin_bottom = 29.0
 focus_neighbour_top = NodePath(".")
 focus_previous = NodePath(".")
@@ -118,9 +118,9 @@ custom_styles/focus = SubResource( 9 )
 custom_styles/normal = SubResource( 3 )
 text = "Play"
 
-[node name="ChooseLevel" type="Button" parent="Buttons"]
+[node name="SelectLevel" type="Button" parent="Buttons"]
 margin_top = 33.0
-margin_right = 129.0
+margin_right = 123.0
 margin_bottom = 62.0
 focus_next = NodePath("../Options")
 mouse_filter = 2
@@ -128,11 +128,11 @@ custom_styles/hover = SubResource( 9 )
 custom_styles/pressed = SubResource( 8 )
 custom_styles/focus = SubResource( 9 )
 custom_styles/normal = SubResource( 3 )
-text = "Choose Level"
+text = "Select Level"
 
 [node name="Options" type="Button" parent="Buttons"]
 margin_top = 66.0
-margin_right = 129.0
+margin_right = 123.0
 margin_bottom = 95.0
 focus_neighbour_bottom = NodePath("../Quit")
 focus_next = NodePath("../Quit")
@@ -145,7 +145,7 @@ text = "Options"
 
 [node name="Quit" type="Button" parent="Buttons"]
 margin_top = 99.0
-margin_right = 129.0
+margin_right = 123.0
 margin_bottom = 128.0
 focus_neighbour_top = NodePath("../Options")
 focus_neighbour_bottom = NodePath(".")
@@ -160,8 +160,8 @@ text = "Quit"
 
 [connection signal="focus_entered" from="Buttons/Play" to="." method="_on_Play_focus_entered"]
 [connection signal="pressed" from="Buttons/Play" to="." method="_on_Play_pressed"]
-[connection signal="focus_entered" from="Buttons/ChooseLevel" to="." method="_on_ChooseLevel_focus_entered"]
-[connection signal="pressed" from="Buttons/ChooseLevel" to="." method="_on_ChooseLevel_pressed"]
+[connection signal="focus_entered" from="Buttons/SelectLevel" to="." method="_on_ChooseLevel_focus_entered"]
+[connection signal="pressed" from="Buttons/SelectLevel" to="." method="_on_ChooseLevel_pressed"]
 [connection signal="focus_entered" from="Buttons/Options" to="." method="_on_Options_focus_entered"]
 [connection signal="pressed" from="Buttons/Options" to="." method="_on_Options_pressed"]
 [connection signal="focus_entered" from="Buttons/Quit" to="." method="_on_Quit_focus_entered"]

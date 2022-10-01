@@ -4,6 +4,7 @@ onready var player := $CoffePlayer
 onready var attack := $"%Attack"
 
 func _ready() -> void:
+	$"%BossTutorial".visible = GlobalStats.show_boss_tutorial
 	GlobalStats.set_current_scene_id(self)
 	var fadeIn = GlobalStats.FadeIn.instance()
 	$UI.add_child(fadeIn)
@@ -17,6 +18,9 @@ func _ready() -> void:
 func start_fight() -> void:
 	GlobalAudio.play_track("BossFight")
 	$AnimationPlayer.play("Fight")
+
+func disable_tutorial() -> void:
+	GlobalStats.show_boss_tutorial = false
 
 func end_fight() -> void:
 	var tween := create_tween().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
