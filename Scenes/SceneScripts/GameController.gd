@@ -13,7 +13,7 @@ onready var itemTimer := $ItemTimer as Timer
 onready var UI := $"%UI" as CanvasLayer
 
 #for Label at Beginning
-export var level_id := 0
+export var class_id := 0
 #time to be "survived"
 export var tut_time := 50.0
 #rate of questions
@@ -24,14 +24,15 @@ export var min_item_rate_time := 2.0
 export var max_item_rate_time := 1
 
 func _ready() -> void:
-	GlobalStats.set_current_scene_id(self)
+	GlobalStats.update_current_scene_id(self)
+	GlobalStats.update_current_class_id(self)
 	GlobalStats.set_level_status(GlobalStats.GAME_ON)
 	#GlobalAudio.play_track("ClassroomMusic")
 	var fadeIn = GlobalStats.FadeIn.instance()
 	$UI.add_child(fadeIn)
 	
 	var levelEffect = LevelEffect.instance()
-	levelEffect.set_level(level_id)
+	levelEffect.set_level(class_id)
 	$UI.add_child(levelEffect)
 	
 	get_tree().paused = true
@@ -63,8 +64,10 @@ func _ready() -> void:
 	UI.clock.set_clock_time(tut_time)
 	
 	#fixes impossible level 1
-	if level_id == 1:
+	if class_id == 1:
 		UI.happyOMeter.adjust(1.0)
+	
+	UI.happyOMeter.class_id = class_id
 	
 
 #Called by questionTimer, picks a student to start a question,

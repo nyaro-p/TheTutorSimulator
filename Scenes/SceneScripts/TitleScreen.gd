@@ -5,7 +5,7 @@ onready var LevelChoice = preload("res://Prefabs/UI/LevelSelection.tscn")
 
 func _ready() -> void:
 	GlobalStats.show_boss_tutorial = true
-	GlobalStats.set_current_scene_id(self)
+	GlobalStats.update_current_scene_id(self)
 	GlobalAudio.play_track("TitleScreenMusic")
 	$Buttons/Play.grab_focus()
 	$Buttons/SelectLevel.visible = false

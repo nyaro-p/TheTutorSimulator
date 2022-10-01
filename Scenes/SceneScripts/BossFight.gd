@@ -5,7 +5,7 @@ onready var attack := $"%Attack"
 
 func _ready() -> void:
 	$"%BossTutorial".visible = GlobalStats.show_boss_tutorial
-	GlobalStats.set_current_scene_id(self)
+	GlobalStats.update_current_scene_id(self)
 	var fadeIn = GlobalStats.FadeIn.instance()
 	$UI.add_child(fadeIn)
 	player.connect("lost", self, "restart")#"lost_animation")

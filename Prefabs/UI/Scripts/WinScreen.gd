@@ -1,10 +1,15 @@
 extends Control
 
 func _ready() -> void:
-	var value = GlobalStats.happiness
+	GlobalStats.update_on_win_screen()
+	GlobalStats.save_score()
+	var value = GlobalStats.current_score
 	$StudentHappiness.text = "Student Happiness: " + str(stepify(value * 100, 0.1)) + "%"
 	var left = 7 - round(7 * value)
-	$StudentLeftClass.text = "Students Left Class: " + str(left)
+	if left == 0:
+		$StudentLeftClass.text = "No Students left!"
+	else:
+		$StudentLeftClass.text = "Students Left Class: " + str(left)
 	$Buttons/NextButton.grab_focus()
 	
 #	var timer = Timer.new()

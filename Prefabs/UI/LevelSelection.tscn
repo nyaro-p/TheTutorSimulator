@@ -44,8 +44,8 @@ bg_color = Color( 0.290196, 0.054902, 0.054902, 0 )
 [node name="LevelChoice" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 12288.0
-margin_bottom = 6912.0
+margin_right = 14848.0
+margin_bottom = 8352.0
 script = ExtResource( 6 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -103,11 +103,18 @@ custom_styles/normal = SubResource( 3 )
 text = "Intro"
 icon_align = 1
 
-[node name="Level1" type="Button" parent="AvailableLevels"]
-unique_name_in_owner = true
+[node name="Level1Box" type="HBoxContainer" parent="AvailableLevels"]
 margin_top = 21.0
 margin_right = 209.0
 margin_bottom = 46.0
+custom_constants/separation = 16
+alignment = 1
+
+[node name="Level1" type="Button" parent="AvailableLevels/Level1Box"]
+unique_name_in_owner = true
+margin_left = 62.0
+margin_right = 100.0
+margin_bottom = 25.0
 focus_neighbour_left = NodePath(".")
 focus_neighbour_right = NodePath(".")
 mouse_filter = 2
@@ -117,11 +124,26 @@ custom_styles/normal = SubResource( 3 )
 text = "Class 1"
 icon_align = 1
 
-[node name="Level2" type="Button" parent="AvailableLevels"]
+[node name="Score1" type="Label" parent="AvailableLevels/Level1Box"]
 unique_name_in_owner = true
+modulate = Color( 0.54902, 0.32549, 0.0588235, 1 )
+margin_left = 116.0
+margin_right = 147.0
+margin_bottom = 25.0
+text = "Score"
+
+[node name="Level2Box" type="HBoxContainer" parent="AvailableLevels"]
 margin_top = 42.0
 margin_right = 209.0
 margin_bottom = 67.0
+custom_constants/separation = 16
+alignment = 1
+
+[node name="Level2" type="Button" parent="AvailableLevels/Level2Box"]
+unique_name_in_owner = true
+margin_left = 76.0
+margin_right = 116.0
+margin_bottom = 25.0
 focus_neighbour_left = NodePath(".")
 focus_neighbour_right = NodePath(".")
 mouse_filter = 2
@@ -131,11 +153,24 @@ custom_styles/normal = SubResource( 3 )
 text = "Class 2"
 icon_align = 1
 
-[node name="Level3" type="Button" parent="AvailableLevels"]
+[node name="Score2" type="Label" parent="AvailableLevels/Level2Box"]
 unique_name_in_owner = true
+margin_left = 132.0
+margin_right = 132.0
+margin_bottom = 25.0
+
+[node name="Level3Box" type="HBoxContainer" parent="AvailableLevels"]
 margin_top = 63.0
 margin_right = 209.0
 margin_bottom = 88.0
+custom_constants/separation = 16
+alignment = 1
+
+[node name="Level3" type="Button" parent="AvailableLevels/Level3Box"]
+unique_name_in_owner = true
+margin_left = 76.0
+margin_right = 116.0
+margin_bottom = 25.0
 focus_neighbour_left = NodePath(".")
 focus_neighbour_right = NodePath(".")
 mouse_filter = 2
@@ -144,6 +179,12 @@ custom_constants/hseparation = -4
 custom_styles/normal = SubResource( 3 )
 text = "Class 3"
 icon_align = 1
+
+[node name="Score3" type="Label" parent="AvailableLevels/Level3Box"]
+unique_name_in_owner = true
+margin_left = 132.0
+margin_right = 132.0
+margin_bottom = 25.0
 
 [node name="Boss" type="Button" parent="AvailableLevels"]
 unique_name_in_owner = true
@@ -163,11 +204,11 @@ icon_align = 1
 [connection signal="pressed" from="BigWindow/BackButton" to="." method="_on_BackButton_pressed"]
 [connection signal="focus_entered" from="AvailableLevels/Intro" to="." method="_on_Intro_focus_entered"]
 [connection signal="pressed" from="AvailableLevels/Intro" to="." method="_on_Intro_pressed"]
-[connection signal="focus_entered" from="AvailableLevels/Level1" to="." method="_on_Level1_focus_entered"]
-[connection signal="pressed" from="AvailableLevels/Level1" to="." method="_on_Level1_pressed"]
-[connection signal="focus_entered" from="AvailableLevels/Level2" to="." method="_on_Level2_focus_entered"]
-[connection signal="pressed" from="AvailableLevels/Level2" to="." method="_on_Level2_pressed"]
-[connection signal="focus_entered" from="AvailableLevels/Level3" to="." method="_on_Level3_focus_entered"]
-[connection signal="pressed" from="AvailableLevels/Level3" to="." method="_on_Level3_pressed"]
+[connection signal="focus_entered" from="AvailableLevels/Level1Box/Level1" to="." method="_on_Level1_focus_entered"]
+[connection signal="pressed" from="AvailableLevels/Level1Box/Level1" to="." method="_on_Level1_pressed"]
+[connection signal="focus_entered" from="AvailableLevels/Level2Box/Level2" to="." method="_on_Level2_focus_entered"]
+[connection signal="pressed" from="AvailableLevels/Level2Box/Level2" to="." method="_on_Level2_pressed"]
+[connection signal="focus_entered" from="AvailableLevels/Level3Box/Level3" to="." method="_on_Level3_focus_entered"]
+[connection signal="pressed" from="AvailableLevels/Level3Box/Level3" to="." method="_on_Level3_pressed"]
 [connection signal="focus_entered" from="AvailableLevels/Boss" to="." method="_on_Boss_focus_entered"]
 [connection signal="pressed" from="AvailableLevels/Boss" to="." method="_on_Boss_pressed"]

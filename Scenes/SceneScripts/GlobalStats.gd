@@ -7,11 +7,11 @@ onready var FadeOut = preload("res://Effects/FadeOut.tscn") as PackedScene
 onready var FadeIn = preload("res://Effects/FadeIn.tscn") as PackedScene
 
 var controller := false
-var happiness := 0.5
 var scene_reached := 0
 var show_boss_tutorial := true
 
 var current_scene := 0 #Redundant
+var current_class := 0
 
 var scenes:= [
 	"res://Scenes/TitleScreen.tscn",
@@ -21,6 +21,14 @@ var scenes:= [
 	"res://Scenes/Classroom_2.tscn",
 	"res://Scenes/Classroom_3.tscn",
 	"res://Scenes/BossFight.tscn"
+]
+
+var current_score := 0.0
+
+var scores:= [
+	0.0,
+	0.0,
+	0.0
 ]
 
 enum {
@@ -51,10 +59,14 @@ func toggle_fullscreen() -> void:
 	OS.window_fullscreen = !OS.window_fullscreen
 	fullscreen = OS.window_fullscreen
 
-func set_current_scene_id(scene) -> void:
+func update_current_scene_id(scene) -> void:
 	current_scene = scenes.find(scene.get_tree().current_scene.filename)
 # warning-ignore:narrowing_conversion
 	scene_reached = max(scene_reached, current_scene)
+
+func update_on_win_screen() -> void:
+# warning-ignore:narrowing_conversion
+	scene_reached = max(scene_reached, current_scene + 1)
 
 func get_next_scene(id:= -100) -> String:
 	if current_scene + 1 < scenes.size():
@@ -68,3 +80,15 @@ func get_next_scene(id:= -100) -> String:
 # warning-ignore:narrowing_conversion
 	scene_reached = max(scene_reached, current_scene)
 	return scenes[current_scene]
+
+func update_current_class_id(scene) -> void:
+	current_class = scenes.find(scene.get_tree().current_scene.filename) - 3
+
+func update_score(value: float) -> void:
+	current_score = value
+
+func get_current_class_score() -> float:
+	return scores[current_class]
+	
+func save_score() -> void:
+	scores[current_class] = max(scores[current_class], current_score)

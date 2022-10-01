@@ -32,6 +32,15 @@ func _ready() -> void:
 		$"%Level3".visible = true
 		$"%Level3".grab_focus()
 		
+		#Score
+		var value = GlobalStats.scores[2]
+		$"%Score3".text = str(stepify(value * 100, 0.1)) + "%"
+		if value >= 0.9:
+			$"%Score3".modulate = Color(0.964706, 1, 0.360784)
+		else:
+			$"%Score3".modulate = Color(0.54902, 0.32549, 0.058824)
+		
+		#For focus perpouses.
 		set_top_and_bottom($"%Level3", previous_button)
 		previous_button = $"%Level3"
 	
@@ -39,12 +48,28 @@ func _ready() -> void:
 		$"%Level2".visible = true
 		$"%Level2".grab_focus()
 		
+		#Score
+		var value = GlobalStats.scores[1]
+		$"%Score2".text = str(stepify(value * 100, 0.1)) + "%"
+		if value >= 0.9:
+			$"%Score2".modulate = Color(0.964706, 1, 0.360784)
+		else:
+			$"%Score2".modulate = Color(0.54902, 0.32549, 0.058824)
+		
 		set_top_and_bottom($"%Level2", previous_button)
 		previous_button = $"%Level2"
 	
 	if GlobalStats.scene_reached >= 3:
 		$"%Level1".visible = true
 		$"%Level1".grab_focus()
+		
+		#Score
+		var value = GlobalStats.scores[0]
+		$"%Score1".text = str(stepify(value * 100, 0.1)) + "%"
+		if value >= 0.9:
+			$"%Score1".modulate = Color(0.964706, 1, 0.360784)
+		else:
+			$"%Score1".modulate = Color(0.54902, 0.32549, 0.058824)
 		
 		set_top_and_bottom($"%Level1", previous_button)
 		previous_button = $"%Level1"
