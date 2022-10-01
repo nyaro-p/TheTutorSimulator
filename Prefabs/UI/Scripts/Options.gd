@@ -5,21 +5,29 @@ onready var MusicSlider = $"%MusicSlider" as HSlider
 onready var SFXSlider = $"%SFXSlider" as HSlider
 onready var Fullscreen = $"%FullscreenCheckBox" as CheckBox
 
+onready var game_data = SaveFile.game_data
+
 signal options_closed
 
 func _ready() -> void:
 	GeneralSlider.value = AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master"))
 	MusicSlider.value = AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Music"))
 	SFXSlider.value = AudioServer.get_bus_volume_db(AudioServer.get_bus_index("SFX"))
-	Fullscreen.pressed = GlobalStats.fullscreen
+	Fullscreen.pressed = OS.window_fullscreen
 	GeneralSlider.grab_focus()
 
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("pause_screen"):
-		emit_signal("options_closed")
-		queue_free()
+		close_and_save()
+		
 
+func close_and_save() -> void:
+	game_data.fullscreen = OS.window_fullscreen
+	SaveFile.save_data()
+	emit_signal("options_closed")
+	queue_free()
+	
 ########## Button Pressed / Value Changed ##########
 
 func _on_GeneralAudioSlider_value_changed(value: float) -> void:
@@ -27,6 +35,7 @@ func _on_GeneralAudioSlider_value_changed(value: float) -> void:
 		value = -80
 	var bus_index = AudioServer.get_bus_index("Master")
 	AudioServer.set_bus_volume_db(bus_index, value)
+	game_data.volumes[0] = value
 	GlobalAudio.play_sound("ButtonSelected")
 
 
@@ -34,6 +43,7 @@ func _on_MusicSlider_value_changed(value: float) -> void:
 	if value <= -40:
 		value = -80
 	var bus_index = AudioServer.get_bus_index("Music")
+	game_data.volumes[1] = value
 	AudioServer.set_bus_volume_db(bus_index, value)
 
 
@@ -42,6 +52,7 @@ func _on_SFXSlider_value_changed(value: float) -> void:
 		value = -80
 	var bus_index = AudioServer.get_bus_index("SFX")
 	AudioServer.set_bus_volume_db(bus_index, value)
+	game_data.volumes[2] = value
 	GlobalAudio.play_sound("ButtonSelected")
 
 
@@ -52,8 +63,7 @@ func _on_FullscreenCheckBox_pressed() -> void:
 
 func _on_Button_pressed() -> void:
 	GlobalAudio.play_sound("ButtonPressed")
-	emit_signal("options_closed")
-	queue_free()
+	close_and_save()
 
 ########## Button Selected ##########
 

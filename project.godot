@@ -18,8 +18,9 @@ config/windows_native_icon="res://AdemIcon.ico"
 
 [autoload]
 
-GlobalStats="*res://Scenes/GloabalScenes/GlobalStats.tscn"
+SaveFile="*res://Scenes/SceneScripts/SaveFile.gd"
 GlobalAudio="*res://Scenes/GlobalAudio.tscn"
+GlobalStats="*res://Scenes/GloabalScenes/GlobalStats.tscn"
 
 [debug]
 
@@ -29,7 +30,6 @@ gdscript/warnings/return_value_discarded=false
 
 window/size/width=512
 window/size/height=288
-window/size/fullscreen=true
 window/size/test_width=1024
 window/size/test_height=576
 window/stretch/mode="2d"
