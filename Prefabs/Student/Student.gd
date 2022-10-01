@@ -77,6 +77,10 @@ func change_to_special_sprite() -> void:
 #			specialSprite.visible = !specialSprite.visible
 #			person.visible = !person.visible
 #			blinkPerson.visible = (!specialSprite.visible and !person.visible)
+		3:
+			specialSprite.visible = !specialSprite.visible
+			person.visible = !specialSprite.visible
+			blinkPerson.visible = (!specialSprite.visible and !person.visible)
 		6:
 			specialSprite.visible = !specialSprite.visible
 			person.visible = !specialSprite.visible

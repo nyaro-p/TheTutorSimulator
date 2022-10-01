@@ -58,6 +58,7 @@ func set_level_status(value: int):
 func toggle_fullscreen() -> void:
 	OS.window_fullscreen = !OS.window_fullscreen
 	fullscreen = OS.window_fullscreen
+	save_data()
 
 func update_current_scene_id(scene) -> void:
 	current_scene = scenes.find(scene.get_tree().current_scene.filename)
@@ -92,3 +93,7 @@ func get_current_class_score() -> float:
 	
 func save_score() -> void:
 	scores[current_class] = max(scores[current_class], current_score)
+	save_data()
+
+func save_data() -> void:
+	pass
