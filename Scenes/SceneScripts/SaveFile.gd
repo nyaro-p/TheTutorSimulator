@@ -14,7 +14,7 @@ func save_data():
 
 func load_data() -> void:
 	var file = File.new()
-	if not file.file_exists(SAVE_FILE):
+	if not file.file_exists(SAVE_FILE) or OS.is_debug_build():
 		game_data = {
 			"fullscreen" : OS.window_fullscreen,
 			"volumes" : [AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master")),
