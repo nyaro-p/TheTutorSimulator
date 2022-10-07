@@ -7,7 +7,7 @@ func _ready() -> void:
 	$StudentHappiness.text = "Student Happiness: " + str(stepify(value * 100, 0.1)) + "%"
 	var left = 7 - round(7 * value)
 	if left == 0:
-		$StudentLeftClass.text = "No Students left!"
+		$StudentLeftClass.text = "No Students left the class!"
 	else:
 		$StudentLeftClass.text = "Students Left Class: " + str(left)
 	$Buttons/NextButton.grab_focus()

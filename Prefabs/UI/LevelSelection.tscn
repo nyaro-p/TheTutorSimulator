@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/Fonts/DialoguedFont.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/EndScreens/Buttom_Next_hover.png" type="Texture" id=2]
@@ -38,14 +38,19 @@ tracks/0/keys = {
 "values": [ Vector2( 0, -236 ), Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.290196, 0.054902, 0.054902, 0 )
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=5]
 
 [node name="LevelChoice" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 14848.0
-margin_bottom = 8352.0
+margin_right = 15360.0
+margin_bottom = 8640.0
 script = ExtResource( 6 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -99,7 +104,7 @@ focus_previous = NodePath(".")
 mouse_filter = 2
 theme = ExtResource( 1 )
 custom_constants/hseparation = -4
-custom_styles/normal = SubResource( 3 )
+custom_styles/normal = SubResource( 7 )
 text = "Intro"
 icon_align = 1
 
@@ -112,25 +117,24 @@ alignment = 1
 
 [node name="Level1" type="Button" parent="AvailableLevels/Level1Box"]
 unique_name_in_owner = true
-margin_left = 62.0
-margin_right = 100.0
+margin_left = 77.0
+margin_right = 115.0
 margin_bottom = 25.0
 focus_neighbour_left = NodePath(".")
 focus_neighbour_right = NodePath(".")
 mouse_filter = 2
 theme = ExtResource( 1 )
 custom_constants/hseparation = -4
-custom_styles/normal = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
 text = "Class 1"
 icon_align = 1
 
 [node name="Score1" type="Label" parent="AvailableLevels/Level1Box"]
 unique_name_in_owner = true
 modulate = Color( 0.54902, 0.32549, 0.0588235, 1 )
-margin_left = 116.0
-margin_right = 147.0
+margin_left = 131.0
+margin_right = 131.0
 margin_bottom = 25.0
-text = "Score"
 
 [node name="Level2Box" type="HBoxContainer" parent="AvailableLevels"]
 margin_top = 42.0
@@ -149,7 +153,7 @@ focus_neighbour_right = NodePath(".")
 mouse_filter = 2
 theme = ExtResource( 1 )
 custom_constants/hseparation = -4
-custom_styles/normal = SubResource( 3 )
+custom_styles/normal = SubResource( 6 )
 text = "Class 2"
 icon_align = 1
 
@@ -176,7 +180,7 @@ focus_neighbour_right = NodePath(".")
 mouse_filter = 2
 theme = ExtResource( 1 )
 custom_constants/hseparation = -4
-custom_styles/normal = SubResource( 3 )
+custom_styles/normal = SubResource( 5 )
 text = "Class 3"
 icon_align = 1
 
@@ -196,7 +200,7 @@ focus_neighbour_right = NodePath(".")
 mouse_filter = 2
 theme = ExtResource( 1 )
 custom_constants/hseparation = -4
-custom_styles/normal = SubResource( 3 )
+custom_styles/normal = SubResource( 5 )
 text = "Boss"
 icon_align = 1
 

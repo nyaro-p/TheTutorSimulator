@@ -27,6 +27,7 @@ func _ready() -> void:
 	GlobalStats.update_current_scene_id(self)
 	GlobalStats.update_current_class_id(self)
 	GlobalStats.set_level_status(GlobalStats.GAME_ON)
+	GlobalAudio.play_track("TitleScreenMusic")
 	#GlobalAudio.play_track("ClassroomMusic")
 	var fadeIn = GlobalStats.FadeIn.instance()
 	$UI.add_child(fadeIn)

@@ -14,14 +14,14 @@ func save_data():
 
 func load_data() -> void:
 	var file = File.new()
-	if not file.file_exists(SAVE_FILE) or OS.is_debug_build():
+	if !file.file_exists(SAVE_FILE) or OS.is_debug_build():
 		game_data = {
 			"fullscreen" : OS.window_fullscreen,
 			"volumes" : [AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master")),
 						AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Music")),
 						AudioServer.get_bus_volume_db(AudioServer.get_bus_index("SFX"))],
 			"scores" : [0.0, 0.0, 0.0],
-			"scene_reached" : 0
+			"scene_reached" : (GlobalStats.scene_reached if OS.is_debug_build() else 0)
 		}
 		save_data()
 	file.open(SAVE_FILE, File.READ)

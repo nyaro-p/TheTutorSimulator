@@ -5,7 +5,7 @@ onready var FadeIn = preload("res://Effects/FadeIn.tscn") as PackedScene
 onready var game_data = SaveFile.game_data
 
 var controller := false
-var scene_reached := 0
+var scene_reached := 6
 var show_boss_tutorial := true
 
 var current_scene := 0 #Redundant

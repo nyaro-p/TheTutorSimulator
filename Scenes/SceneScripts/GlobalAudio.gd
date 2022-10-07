@@ -36,9 +36,19 @@ func play_track(track_name: String) -> void:
 		
 		var track = $Music.get_node(track_name) as AudioStreamPlayer
 		if !track.playing:
+			set_MusicControl_volume_db(0.0)
 			track.play()
 		if !track.is_connected("finished", self, "play_track"):
 			track.connect("finished", self, "play_track", [track_name])
 		
 		current_song = track_name
 	
+#Fades out music using MusicController
+func fade_out_music(time: float):
+	var tween := create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_method(self, "set_MusicControl_volume_db", 0.0, -80.0, time)
+
+#Sets the volume of the dditional bus controlling music volume.
+func set_MusicControl_volume_db(value: float) -> void:
+	var bus_index = AudioServer.get_bus_index("MusicController")
+	AudioServer.set_bus_volume_db(bus_index, value)
