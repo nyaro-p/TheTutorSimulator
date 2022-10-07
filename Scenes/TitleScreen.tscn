@@ -54,7 +54,7 @@ anchor_bottom = 1.0
 [node name="ColorRect" type="ColorRect" parent="Background"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.54902, 0.945098, 0.984314, 1 )
+color = Color( 0.984314, 0.721569, 0.54902, 1 )
 
 [node name="TitleScreenBackground" type="TextureRect" parent="Background"]
 modulate = Color( 1, 1, 1, 0.694118 )
@@ -81,6 +81,7 @@ texture = ExtResource( 3 )
 position = Vector2( 362, 139 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 6 )
+frame = 1
 speed_scale = 0.283
 playing = true
 

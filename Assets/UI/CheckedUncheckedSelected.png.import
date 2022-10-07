@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ButtonSelected.png-389d9783ff0ca6edc7941df9a2265d97.stex"
+path="res://.import/CheckedUncheckedSelected.png-fe1bba40bffed8e234e165238007f0b3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/ButtonSelected.png"
-dest_files=[ "res://.import/ButtonSelected.png-389d9783ff0ca6edc7941df9a2265d97.stex" ]
+source_file="res://Assets/UI/CheckedUncheckedSelected.png"
+dest_files=[ "res://.import/CheckedUncheckedSelected.png-fe1bba40bffed8e234e165238007f0b3.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

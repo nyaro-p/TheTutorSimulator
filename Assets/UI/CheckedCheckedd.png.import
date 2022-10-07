@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ButtonSelected.png-389d9783ff0ca6edc7941df9a2265d97.stex"
+path="res://.import/CheckedCheckedd.png-822e0a2b42ef889e3eaf3cc1de79c836.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/ButtonSelected.png"
-dest_files=[ "res://.import/ButtonSelected.png-389d9783ff0ca6edc7941df9a2265d97.stex" ]
+source_file="res://Assets/UI/CheckedCheckedd.png"
+dest_files=[ "res://.import/CheckedCheckedd.png-822e0a2b42ef889e3eaf3cc1de79c836.stex" ]
 
 [params]
 

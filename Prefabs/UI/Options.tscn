@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Prefabs/UI/Scripts/Options.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/DialoguedFont.tres" type="Theme" id=2]
@@ -8,6 +8,13 @@
 [ext_resource path="res://Assets/EndScreens/Buttom_Next_hover.png" type="Texture" id=6]
 [ext_resource path="res://Assets/EndScreens/Buttom_Next_normal.png" type="Texture" id=7]
 [ext_resource path="res://Assets/UI/ButtonSelected.png" type="Texture" id=8]
+[ext_resource path="res://Assets/UI/CheckUnchecked.png" type="Texture" id=9]
+[ext_resource path="res://Assets/UI/CheckedCheckedd.png" type="Texture" id=10]
+
+[sub_resource type="StyleBoxLine" id=1]
+grow_begin = 0.0
+grow_end = 0.0
+thickness = 6
 
 [node name="Options" type="Control"]
 anchor_right = 1.0
@@ -54,6 +61,7 @@ custom_icons/tick = ExtResource( 3 )
 custom_icons/grabber_disabled = ExtResource( 3 )
 custom_icons/grabber_highlight = ExtResource( 8 )
 custom_icons/grabber = ExtResource( 3 )
+custom_styles/slider = SubResource( 1 )
 min_value = -40.0
 max_value = 0.0
 step = 2.0
@@ -86,6 +94,7 @@ custom_icons/tick = ExtResource( 3 )
 custom_icons/grabber_disabled = ExtResource( 3 )
 custom_icons/grabber_highlight = ExtResource( 8 )
 custom_icons/grabber = ExtResource( 3 )
+custom_styles/slider = SubResource( 1 )
 min_value = -40.0
 max_value = 0.0
 step = 2.0
@@ -118,6 +127,7 @@ custom_icons/tick = ExtResource( 3 )
 custom_icons/grabber_disabled = ExtResource( 3 )
 custom_icons/grabber_highlight = ExtResource( 8 )
 custom_icons/grabber = ExtResource( 3 )
+custom_styles/slider = SubResource( 1 )
 min_value = -40.0
 max_value = 0.0
 step = 2.0
@@ -146,6 +156,8 @@ focus_neighbour_bottom = NodePath("../../../BackButton")
 focus_next = NodePath("../../../BackButton")
 focus_previous = NodePath("../../SFX/SFXSlider")
 mouse_filter = 2
+custom_icons/checked = ExtResource( 10 )
+custom_icons/unchecked = ExtResource( 9 )
 
 [node name="BackButton" type="TextureButton" parent="."]
 anchor_left = 0.5
