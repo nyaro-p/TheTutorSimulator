@@ -50,14 +50,16 @@ func is_on_timer() -> bool:
 #Setter function.
 #Listened by GameController
 func timer_finished() -> void:
-	change_to_special_sprite()
+	if person.frame == 3:
+		change_to_special_sprite()
 	emit_signal("unhappy")
 	is_on_timer_bool = false
 
 #Setter function.
 #Listened by GameController
 func question_answered() -> void:
-	change_to_special_sprite()
+	if person.frame == 3:
+		change_to_special_sprite()
 	emit_signal("happy")
 	is_on_timer_bool = false
 
