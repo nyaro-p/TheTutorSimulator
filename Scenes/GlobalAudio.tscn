@@ -8,7 +8,7 @@
 [ext_resource path="res://Assets/Audio/Tracks/Classroom.wav" type="AudioStream" id=6]
 [ext_resource path="res://Assets/Audio/Sounds/button_pressed.wav" type="AudioStream" id=7]
 [ext_resource path="res://Assets/Audio/Sounds/button_selected.wav" type="AudioStream" id=8]
-[ext_resource path="res://Assets/Audio/Tracks/BossFight.wav" type="AudioStream" id=9]
+[ext_resource path="res://Assets/Audio/Tracks/BossFight3.wav" type="AudioStream" id=9]
 
 [node name="GlobalAudio" type="Node"]
 pause_mode = 2
