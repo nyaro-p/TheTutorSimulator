@@ -61,6 +61,21 @@ func _on_FullscreenCheckBox_pressed() -> void:
 	GlobalStats.toggle_fullscreen()
 
 
+func _on_ResetCheckBox_pressed() -> void:
+	GlobalAudio.play_sound("ButtonPressed")
+	
+	GlobalStats.game_data = {
+			"fullscreen" : OS.window_fullscreen,
+			"volumes" : [AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master")),
+						AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Music")),
+						AudioServer.get_bus_volume_db(AudioServer.get_bus_index("SFX"))],
+			"scores" : [0.0, 0.0, 0.0],
+			"scene_reached" : GlobalStats.scene_reached
+		}
+	SaveFile.save_data()
+	GlobalStats.update_data()
+
+
 func _on_Button_pressed() -> void:
 	GlobalAudio.play_sound("ButtonPressed")
 	close_and_save()
@@ -85,3 +100,8 @@ func _on_FullscreenCheckBox_focus_entered() -> void:
 
 func _on_Button_focus_entered() -> void:
 	GlobalAudio.play_sound("ButtonSelected")
+
+
+func _on_ResetCheckBox_focus_entered() -> void:
+	GlobalAudio.play_sound("ButtonSelected")
+

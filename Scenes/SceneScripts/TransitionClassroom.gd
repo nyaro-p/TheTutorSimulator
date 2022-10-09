@@ -8,6 +8,8 @@ func _input(_event) -> void:
 		get_tree().change_scene("res://Scenes/TitleScreen.tscn")
 
 func _ready() -> void:
+	GlobalStats.update_current_scene_id(self)
+	GlobalAudio.play_track("TitleScreenMusic")
 	var children = students.get_children()
 	
 	#Assign student sprite frame

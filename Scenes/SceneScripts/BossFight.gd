@@ -5,8 +5,11 @@ onready var attack := $"%Attack"
 
 func _ready() -> void:
 	if GlobalStats.show_boss_tutorial:
+		$AnimationPlayer.play("PreFight")
 		GlobalAudio.play_track("TitleScreenMusic")
 		GlobalAudio.fade_out_music(8.0)
+	else:
+		$AnimationPlayer.play("RestartedPreFight")
 	
 	$"%BossTutorial".visible = GlobalStats.show_boss_tutorial
 	GlobalStats.update_current_scene_id(self)

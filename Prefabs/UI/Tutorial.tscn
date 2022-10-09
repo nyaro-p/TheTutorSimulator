@@ -195,7 +195,7 @@ margin_right = 243.0
 margin_bottom = 87.0
 theme = ExtResource( 2 )
 custom_constants/line_spacing = -10
-text = "In this game you assume the role of Adem! Help your students with Computer Science!"
+text = "In this game you assume the role of a tutor! Help your students with Computer Science!"
 autowrap = true
 
 [node name="Help" type="Label" parent="New/First"]
@@ -235,6 +235,7 @@ Do not worry! It is supplied directly
 into classrooms by Kaffee Typ GMBH!"
 
 [node name="Second" type="Control" parent="New"]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 

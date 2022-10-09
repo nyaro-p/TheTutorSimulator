@@ -5,7 +5,7 @@ onready var FadeIn = preload("res://Effects/FadeIn.tscn") as PackedScene
 onready var game_data = SaveFile.game_data
 
 var controller := false
-var scene_reached := 6
+var scene_reached := 0
 var show_boss_tutorial := true
 
 var current_scene := 0 #Redundant
@@ -38,19 +38,23 @@ enum {
 #Stops clock after GameLost
 var level_status = GAME_ON
 
-func _ready() -> void:
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-	
-	OS.window_fullscreen = game_data.fullscreen
-	scores = game_data.scores
-	scene_reached = game_data.scene_reached
-	
+func update_data() -> void:
 	var bus_index = AudioServer.get_bus_index("Master")
 	AudioServer.set_bus_volume_db(bus_index, game_data.volumes[0])
 	bus_index = AudioServer.get_bus_index("Music")
 	AudioServer.set_bus_volume_db(bus_index, game_data.volumes[1])
 	bus_index = AudioServer.get_bus_index("SFX")
 	AudioServer.set_bus_volume_db(bus_index, game_data.volumes[2])
+	
+	OS.window_fullscreen = game_data.fullscreen
+	scores = game_data.scores
+	scene_reached = game_data.scene_reached
+
+func _ready() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	
+	update_data()
+
 
 #Checks for controller.
 func _input(event: InputEvent) -> void:

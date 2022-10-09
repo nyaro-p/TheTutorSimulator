@@ -152,12 +152,40 @@ margin_bottom = 33.0
 focus_neighbour_left = NodePath(".")
 focus_neighbour_top = NodePath("../../SFX/SFXSlider")
 focus_neighbour_right = NodePath(".")
-focus_neighbour_bottom = NodePath("../../../BackButton")
-focus_next = NodePath("../../../BackButton")
+focus_neighbour_bottom = NodePath("../../Reset/ResetCheckBox")
+focus_next = NodePath("../../Reset/ResetCheckBox")
 focus_previous = NodePath("../../SFX/SFXSlider")
 mouse_filter = 2
 custom_icons/checked = ExtResource( 10 )
 custom_icons/unchecked = ExtResource( 9 )
+
+[node name="Reset" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 106.0
+margin_right = 266.0
+margin_bottom = 139.0
+custom_constants/separation = 0
+
+[node name="Reset Highscores" type="Label" parent="VBoxContainer/Reset"]
+margin_top = 4.0
+margin_right = 92.0
+margin_bottom = 29.0
+text = "Reset Highscores"
+
+[node name="ResetCheckBox" type="CheckBox" parent="VBoxContainer/Reset"]
+unique_name_in_owner = true
+margin_left = 92.0
+margin_right = 116.0
+margin_bottom = 33.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath("../../Fullscreen/FullscreenCheckBox")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath("../../../BackButton")
+focus_next = NodePath("../../../BackButton")
+focus_previous = NodePath("../../Fullscreen/FullscreenCheckBox")
+mouse_filter = 2
+custom_icons/checked = ExtResource( 10 )
+custom_icons/unchecked = ExtResource( 9 )
+toggle_mode = false
 
 [node name="BackButton" type="TextureButton" parent="."]
 anchor_left = 0.5
@@ -171,11 +199,11 @@ margin_bottom = 7.0
 rect_scale = Vector2( 0.3, 0.3 )
 rect_pivot_offset = Vector2( 1, 1 )
 focus_neighbour_left = NodePath(".")
-focus_neighbour_top = NodePath("../VBoxContainer/Fullscreen/FullscreenCheckBox")
+focus_neighbour_top = NodePath("../VBoxContainer/Reset/ResetCheckBox")
 focus_neighbour_right = NodePath(".")
 focus_neighbour_bottom = NodePath(".")
 focus_next = NodePath(".")
-focus_previous = NodePath("../VBoxContainer/Fullscreen/FullscreenCheckBox")
+focus_previous = NodePath("../VBoxContainer/Reset/ResetCheckBox")
 mouse_filter = 2
 texture_normal = ExtResource( 7 )
 texture_pressed = ExtResource( 5 )
@@ -191,5 +219,7 @@ flip_h = true
 [connection signal="value_changed" from="VBoxContainer/SFX/SFXSlider" to="." method="_on_SFXSlider_value_changed"]
 [connection signal="focus_entered" from="VBoxContainer/Fullscreen/FullscreenCheckBox" to="." method="_on_FullscreenCheckBox_focus_entered"]
 [connection signal="pressed" from="VBoxContainer/Fullscreen/FullscreenCheckBox" to="." method="_on_FullscreenCheckBox_pressed"]
+[connection signal="focus_entered" from="VBoxContainer/Reset/ResetCheckBox" to="." method="_on_ResetCheckBox_focus_entered"]
+[connection signal="pressed" from="VBoxContainer/Reset/ResetCheckBox" to="." method="_on_ResetCheckBox_pressed"]
 [connection signal="focus_entered" from="BackButton" to="." method="_on_Button_focus_entered"]
 [connection signal="pressed" from="BackButton" to="." method="_on_Button_pressed"]

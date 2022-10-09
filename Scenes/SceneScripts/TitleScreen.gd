@@ -40,6 +40,7 @@ func _on_Options_pressed() -> void:
 	options.connect("options_closed", self, "options_closed")
 
 func options_closed() -> void:
+	$Buttons/SelectLevel.visible = GlobalStats.scene_reached > 1 #Unnecessary since scene_reched doesn't change,,
 	$Buttons/Options.grab_focus()
 
 

@@ -84,14 +84,18 @@ func change_to_special_sprite() -> void:
 			person.visible = !specialSprite.visible
 			blinkPerson.visible = (!specialSprite.visible and !person.visible)
 		6:
-			specialSprite.visible = !specialSprite.visible
-			person.visible = !specialSprite.visible
-			blinkPerson.visible = (!specialSprite.visible and !person.visible)
-			
-			var timer = get_node_or_null("Timer")
-			if timer == null:
-				timer = Timer.new()
-				add_child(timer)
-			timer.start(6 + randi() % 3)
-			if !timer.is_connected("timeout", self,"change_to_special_sprite"):
-				timer.connect("timeout",self,"change_to_special_sprite") 
+			if !blinkPerson.visible:
+				specialSprite.visible = !specialSprite.visible
+				person.visible = (!specialSprite.visible and !blinkPerson.visible)
+				blinkPerson.visible = (!specialSprite.visible and !person.visible)
+				blinkTimer.paused = !blinkTimer.paused
+				
+				var timer = get_node_or_null("Timer")
+				if timer == null:
+					timer = Timer.new()
+					add_child(timer)
+				timer.start(6 + randi() % 3)
+				if !timer.is_connected("timeout", self,"change_to_special_sprite"):
+					timer.connect("timeout",self,"change_to_special_sprite")
+			else:
+				yield(get_tree().create_timer(0.1), "timeout")
