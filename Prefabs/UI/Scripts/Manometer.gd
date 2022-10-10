@@ -13,6 +13,7 @@ func decrease(value: float) -> void:
 	pivot.rotation_degrees = clamp(pivot.rotation_degrees, 0, 90)
 	if pivot.rotation_degrees == 90:
 		print("coffee finished")
+		GlobalAudio.play_sound("Lost")
 		GlobalStats.set_level_status(GlobalStats.GAME_STOPPED)
 		get_tree().paused = true
 		var loseScreen = LoseScreen.instance()

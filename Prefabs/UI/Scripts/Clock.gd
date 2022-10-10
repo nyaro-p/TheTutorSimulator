@@ -16,6 +16,7 @@ func do_one_tick() -> void:
 	if new_rotation > 360.0:
 		if GlobalStats.get_level_status() == GlobalStats.GAME_ON:
 			print("global time finished")
+			GlobalAudio.play_sound("Won")
 			get_tree().paused = true
 			var winScreen = WinScreen.instance()
 			(get_parent() as CanvasLayer).add_child(winScreen)

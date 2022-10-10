@@ -3,6 +3,7 @@ extends Control
 var step := 0
 
 func _ready() -> void:
+	GlobalStats.update_current_scene_id(self)
 	var fadeIn = GlobalStats.FadeIn.instance()
 	add_child(fadeIn)
 	

@@ -10,7 +10,7 @@ config_version=4
 
 [application]
 
-config/name="The Adem Simulator"
+config/name="The Tutor Simulator"
 run/main_scene="res://Prefabs/UI/SplashScreen.tscn"
 boot_splash/show_image=false
 config/icon="res://AdemIcon.png"

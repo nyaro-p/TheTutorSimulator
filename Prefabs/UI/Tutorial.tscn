@@ -235,7 +235,6 @@ Do not worry! It is supplied directly
 into classrooms by Kaffee Typ GMBH!"
 
 [node name="Second" type="Control" parent="New"]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 

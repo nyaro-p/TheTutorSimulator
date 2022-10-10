@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/SceneScripts/GlobalAudio.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Audio/Sounds/Helped.wav" type="AudioStream" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Assets/Audio/Sounds/button_pressed.wav" type="AudioStream" id=7]
 [ext_resource path="res://Assets/Audio/Sounds/button_selected.wav" type="AudioStream" id=8]
 [ext_resource path="res://Assets/Audio/Tracks/BossFight3.wav" type="AudioStream" id=9]
+[ext_resource path="res://Assets/Audio/Sounds/YouWon.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/Audio/Sounds/YouLost.wav" type="AudioStream" id=11]
 
 [node name="GlobalAudio" type="Node"]
 pause_mode = 2
@@ -37,6 +39,16 @@ bus = "SFX"
 [node name="ButtonSelected" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource( 8 )
 volume_db = -10.0
+bus = "SFX"
+
+[node name="Won" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 10 )
+volume_db = -10.0
+bus = "SFX"
+
+[node name="Lost" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 11 )
+volume_db = -20.0
 bus = "SFX"
 
 [node name="Music" type="Node" parent="."]

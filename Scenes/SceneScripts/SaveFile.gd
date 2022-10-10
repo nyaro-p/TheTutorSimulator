@@ -21,7 +21,7 @@ func load_data() -> void:
 						AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Music")),
 						AudioServer.get_bus_volume_db(AudioServer.get_bus_index("SFX"))],
 			"scores" : [0.0, 0.0, 0.0],
-			"scene_reached" : (GlobalStats.scene_reached if OS.is_debug_build() else 0)
+			"scene_reached" : (GlobalStats.scene_reached if !OS.is_debug_build() else 0)
 		}
 		save_data()
 	file.open(SAVE_FILE, File.READ)
