@@ -15,7 +15,6 @@ signal happy
 signal unhappy
 
 func _ready() -> void:
-	randomize()
 	#randomly gives student a laptop.
 	$Laptop.visible = bool(randi() % 2)
 	

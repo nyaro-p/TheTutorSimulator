@@ -48,6 +48,12 @@ func rotating_attack() -> void:
 func four_questions() -> void:
 	attack.play("four_questions")
 
+func scisors() -> void:
+	attack.play("scisors")
+
+func cascade() -> void:
+	attack.play("cascade")
+
 #### Student ####
 
 func raise_hand() -> void:

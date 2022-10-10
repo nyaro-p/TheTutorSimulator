@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Assets/Ground.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Fonts/DialoguedFont.tres" type="Theme" id=2]
@@ -367,6 +367,150 @@ tracks/24/keys = {
 "update": 0,
 "values": [ 0.0 ]
 }
+tracks/25/type = "value"
+tracks/25/path = NodePath("Scisors:visible")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/26/type = "value"
+tracks/26/path = NodePath("Scisors:position")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 255, 136.75 ) ]
+}
+tracks/27/type = "value"
+tracks/27/path = NodePath("Scisors/Q1:rect_rotation")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/28/type = "value"
+tracks/28/path = NodePath("Scisors/Node2D:rotation_degrees")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/29/type = "value"
+tracks/29/path = NodePath("Scisors:modulate")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/30/type = "value"
+tracks/30/path = NodePath("Cascade:visible")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/31/type = "value"
+tracks/31/path = NodePath("Cascade/Pivot:visible")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/32/type = "value"
+tracks/32/path = NodePath("Cascade/Pivot/Q1:rect_position")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -207.552, -12 ) ]
+}
+tracks/33/type = "value"
+tracks/33/path = NodePath("Cascade/Pivot:rotation_degrees")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/34/type = "value"
+tracks/34/path = NodePath("Cascade/Pivot/Q2:visible")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/35/type = "value"
+tracks/35/path = NodePath("Cascade/Pivot/Q2:rect_position")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 81, -12 ) ]
+}
+tracks/36/type = "value"
+tracks/36/path = NodePath("Cascade:modulate")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
 
 [sub_resource type="Animation" id=12]
 resource_name = "bottom_attack"
@@ -378,10 +522,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1.5, 1.6, 1.8, 2, 2.2, 2.9, 3.2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 1.5, 1.6, 1.8, 2, 2.2, 2.4, 2.9, 3.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 318, 275.75 ), Vector2( 318, 188.75 ), Vector2( 298, 174.25 ), Vector2( 338, 159.75 ), Vector2( 298, 145.25 ), Vector2( 338, 130.75 ), Vector2( 318, 80 ), Vector2( 318, -200 ) ]
+"values": [ Vector2( 318, 275.75 ), Vector2( 318, 188.75 ), Vector2( 298, 174.25 ), Vector2( 338, 172.309 ), Vector2( 298, 145.25 ), Vector2( 338, 130.75 ), Vector2( 282, 108.75 ), Vector2( 318, 80 ), Vector2( 318, -200 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Q2Pivot:rotation_degrees")
@@ -394,6 +538,94 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0, -90.0 ]
+}
+
+[sub_resource type="Animation" id=25]
+resource_name = "cascade"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Cascade:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Cascade/Pivot:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Cascade/Pivot/Q1:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4, 4.9, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -207.552, -12 ), Vector2( -119, -12 ), Vector2( -119, -12 ), Vector2( -400, -12 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Cascade/Pivot:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.4, 2.2, 2.8, 4.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, -270.0, -270.0, 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Cascade/Pivot/Q2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 2.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Cascade/Pivot/Q2:rect_position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 2.2, 2.8, 4.9, 5 ),
+"transitions": PoolRealArray( 1, 1.41421, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 81, -12 ), Vector2( 1.311, -12 ), Vector2( 1.311, -12 ), Vector2( 400, -12 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Cascade:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 4.6, 4.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
 [sub_resource type="Animation" id=14]
@@ -457,7 +689,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 0, 0.5, 1.5, 3, 3.5, 4, 5, 5.6, 9.3, 10.1, 10.5, 10.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -241, 42 ), Vector2( -241, 42 ), Vector2( -63, 42 ), Vector2( -63, 42 ), Vector2( 108, 42 ), Vector2( 108, 42 ), Vector2( -63, 42 ), Vector2( -63, 42 ), Vector2( 118, -16 ), Vector2( 118, -16 ), Vector2( -106, 51 ), Vector2( -106, 51 ) ]
+"values": [ Vector2( -241, 42 ), Vector2( -241, 42 ), Vector2( -63, 42 ), Vector2( -63, 42 ), Vector2( 108, 42 ), Vector2( 108, 42 ), Vector2( -63, 42 ), Vector2( -63, 42 ), Vector2( 86, -90 ), Vector2( 86, -90 ), Vector2( -40, 89 ), Vector2( -40, 89 ) ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("FourQuestions/Q1/Area2D/CollisionShape2D:disabled")
@@ -601,12 +833,13 @@ tracks/16/keys = {
 "times": PoolRealArray( 0, 5.6, 9.3, 10.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, 0.0, -15.5, -15.5 ]
+"values": [ 0.0, 0.0, -54.3, -54.3 ]
 }
 
 [sub_resource type="Animation" id=13]
 resource_name = "rotating_attack"
 length = 10.0
+step = 0.01
 tracks/0/type = "value"
 tracks/0/path = NodePath("DoublePivot:position")
 tracks/0/interp = 1
@@ -614,7 +847,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1, 4.6, 6, 8, 9 ),
+"times": PoolRealArray( 0, 1, 3.5, 4.9, 6.9, 7.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 255, 137.75 ), Vector2( 255, 137.75 ), Vector2( 255, 137.75 ), Vector2( 255, 69.75 ), Vector2( 255, 210.75 ), Vector2( 255, 137.75 ) ]
@@ -626,10 +859,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1, 3, 3.01, 4.62 ),
+"times": PoolRealArray( 0, 1, 2.22, 2.23, 3.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 90.0, 90.0, -360.0, 360.0, -360.0 ]
+"values": [ 90.0, 90.0, 180.0, -180.0, 0.0 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("DoublePivot/Questions3:rect_position")
@@ -638,10 +871,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 1, 4.62, 9, 9.6 ),
+"times": PoolRealArray( 0, 1, 3.5, 7.9, 8.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -83, -400 ), Vector2( -83, -104 ), Vector2( -83, -55 ), Vector2( -83, -55 ), Vector2( -83, -251 ) ]
+"values": [ Vector2( -83, -400 ), Vector2( -83, -104 ), Vector2( -83, -57 ), Vector2( -83, -57 ), Vector2( -83, -251 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("DoublePivot/Questions4:rect_position")
@@ -650,10 +883,74 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 1, 4.62, 9, 9.6 ),
+"times": PoolRealArray( 0, 1, 3.5, 7.9, 8.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -66, 400 ), Vector2( -66, 78 ), Vector2( -66, 29 ), Vector2( -66, 29 ), Vector2( -66, 181 ) ]
+"values": [ Vector2( -66, 400 ), Vector2( -66, 78 ), Vector2( -66, 33 ), Vector2( -66, 33 ), Vector2( -66, 181 ) ]
+}
+
+[sub_resource type="Animation" id=24]
+resource_name = "scisors"
+length = 4.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Scisors:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Scisors:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 1.6, 2, 2.4, 3.1, 4.3, 4.34 ),
+"transitions": PoolRealArray( 1, 3.605, 1, 1, 1, 5.09824, 5.09824, 1 ),
+"update": 0,
+"values": [ Vector2( 255, 60.75 ), Vector2( 255, 136.75 ), Vector2( 255, 136.75 ), Vector2( 255, 156.343 ), Vector2( 255, 156.343 ), Vector2( 255, 234.644 ), Vector2( 255, 234.644 ), Vector2( 255, 29.107 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Scisors/Q1:rect_rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1, 1.6, 2, 2.4, 3.1, 3.6, 4, 4.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, -10.0, 90.0, 0.0, 0.0, -10.0, 70.0, 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Scisors/Node2D:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1, 1.6, 2, 2.4, 3.1, 3.6, 4, 4.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 20.0, -90.0, 0.0, 0.0, 20.0, -70.0, 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Scisors:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 4, 4.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
 [sub_resource type="Animation" id=11]
@@ -714,10 +1011,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 1, 3, 3.8, 3.9, 4.7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 1, 3, 3.89, 3.9, 4.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, 1.0, 1.0, 0.0, 1.0 ]
+"values": [ 0.0, 0.0, 1.0, 1.0, 0.0, 1.0 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Field/Student/Label2:visible")
@@ -738,10 +1035,10 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 1, 3.9 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 1, 3.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ "I think I get it...", "Thanks!" ]
+"values": [ "", "I think I get it...", "Thanks!" ]
 }
 tracks/4/type = "method"
 tracks/4/path = NodePath("CoffePlayer")
@@ -760,7 +1057,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id=5]
 resource_name = "Fight"
-length = 41.0
+length = 51.5
 tracks/0/type = "method"
 tracks/0/path = NodePath(".")
 tracks/0/interp = 1
@@ -768,8 +1065,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.4, 4.4, 8, 20.5, 23.5, 28.7, 40.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0.4, 4.4, 8, 20.5, 23.5, 28.7, 40.9, 45.7, 51.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "values": [ {
 "args": [  ],
 "method": "upper_attack"
@@ -790,6 +1087,12 @@ tracks/0/keys = {
 "method": "four_questions"
 }, {
 "args": [  ],
+"method": "scisors"
+}, {
+"args": [  ],
+"method": "cascade"
+}, {
+"args": [  ],
 "method": "end_fight"
 } ]
 }
@@ -800,8 +1103,8 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 2.6, 3.2, 3.6, 4, 7.4, 8, 17, 18.5, 19.5, 20, 26.5, 27.4, 27.9, 28.5, 40 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 2.6, 3.2, 3.6, 4, 7.4, 8, 17, 18.5, 19.5, 20, 26.5, 27.4, 27.9, 28.5, 40, 40.9, 50.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "values": [ {
 "args": [  ],
 "method": "raise_hand"
@@ -844,6 +1147,12 @@ tracks/1/keys = {
 }, {
 "args": [  ],
 "method": "blink"
+}, {
+"args": [  ],
+"method": "raise_hand"
+}, {
+"args": [  ],
+"method": "lower_hand"
 }, {
 "args": [  ],
 "method": "raise_hand"
@@ -1312,12 +1621,101 @@ monitoring = false
 position = Vector2( 62.5, 12.25 )
 shape = SubResource( 18 )
 
+[node name="Scisors" type="Node2D" parent="Questions"]
+visible = false
+position = Vector2( 255, 136.75 )
+
+[node name="Q1" type="Label" parent="Questions/Scisors"]
+modulate = Color( 0.960784, 0.168627, 0.168627, 1 )
+margin_left = 16.0
+margin_top = -113.0
+margin_right = 131.0
+margin_bottom = -88.0
+theme = ExtResource( 2 )
+text = "NullPointerException"
+
+[node name="Area2D" type="Area2D" parent="Questions/Scisors/Q1"]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Questions/Scisors/Q1/Area2D"]
+visible = false
+position = Vector2( 58, 12.25 )
+shape = SubResource( 15 )
+
+[node name="Node2D" type="Node2D" parent="Questions/Scisors"]
+position = Vector2( -15, -112 )
+
+[node name="Q4" type="Label" parent="Questions/Scisors/Node2D"]
+modulate = Color( 0.960784, 0.168627, 0.168627, 1 )
+margin_left = -125.0
+margin_top = -1.0
+margin_right = 29.0
+margin_bottom = 24.0
+theme = ExtResource( 2 )
+text = "FileNotFoundException"
+
+[node name="Area2D" type="Area2D" parent="Questions/Scisors/Node2D/Q4"]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Questions/Scisors/Node2D/Q4/Area2D"]
+visible = false
+position = Vector2( 62.5, 12.25 )
+shape = SubResource( 18 )
+
+[node name="Cascade" type="Node2D" parent="Questions"]
+visible = false
+position = Vector2( 255, 137.75 )
+
+[node name="Pivot" type="Node2D" parent="Questions/Cascade"]
+visible = false
+
+[node name="Q1" type="Label" parent="Questions/Cascade/Pivot"]
+margin_left = -207.552
+margin_top = -12.0
+margin_right = -92.552
+margin_bottom = 13.0
+theme = ExtResource( 2 )
+text = "ArithmeticException"
+
+[node name="Area2D" type="Area2D" parent="Questions/Cascade/Pivot/Q1"]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Questions/Cascade/Pivot/Q1/Area2D"]
+position = Vector2( 58, 12.25 )
+shape = SubResource( 15 )
+
+[node name="Q2" type="Label" parent="Questions/Cascade/Pivot"]
+visible = false
+margin_left = 81.0
+margin_top = -12.0
+margin_right = 196.0
+margin_bottom = 13.0
+theme = ExtResource( 2 )
+text = "ArithmeticException"
+
+[node name="Area2D" type="Area2D" parent="Questions/Cascade/Pivot/Q2"]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Questions/Cascade/Pivot/Q2/Area2D"]
+position = Vector2( 58, 12.25 )
+shape = SubResource( 15 )
+
 [node name="Attack" type="AnimationPlayer" parent="Questions"]
 unique_name_in_owner = true
 anims/RESET = SubResource( 10 )
 anims/bottom_attack = SubResource( 12 )
+anims/cascade = SubResource( 25 )
 anims/four_questions = SubResource( 14 )
 anims/rotating_attack = SubResource( 13 )
+anims/scisors = SubResource( 24 )
 anims/upper_attack = SubResource( 11 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -1361,7 +1759,6 @@ anchor_bottom = 1.0
 [node name="ColorRect" type="ColorRect" parent="UI/Won"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.54902, 0.945098, 0.984314, 1 )
 
 [node name="Lost" type="Label" parent="UI/Won"]
 anchor_left = 0.5
@@ -1378,6 +1775,6 @@ align = 1
 
 [node name="BossTutorial" type="Sprite" parent="UI"]
 unique_name_in_owner = true
-position = Vector2( 255, 180 )
+position = Vector2( 254, 180 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 10 )
